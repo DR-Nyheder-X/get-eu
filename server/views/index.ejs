@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title><%= title %></title>
+    <meta name="description" content="<%= description %>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="App">
+      <%/*
+        Show this loader while webpack is loading react and friends.
+        When React has loaded it will remove .Waiting and its styles.
+      */%>
+      <style>
+        body {
+          background-color: #fff;
+        }
+
+        .Waiting {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-top: -4px;
+          margin-left: -50px;
+          display: block;
+          width: 100px;
+          height: 7px;
+          text-align: center;
+        }
+
+        .Waiting i {
+          background: #000;
+        }
+
+        .Waiting-one,
+        .Waiting-two,
+        .Waiting-three {
+          vertical-align: top;
+          display: inline-block;
+          width: 7px;
+          height: 7px;
+          margin: 0 1px;
+          border-radius: 50%;
+          -webkit-animation: pulse 1s infinite ease-in-out;
+          -moz-animation: pulse 1s infinite ease-in-out;
+          animation: pulse 1s infinite ease-in-out;
+          -webkit-animation-fill-mode: both;
+          -moz-animation-fill-mode: both;
+          animation-fill-mode: both;
+        }
+
+        .Waiting-one {
+          -webkit-animation-delay: -.32s;
+          -moz-animation-delay: -.32s;
+          animation-delay: -.32s;
+        }
+
+        .Waiting-two {
+          -webkit-animation-delay: -.16s;
+          -moz-animation-delay: -.16s;
+          animation-delay: -.16s;
+        }
+
+        @-webkit-keyframes pulse {0%,100%,80% {opacity:0} 40%{opacity:1 }}
+        @-moz-keyframes pulse {0%,100%,80% {opacity:0} 40% {opacity:1}}
+        @keyframes pulse {0%,100%,80% {opacity:0} 40% {opacity:1}}
+      </style>
+
+      <span class="Waiting">
+        <i class="Waiting-one"></i>
+        <i class="Waiting-two"></i>
+        <i class="Waiting-three"></i>
+      </span>
+    </div><!-- /.App -->
+
+    <%if (!isProduction) { %>
+      <script src="/build/main.bundle.js"></script>
+    <% } else { %>
+      <script src="/build/<%= assetPath('app.js') %>"></script>
+    <% } %>
+  </body>
+</html>

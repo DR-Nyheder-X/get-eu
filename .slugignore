@@ -1,0 +1,5 @@
+# From the Heroku docs:
+# "If your repository contains files not necessary to run your app, you may wish
+# to add these to a .slugignore file in the root of your repository."
+
+design

@@ -1,0 +1,34 @@
+/* Base
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+$backgroundColor: #fff;
+$fontFamily: sans-serif;
+$color: black;
+$lineHeight: 1.6;
+
+/* Links
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+$linkColor: blue;
+$linkActiveColor: navy; // Used only on mobiles to indicate a tab
+$linkHoverColor: $linkActiveColor; // Used only on desktops
+
+/* Media queries
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+$xSmallBreakpoint: 320px;
+$smallBreakpoint: 550px;
+$mediumBreakpoint: 768px;
+$largeBreakpoint: 1100px;
+$xLargeBreakpoint: 1400px;
+$xxLargeBreakpoint: 1700px;
+
+$xSmallUp: "only screen";
+$xSmallOnly: "only screen and (max-width: #{$xSmallBreakpoint})";
+$smallUp: "only screen and (min-width: #{$smallBreakpoint})";
+$smallOnly: "only screen and (min-width: #{$xSmallBreakpoint}) and (max-width: #{$smallBreakpoint})";
+$mediumUp: "only screen and (min-width: #{$mediumBreakpoint})";
+$mediumOnly: "only screen and (min-width: #{$smallBreakpoint}) and (max-width: #{$mediumBreakpoint})";
+$largeUp: "only screen and (min-width: #{$largeBreakpoint})";
+$largeOnly: "only screen and (min-width: #{$largeBreakpoint}) and (max-width: #{$xLargeBreakpoint})";
+$xLargeUp: "only screen and (min-width: #{$xLargeBreakpoint})";
+$xLargeOnly: "only screen and (min-width: #{$xLargeBreakpoint}) and (max-width: #{$xxLargeBreakpoint})";
+$xxLargeUp: "only screen and (min-width: #{$xxLargeBreakpoint})";
+$xxLargeOnly: "only screen and (min-width: #{$xxLargeBreakpoint}) and (max-width: 9999px)";
