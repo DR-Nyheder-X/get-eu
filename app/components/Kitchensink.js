@@ -11,10 +11,14 @@ var Kitchensink = React.createClass({
         <h1 className="PageTitle PageTitle--blocky">Kitchensink</h1>
         <div className="SectionTitle"><h2>Buttons</h2></div>
         <div className="Copy">
-          <p>Buttonize things with the <code>.Button</code> class. Disable with <code>.Button--disabled</code>.</p>
-          <p><a className="Button" href="#">This is a button</a></p>
+          <p><a className="Button Button--small" href="#">Small button</a></p>
+          <p><a className="Button" href="#">Default button</a></p>
           <p><a className="Button Button--disabled" href="#">Disabled button</a></p>
-
+          <p><a className="Button Button--red" href="#">Red button</a></p>
+          <p><a className="Button Button--light" href="#">Light button</a></p>
+          <p><a className="Button Button--shadow" href="#">Default with shadow</a></p>
+          <p><a className="Button Button--red Button--darkShadow" href="#">Red with dark shadow</a></p>
+          <p><a className="Button Button--shadow Button--fullWidth" href="#">Full width with shadow</a></p>
         </div>
 
       </div>

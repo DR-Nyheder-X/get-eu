@@ -9,6 +9,11 @@ html {
   -webkit-text-size-adjust: 100%;
   line-height: $lineHeight;
   font-size: $fontSize;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {

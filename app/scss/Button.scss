@@ -17,7 +17,7 @@
   &:hover,
   &:active {
     color: $white;
-    background: $darkerPurple;
+    background: $purple;
   }
 }
 
@@ -32,4 +32,43 @@
     color: $darkerTurquoise;
     cursor: default;
   }
+}
+
+.Button--red {
+  background-color: $red;
+  color: $darkerPurple;
+
+  &:hover,
+  &:active {
+    color: $darkerPurple;
+    background: $lightRed;
+  }
+}
+
+.Button--light {
+  background-color: $lightTurquoise;
+  color: $darkerPurple;
+
+  &:hover,
+  &:active {
+    color: $darkerPurple;
+    background-color: $lighterTurquoise;
+  }
+}
+
+.Button--shadow {
+  box-shadow: 2px 2px 0 0 $darkTurquoise;
+}
+
+.Button--darkShadow {
+  box-shadow: 2px 2px 0 0 $black;
+}
+
+.Button--fullWidth {
+  width: 100%;
+}
+
+.Button--small {
+  font-size: 14px;
+  padding: .3em 1em .35em;
 }
