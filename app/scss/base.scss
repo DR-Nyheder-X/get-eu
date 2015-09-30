@@ -7,7 +7,8 @@ html {
   font-family: $fontFamily;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-    line-height: $lineHeight;
+  line-height: $lineHeight;
+  font-size: $fontSize;
 }
 
 body {
@@ -138,8 +139,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
 button,

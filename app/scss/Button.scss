@@ -1,0 +1,35 @@
+@import 'settings.scss';
+@import 'mixins.scss';
+
+.Button {
+  font-family: $mediumFontFamily;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: .015em;
+  color: $white;
+  background-color: $darkPurple;
+  display: inline-block;
+  list-style: 1;
+  border-radius: 2px;
+  padding: .6em 1.4em .65em;
+  transition: background-color .2s ease;
+
+  &:hover,
+  &:active {
+    color: $white;
+    background: $darkerPurple;
+  }
+}
+
+.Button--disabled {
+  background-color: $darkTurquoise;
+  color: $darkerTurquoise;
+  cursor: default;
+
+  &:hover,
+  &:active {
+    background-color: $darkTurquoise;
+    color: $darkerTurquoise;
+    cursor: default;
+  }
+}

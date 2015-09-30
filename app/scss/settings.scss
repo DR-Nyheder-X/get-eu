@@ -2,9 +2,12 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 $black: #000;
 
+$white: #fff;
+
 $lightTurquoise: #A6FAF9;
 $turquoise: #82E7E6;
 $darkTurquoise: #44C8C6;
+$darkerTurquoise: #226564;
 
 $purple: #4B61B0;
 $darkPurple: #293A74;
@@ -18,6 +21,7 @@ $darkRed: #E26174;
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 $backgroundColor: $turquoise;
 $fontFamily: georgia, serif;
+$fontSize: 14px;
 $boldFontFamily: 'din condensed bold', sans-serif;
 $mediumFontFamily: 'din condensed medium', sans-serif;
 $color: $darkerPurple;
@@ -25,9 +29,9 @@ $lineHeight: 1.6;
 
 /* Links
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-$linkColor: $red;
+$linkColor: $darkerPurple;
 $linkActiveColor: $darkerPurple; // Used only on mobiles to indicate a tab
-$linkHoverColor: $darkRed; // Used only on desktops
+$linkHoverColor: $darkerPurple; // Used only on desktops
 
 /* Media queries
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

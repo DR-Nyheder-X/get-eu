@@ -1,0 +1,18 @@
+@import 'settings.scss';
+@import 'mixins.scss';
+
+.Copy {
+  p {
+    @include pagePadding;
+    margin-bottom: .75em;
+  }
+
+  code {
+    padding: .2em;
+    margin: 0;
+    font-size: 85%;
+    background-color: $lightTurquoise;
+    border-radius: 2px;
+  }
+
+}//.Copy
