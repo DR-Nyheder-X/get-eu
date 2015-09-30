@@ -15,7 +15,6 @@ var App = React.createClass({
   render: function() {
     return (
       <main className="App">
-        <MainNavigation />
         <RouteHandler />
       </main>
     )
@@ -29,7 +28,7 @@ var App = React.createClass({
 // https://github.com/odysseyscience/react-router-proxy-loader
 var routes = (
   <Route name="app" path="/" handler={App}>
-    <Route name="about" path="about" handler={require('react-router-proxy!./About.js')} />
+    <Route name="kitchensink" path="kitchensink" handler={require('react-router-proxy!./Kitchensink.js')} />
     <DefaultRoute handler={require('react-router-proxy!./Home.js')} />
     <NotFoundRoute handler={require('react-router-proxy!./NotFound.js')} />
   </Route>

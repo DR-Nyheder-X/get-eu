@@ -1,15 +1,33 @@
+/* Colors
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+$black: #000;
+
+$lightTurquoise: #A6FAF9;
+$turquoise: #82E7E6;
+$darkTurquoise: #44C8C6;
+
+$purple: #4B61B0;
+$darkPurple: #293A74;
+$darkerPurple: #1A2859;
+
+$red: #FF758A;
+$darkRed: #E26174;
+
+
 /* Base
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-$backgroundColor: #fff;
-$fontFamily: sans-serif;
-$color: black;
+$backgroundColor: $turquoise;
+$fontFamily: georgia, serif;
+$boldFontFamily: 'din condensed bold', sans-serif;
+$mediumFontFamily: 'din condensed medium', sans-serif;
+$color: $darkerPurple;
 $lineHeight: 1.6;
 
 /* Links
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-$linkColor: blue;
-$linkActiveColor: navy; // Used only on mobiles to indicate a tab
-$linkHoverColor: $linkActiveColor; // Used only on desktops
+$linkColor: $red;
+$linkActiveColor: $darkerPurple; // Used only on mobiles to indicate a tab
+$linkHoverColor: $darkRed; // Used only on desktops
 
 /* Media queries
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
