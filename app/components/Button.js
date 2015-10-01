@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import classname from 'classname'
+import formatTypeClasses from '../utils/formatTypeClasses'
 
 require('../scss/Button.scss')
 
@@ -12,7 +13,7 @@ export default class Button extends Component {
     }
   }
   render () {
-    const type = formatTypeClasses(this.props.type)
+    const type = formatTypeClasses('Button', this.props.type)
     const cls = classname('Button', this.props.className, type)
     return (
       <a className={cls} {...this.props}>{this.props.children}</a>
@@ -20,11 +21,3 @@ export default class Button extends Component {
   }
 }
 
-function formatTypeClasses (type) {
-  if (!type) return ''
-
-  return type
-    .split(' ')
-    .map(cls => `Button--${cls}`)
-    .join(' ')
-}
