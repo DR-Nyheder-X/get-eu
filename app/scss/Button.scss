@@ -21,7 +21,8 @@
   }
 }
 
-.Button--disabled {
+.Button--disabled,
+.Button[disabled] {
   background-color: $darkTurquoise;
   color: $darkerTurquoise;
   cursor: default;
