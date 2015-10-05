@@ -51,12 +51,16 @@ if (isProduction) {
 
 /* Index page
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-app.get('/', function(req, res){
+app.get('/some/weird/path', function(req, res){
   res.render('index', {
     title: '',
     description: '',
     isProduction: isProduction
   })
+})
+
+app.get('/', function(req, res) {
+  res.redirect('/some/weird/path')
 })
 
 /* 404
