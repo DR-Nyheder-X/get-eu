@@ -34,12 +34,10 @@ var Kitchensink = React.createClass({
         </PageTitle>
 
         <SectionTitle>Progress bars</SectionTitle>
-        <Copy>
-          <p><Progressbar percent='20' /></p>
-          <p><Progressbar percent='80' type='dimmed' /></p>
-          <p><Progressbar percent='40' type='small' /></p>
-          <p><Progressbar percent='70' type='small dimmed' /></p>
-        </Copy>
+        <Progressbar percent='20' />
+        <Progressbar percent='80' type='dimmed' />
+        <Progressbar percent='40' type='small' />
+        <Progressbar percent='70' type='small dimmed' />
       </div>
     )
   }

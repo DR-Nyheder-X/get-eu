@@ -10,13 +10,15 @@
   background-color: $darkPurple;
   display: inline-block;
   border-radius: 2px;
-  padding: .6em 1.4em .65em;
+  padding: .85em 1.4em .925em;
   transition: background-color .2s ease;
 
   &:hover,
   &:active {
     color: $white;
     background: $purple;
+    text-decoration: none;
+    cursor: pointer;
   }
 }
 
@@ -70,5 +72,5 @@
 
 .Button--small {
   font-size: 14px;
-  padding: .3em 1em .35em;
+  padding: .5em .75em .55em;
 }
