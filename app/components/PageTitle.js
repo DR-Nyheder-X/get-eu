@@ -37,7 +37,6 @@ export class PreHeading extends Component {
     }
   }
   render () {
-    return <h2 className='PageTitle-preheading'>Pre:{this.props.children}</h2>
+    return <h2 className='PageTitle-preheading'>{this.props.children}</h2>
   }
 }
-
