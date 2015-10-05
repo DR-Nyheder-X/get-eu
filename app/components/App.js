@@ -36,5 +36,5 @@ var routes = (
 
 Router.run(routes, function(Root) {
   // Whenever the url changes, this callback is called again
-  React.render(<Root />, document.body)
+  React.render(<Root />, document.querySelector('.AppWrapper'))
 })

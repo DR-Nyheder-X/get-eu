@@ -2,7 +2,6 @@
 @import 'mixins.scss';
 
 .SectionTitle {
-  font-family: $mediumFontFamily;
   text-transform: uppercase;
   font-size: 16px;
   letter-spacing: .025em;
@@ -11,6 +10,7 @@
   @include pagePadding;
 
   h2 {
+    font-family: $mediumFontFamily;
     border-bottom: 1px solid $darkTurquoise;
     padding-bottom: .1em;
   }

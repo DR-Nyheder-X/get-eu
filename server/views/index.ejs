@@ -6,9 +6,11 @@
     <title><%= title %></title>
     <meta name="description" content="<%= description %>">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="http://www.dr.dk/assets/css/005/base.css">
+    <script src="http://www.dr.dk/assets/js/004/base.js"></script>
   </head>
   <body>
-    <div class="App">
+    <div class="AppWrapper">
       <%/*
         Show this loader while webpack is loading react and friends.
         When React has loaded it will remove .Waiting and its styles.
@@ -74,6 +76,8 @@
         <i class="Waiting-three"></i>
       </span>
     </div><!-- /.App -->
+
+    <script src="http://www.dr.dk/drdkTopbar/topbar.js?version=005"></script>
 
     <%if (!isProduction) { %>
       <script src="/build/main.bundle.js"></script>
