@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import classname from 'classname'
 import formatTypeClasses from '../utils/formatTypeClasses'
 
-require('../scss/Button.scss')
+import '../scss/Button.scss'
 
 export default class Button extends Component {
   static get propTypes () {
@@ -20,4 +20,3 @@ export default class Button extends Component {
     )
   }
 }
-
