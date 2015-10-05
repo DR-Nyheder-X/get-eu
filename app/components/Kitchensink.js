@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from './Button'
 import PageTitle, { PreHeading } from './PageTitle'
+import Progressbar from './Progressbar'
 import Copy from './Copy'
 import SectionTitle from './SectionTitle'
 
@@ -31,6 +32,14 @@ var Kitchensink = React.createClass({
           <PreHeading>This is a pre-heading with a</PreHeading>
           <h1>Small centered page title</h1>
         </PageTitle>
+
+        <SectionTitle>Progress bars</SectionTitle>
+        <Copy>
+          <p><Progressbar percent='20' /></p>
+          <p><Progressbar percent='80' type='dimmed' /></p>
+          <p><Progressbar percent='40' type='small' /></p>
+          <p><Progressbar percent='70' type='small dimmed' /></p>
+        </Copy>
       </div>
     )
   }

@@ -1,0 +1,30 @@
+@import 'settings.scss';
+@import 'mixins.scss';
+
+.Progressbar {
+  margin: 3px;
+  background: #fff;
+  height: 8px;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: inset 0 -2px 0 0 $darkTurquoise;
+}
+
+.Progressbar-fill {
+  height: 8px;
+  background-color: $purple;
+  box-shadow: inset 0 -2px 0 0 $darkerPurple;
+}
+
+.Progressbar--dimmed {
+  background-color: $gray;
+  box-shadow: inset 0 -2px 0 0 $darkGray;
+}
+
+.Progressbar--small {
+  height: 6px;
+
+  .Progressbar-fill {
+    height: 6px;
+  }
+}
