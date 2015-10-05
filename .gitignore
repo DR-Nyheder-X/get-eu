@@ -1,5 +1,5 @@
 # Web development
-node_modules
+/node_modules
 bower_components
 .sass-cache
 
