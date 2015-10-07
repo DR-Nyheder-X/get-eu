@@ -1,10 +1,6 @@
 import React from 'react'
 import { createStore, applyMiddleware, compose } from 'redux'
-import {
-  ReduxRouter,
-  reduxReactRouter,
-  routerStateReducer
-} from 'redux-router'
+import { ReduxRouter, reduxReactRouter } from 'redux-router'
 import { createHistory } from 'history'
 
 import routes from './routes'
@@ -14,18 +10,9 @@ const composedCreateStore = compose(
   reduxReactRouter({ routes, createHistory })
 )(createStore)
 
-// ------------------------------------------------------
+import { createFinalReducer } from './reducers'
 
-// REDUCERS ---------------------------------------------
-
-import { combineReducers } from 'redux'
-
-const initialState = {}
-function a (state = initialState) {
-  return state
-}
-
-const reducer = combineReducers({ a, router: routerStateReducer })
+const reducer = createFinalReducer()
 
 export default function createFinalStore () {
   return composedCreateStore(reducer)
