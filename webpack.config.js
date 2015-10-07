@@ -37,7 +37,7 @@ module.exports = {
         exclude: path.resolve(__dirname, 'node_modules')
       }, {
         test: /\.s?css?$/,
-        loader: 'style!css!sass?includePaths[]=./node_modules!autoprefixer'
+        loader: 'style!css!autoprefixer!sass?includePaths[]=./node_modules'
       }
     ]
   }
