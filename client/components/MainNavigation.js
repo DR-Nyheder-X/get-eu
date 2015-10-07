@@ -15,13 +15,8 @@ export default class MainNavigation extends Component {
     }
   }
   render () {
-<<<<<<< HEAD
-    const cls = classname('MainNavigation', this.props.className)
-=======
     const type = formatTypeClasses('MainNavigation', this.props.type)
     const cls = classname('MainNavigation', this.props.className, type)
-
->>>>>>> origin/master
     return (
       <nav className={cls} {...this.props}>
         <div className="MainNavigation-tab MainNavigation-tabWiki">
