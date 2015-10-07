@@ -1,6 +1,119 @@
-.MainNavigation a {
+@import 'settings.scss';
+@import 'mixins.scss';
+
+$MainNavigationHeight: 44px;
+
+.MainNavigation {
+  height: $MainNavigationHeight;
+  // overflow: hidden;
+  background-color: $darkPurple;
+}
+
+.MainNavigation-tab {
+  font-family: $mediumFontFamily;
   display: inline-block;
-  padding: .5em;
-  border: 1px solid black;
-  margin-right: .5em;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: .025em;
+  text-align: center;
+}
+
+.MainNavigation-tab a {
+  display: block;
+  color: $turquoise;
+  height: $MainNavigationHeight;
+  background-color: $darkerPurple;
+  z-index: 98;
+  line-height: 43px;
+
+  &:hover {
+    text-decoration: none;
+    color: $lightTurquoise;
+  }
+}
+
+// Tab/pill widths
+.MainNavigation-tab,
+.MainNavigation-pill {
+  width: 33.33%;
+}
+
+// Active tab
+.MainNavigation-tab--active a {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  background: $turquoise;
+  color: $darkerPurple;
+  box-shadow: 2px 2px 0 $black;
+  z-index: 99;
+
+  &:hover {
+    color: $darkerPurple;
+  }
+}
+
+// Pill style tab
+.MainNavigation-tab--pill {
+  padding-right: 14px;
+  padding-left: 14px;
+  position: relative;
+
+  .Icon {
+    display: none;
+    position: relative;
+    bottom: -2px;
+  }
+}
+
+// Show points icon on larger screens
+@media #{$smallUp} {
+  .MainNavigation-tab--pill .Icon {
+    display: inline-block;
+  }
+}
+
+.MainNavigation-tab--pill a {
+  font-size: 14px;
+  background-color: $turquoise;
+  color: $darkerPurple;
+  border-radius: 2px;
+  box-shadow: 2px 2px 0 $black;
+  height: 31px;
+  line-height: 31px;
+  position: absolute;
+  top: -27px;
+  bottom: 0;
+  left: 14px;
+  right: 14px;
+
+  &:hover {
+    color: $darkerPurple;
+    background-color: $lightTurquoise;
+  }
+}
+
+// Wiki (learn)
+.MainNavigation-tabWiki.MainNavigation-tab--active a {
+  border-radius: 0;
+  border-top-right-radius: 2px;
+}
+
+// Quiz
+.MainNavigation-tabQuiz a {
+  border-radius: 0;
+  border-top-right-radius: 2px;
+}
+
+.MainNavigation-tabQuiz.MainNavigation-tab--active a {
+  border-top-left-radius: 2px;
+  box-shadow: 2px 2px 0 $black;
+}
+
+// Active pill (points)
+.MainNavigation-tab--pill.MainNavigation-tab--active a {
+  background-color: #fff;
+
+  .Icon {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAAqCAMAAAAzmnPFAAABzlBMVEUAAAC/QEC/gEDMZjPMZma/alXPYFDylHnRaFHQXkzjhGjj4+Pj4+P4lHnlfGL5j3bQa1P5lH3YdljQbVDSa1HSa1L7lHvk5OTl5eXPa1X7lHrl5eXl5eXRbFPRbVXk5OTk5OTl5eXRbFT7ln3RblX7lXz7lX3l5eXRbVXSblT8lXzRbFTSblXmgGjSbVXl5eXzjHPRbVb8lX38lnzl5eX8lX3m5ubl5eXSblXk3dz7lHrSblX9ln3l5eX9ln3SbVbSblXm5ub9lnzm5ubl5eX9lnz6knnRbVXSblXogmnZdVzSblX9ln3SblX4kHjrhWzzjHPTcVrcd179lX39ln3SbVXUb1fm5ubngmj6k3nSblbScFnSclvTblbTb1fTdV7TdmDTeWTUb1fUcFjVcFjWcVnWhnLXc1vYc1vYkoHYl4jZdFzZmYradl3aopTbppncd1/ceF/cqp7deGDeeWHeemHfvrbfvrffwrvgemLge2Lgxb/he2PifWXkf2bk3tzl4N/l4+Pm5ubngWnog2rqhGvqhGzth27tiG/wiXHwinHxi3Lyi3PyjHP0jnX1j3b2kHf3kHf4knn5k3r6k3r6lHv7lHv7lXz8lXz9ln3onK9cAAAAWnRSTlMABAQFBQwQExYbGyQlJicpKys0Njk+PkNERUVOT1NUcXJ0f4+QkJGUoqOmp66ur6+vsrKzub7Aw8XFyMzM193i5ubm6O7w8vT19ff5+fv7/Pz9/f39/v7+/v7aeFcdAAACP0lEQVR4AZ3U+VcSURQH8NFMbUkzzcr2RUvaIa2UsiiszNRSWr5ZqZQtamCU1rRkRAiaVEA697+N9xCm4TEL8/llzpzDlzv33jcjaVQ0NTvdnl6P23mwqUIqVaPDSyqvo7GkdJ2LCrnqLKfLWwZJNNRcbi1e1UbFdVRZiW+6SHq6ay1UV+OivhrT3tvIyECDSb6FjPXXGy9ukIwpPdVGeReZWegqMzh1ZC7Yqp93kLmYb4tevMJL5tK4c2p98XwTWRHC0oPjlcXyzWRFFB9IubFbEjnJijgeK0T3D4h5N1mRABaJFFn8Aw9ZkQS+EFHqrtBCL1mxArxj18j1Srv1p9h1eeyY3f6fESP71tmbPx4RM48Tdvb/I1c/gVtrbZ0/TOUGscfO+c/Ony/iiI33D9n98/qdNt5/AIu5RVwq/fsDwK+szh83C/J1Q2RMmQDwiThZrG/6/Y0iY4my54/3r1XeQUZ+svhb4iLg8y9Q1U36/jxl+V/EpPxg+xfU9unHXyC/PEUGcPv8ycN7d26QNGoG9B6eV59WiPmOjECYu3pm30ZJ1dCvkEiJgnme4jc8PvI1nNe+Tcqr71kQ9z6Rjf/mvctgZsP/ubdfyqvuCsbSpErHguCmWfXliB/Mm7DGZUlV1upDKBpPJFeSiXg0hFWf/yYT8/IYNHGhPrf5HAyNzGrj7dulAluPXoPqyav3gWHkDAeyo9PMX7Bmx6HTnaMPR8dfvv74LfO7uZnJcXY7OTPHc1cunM3sf1du//8AwdSn9tP76iwAAAAASUVORK5CYII=);
+  }
 }

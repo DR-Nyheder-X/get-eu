@@ -1,0 +1,72 @@
+@import 'settings.scss';
+@import 'mixins.scss';
+
+$MainNavigationHeight: 44px;
+
+.MainNavigation {
+  height: $MainNavigationHeight;
+  overflow: hidden;
+  background-color: $darkPurple;
+}
+
+.MainNavigation-tab {
+  font-family: $mediumFontFamily;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: .025em;
+  text-align: center;
+}
+
+.MainNavigation-tab a {
+  display: block;
+  color: $turquoise;
+  height: $MainNavigationHeight;
+  background-color: $darkerPurple;
+  z-index: 98;
+  position: relative;
+  line-height: 42px;
+
+  &:hover {
+    text-decoration: none;
+    color: $lightTurquoise;
+  }
+}
+
+// Tab/pill widths
+.MainNavigation-tab,
+.MainNavigation-pill {
+  width: 33.33%;
+}
+
+// Pill style tab
+.MainNavigation-tab--pill {
+  padding-right: 14px;
+  padding-left: 14px;
+}
+
+.MainNavigation-tab--pill a {
+  background-color: $darkPurple;
+  font-size: 14px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 2px 2px 0 $black;
+  height: 29px;
+  line-height: 1;
+}
+
+// Active tab
+.MainNavigation-tab--active a {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  background: $turquoise;
+  color: $darkerPurple;
+  box-shadow: 2px 2px 0 $black;
+  z-index: 99;
+
+  &:hover {
+    color: $darkerPurple;
+  }
+}
+
+// Active pill

@@ -3,6 +3,7 @@ import Button from './Button'
 import PageTitle, { PreHeading } from './PageTitle'
 import Progressbar from './Progressbar'
 import Copy from './Copy'
+import MainNavigation from './MainNavigation'
 import SectionTitle from './SectionTitle'
 
 var Kitchensink = React.createClass({
@@ -38,6 +39,9 @@ var Kitchensink = React.createClass({
         <Progressbar percent='80' type='dimmed' />
         <Progressbar percent='40' type='small' />
         <Progressbar percent='70' type='small dimmed' />
+
+      <SectionTitle>Main navigation</SectionTitle>
+      <MainNavigation />
       </div>
     )
   }
