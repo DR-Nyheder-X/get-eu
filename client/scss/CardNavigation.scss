@@ -2,6 +2,7 @@
 @import 'mixins.scss';
 
 .CardNavigation {
+  @include pagePadding;
   position: relative;
 }
 

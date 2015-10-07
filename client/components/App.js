@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import MainNavigation from './MainNavigation'
 
 require('../scss/App.scss')
 
@@ -12,7 +13,7 @@ class App extends Component {
   render () {
     return (
       <main className="App">
-        <h1>App!</h1>
+        <MainNavigation />
         {this.props.children}
       </main>
     )

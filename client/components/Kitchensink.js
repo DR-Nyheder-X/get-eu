@@ -8,6 +8,7 @@ import SectionTitle from './SectionTitle'
 import Header from './Header'
 import PointLogEntry from './PointLogEntry'
 import CardNavigation from './CardNavigation'
+import Tiles from './Tiles'
 
 export default class Kitchensink extends Component {
   render () {
@@ -58,6 +59,9 @@ export default class Kitchensink extends Component {
 
         <SectionTitle>Card navigation</SectionTitle>
         <CardNavigation />
+
+        <SectionTitle>Tiles</SectionTitle>
+        <Tiles />
       </div>
     )
   }
