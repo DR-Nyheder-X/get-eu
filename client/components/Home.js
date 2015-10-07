@@ -1,17 +1,17 @@
-var React = require('react')
+import React, { Component, PropTypes } from 'react'
+import { Link } from 'react-router'
+
 require('../scss/Home.scss')
 
-var Home = React.createClass({
-  render: function() {
+export default class Home extends Component {
+  render () {
     return (
       <div className="Home">
         <h1>Get EU frontend components</h1>
         <ul>
-          <li><a href="#/kitchensink">Kitchensink</a></li>
+          <li><Link to='/kitchensink'>Kitchensink</Link></li>
         </ul>
       </div>
     )
   }
-})
-
-module.exports = Home
+}

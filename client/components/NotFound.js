@@ -1,16 +1,14 @@
-var React = require('react')
+import React, { Component } from 'react'
 
-// Styles
 require('../scss/NotFound.scss')
 
-var NotFound = React.createClass({
-  render: function() {
+export default class NotFound extends Component {
+  render () {
     return (
     <div className="NotFound">
         <h1>We can't find that page</h1>
       </div>
     )
   }
-})
+}
 
-module.exports = NotFound

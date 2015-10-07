@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Button from './Button'
 import PageTitle, { PreHeading } from './PageTitle'
 import Progressbar from './Progressbar'
@@ -6,8 +6,8 @@ import Copy from './Copy'
 import MainNavigation from './MainNavigation'
 import SectionTitle from './SectionTitle'
 
-var Kitchensink = React.createClass({
-  render: function () {
+export default class Kitchensink extends Component {
+  render () {
     return (
       <div className='Kitchensink'>
         <PageTitle type='boxed'>Kitchensink</PageTitle>
@@ -45,6 +45,4 @@ var Kitchensink = React.createClass({
       </div>
     )
   }
-})
-
-module.exports = Kitchensink
+}

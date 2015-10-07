@@ -5,9 +5,11 @@ var isProduction = process.env.NODE_ENV === 'production'
 
 var entry = './client/index.js'
 var plugins = [
+  new webpack.optimize.OccurenceOrderPlugin(),
   new webpack.NoErrorsPlugin(),
   new webpack.DefinePlugin({
-    __PRODUCTION__: isProduction
+    __PRODUCTION: isProduction,
+    __DEVELOPMENT: process.env.NODE_ENV === 'development'
   })
 ]
 
@@ -17,23 +19,27 @@ if (!isProduction) {
 
 module.exports = {
   devtool: isProduction ? null : 'eval-sourcemaps',
-  color: true,
   entry: isProduction ? entry : [
     'webpack-hot-middleware/client',
     entry
   ],
   output: {
-    path: path.resolve(__dirname, 'public/build'),
+    path: path.resolve(__dirname),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: '/client/'
   },
   plugins: plugins,
   module: {
-    loaders: [{
-      test: /\.js$/,
-      loaders: ['babel'],
-      exclude: path.resolve(__dirname, 'node_modules')
-    }]
+    loaders: [
+      {
+        test: /\.js$/,
+        loaders: ['babel'],
+        exclude: path.resolve(__dirname, 'node_modules')
+      }, {
+        test: /\.s?css?$/,
+        loader: 'style!css!sass?includePaths[]=./node_modules!autoprefixer'
+      }
+    ]
   }
 };
 
