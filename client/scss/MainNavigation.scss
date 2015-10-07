@@ -5,8 +5,8 @@ $MainNavigationHeight: 44px;
 
 .MainNavigation {
   height: $MainNavigationHeight;
-  // overflow: hidden;
   background-color: $darkPurple;
+  overflow: hidden;
 }
 
 .MainNavigation-tab {
@@ -26,9 +26,10 @@ $MainNavigationHeight: 44px;
   z-index: 98;
   line-height: 43px;
 
-  &:hover {
+  &:active {
     text-decoration: none;
     color: $lightTurquoise;
+    background-color: $darkPurple;
   }
 }
 
@@ -47,8 +48,9 @@ $MainNavigationHeight: 44px;
   box-shadow: 2px 2px 0 $black;
   z-index: 99;
 
-  &:hover {
+  &:active {
     color: $darkerPurple;
+    background: $turquoise;
   }
 }
 
@@ -65,7 +67,6 @@ $MainNavigationHeight: 44px;
   }
 }
 
-// Show points icon on larger screens
 @media #{$smallUp} {
   .MainNavigation-tab--pill .Icon {
     display: inline-block;
@@ -86,7 +87,7 @@ $MainNavigationHeight: 44px;
   left: 14px;
   right: 14px;
 
-  &:hover {
+  &:active {
     color: $darkerPurple;
     background-color: $lightTurquoise;
   }

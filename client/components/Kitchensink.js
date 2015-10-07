@@ -5,6 +5,7 @@ import Progressbar from './Progressbar'
 import Copy from './Copy'
 import MainNavigation from './MainNavigation'
 import SectionTitle from './SectionTitle'
+import Header from './Header'
 
 export default class Kitchensink extends Component {
   render () {
@@ -40,8 +41,12 @@ export default class Kitchensink extends Component {
         <Progressbar percent='40' type='small' />
         <Progressbar percent='70' type='small dimmed' />
 
-      <SectionTitle>Main navigation</SectionTitle>
-      <MainNavigation />
+        <SectionTitle>Header</SectionTitle>
+        <Header />
+
+        <SectionTitle>Main navigation</SectionTitle>
+        <MainNavigation />
+
       </div>
     )
   }
