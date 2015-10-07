@@ -7,6 +7,7 @@ import MainNavigation from './MainNavigation'
 import SectionTitle from './SectionTitle'
 import Header from './Header'
 import PointLogEntry from './PointLogEntry'
+import CardNavigation from './CardNavigation'
 
 export default class Kitchensink extends Component {
   render () {
@@ -54,6 +55,9 @@ export default class Kitchensink extends Component {
         <PointLogEntry type='3' points='30'>For at svare rigtigt på et nemt spørgsmål om flygtninge.</PointLogEntry>
         <PointLogEntry type='4' points='40'>For at svare rigtigt på et nemt spørgsmål om flygtninge.</PointLogEntry>
         <PointLogEntry type='5' points='50'>For at gennemføre testen for erhverv.</PointLogEntry>
+
+        <SectionTitle>Card navigation</SectionTitle>
+        <CardNavigation />
       </div>
     )
   }
