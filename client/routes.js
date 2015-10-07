@@ -11,7 +11,7 @@ import Test from './components/Test'
 const routes = (
   <Route>
     <Route path='/' component={App}>
-      <IndexRoute component={Home} />
+      <IndexRoute component={Learn} />
       <Route path='kitchensink' component={Kitchensink} />
       <Route path='learn'>
         <IndexRoute component={Learn} />
