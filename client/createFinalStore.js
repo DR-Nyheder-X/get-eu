@@ -8,7 +8,11 @@ import routes from './routes'
 
 const composedCreateStore = compose(
   // applyMiddleware(),
+<<<<<<< HEAD
   persistState(),
+=======
+  persistState('progress'),
+>>>>>>> origin/master
   reduxReactRouter({ routes, createHistory })
 )(createStore)
 
