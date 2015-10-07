@@ -5,6 +5,10 @@ import Progressbar from './Progressbar'
 import Copy from './Copy'
 import MainNavigation from './MainNavigation'
 import SectionTitle from './SectionTitle'
+import Header from './Header'
+import PointLogEntry from './PointLogEntry'
+import CardNavigation from './CardNavigation'
+import Tiles from './Tiles'
 
 export default class Kitchensink extends Component {
   render () {
@@ -40,8 +44,24 @@ export default class Kitchensink extends Component {
         <Progressbar percent='40' type='small' />
         <Progressbar percent='70' type='small dimmed' />
 
-      <SectionTitle>Main navigation</SectionTitle>
-      <MainNavigation />
+        <SectionTitle>Header</SectionTitle>
+        <Header />
+
+        <SectionTitle>Main navigation</SectionTitle>
+        <MainNavigation />
+
+        <SectionTitle>Point log entry</SectionTitle>
+        <PointLogEntry type='1' points='10'>For at svare rigtigt på et nemt spørgsmål om flygtninge.</PointLogEntry>
+        <PointLogEntry type='2' points='20'>For at svare rigtigt på et svært spørgsmål om familie.</PointLogEntry>
+        <PointLogEntry type='3' points='30'>For at svare rigtigt på et nemt spørgsmål om flygtninge.</PointLogEntry>
+        <PointLogEntry type='4' points='40'>For at svare rigtigt på et nemt spørgsmål om flygtninge.</PointLogEntry>
+        <PointLogEntry type='5' points='50'>For at gennemføre testen for erhverv.</PointLogEntry>
+
+        <SectionTitle>Card navigation</SectionTitle>
+        <CardNavigation />
+
+        <SectionTitle>Tiles</SectionTitle>
+        <Tiles />
       </div>
     )
   }
