@@ -30,7 +30,7 @@ export type Repo = {
 
 const repo: Repo = {
   categories: [{
-    // title: 'Thing',
+    title: 'Thing',
     steps: [{
       slides: [{
         text: 'a'

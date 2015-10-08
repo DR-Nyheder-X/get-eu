@@ -1,9 +1,11 @@
-/* @flow */
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Repo from '../Repo'
 
-class Test extends Component {
+@connect(state => ({
+  progress: state.progress
+}))
+export default class Test extends Component {
   static propTypes = {
     progress: PropTypes.object.isRequired
   }
@@ -12,12 +14,14 @@ class Test extends Component {
     return (
       <div>
         test
-        <pre>{JSON.stringify(this.props.progress)}</pre>
+        {Repo.categories.map(categoryElm)}
       </div>
     )
   }
 }
 
-export default connect(state => ({
-  progress: state.progress
-}))(Test)
+function categoryElm (category) {
+  return (
+    <div key={category.title}>{category.title}</div>
+  )
+}
