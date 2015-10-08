@@ -27,3 +27,7 @@ if (__DEVELOPMENT) { // eslint-disable-line
   store.subscribe(() => console.log(store.getState()))
 }
 
+if (module.hot) {
+  module.hot.accept();
+}
+

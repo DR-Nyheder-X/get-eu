@@ -12,7 +12,9 @@ app.set('views', __dirname + '/views') // Set views directory
 
 app.use(express.static(__dirname + '/../public'))
 
-if (!isProduction) { useDev(app) }
+if (!isProduction) {
+  useDev(app)
+}
 
 app.get('*', (req, res) => {
   res.render('index', { isProduction })
