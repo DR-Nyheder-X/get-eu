@@ -4,16 +4,23 @@ import MainNavigation from './MainNavigation'
 
 require('../scss/App.scss')
 
-@connect(state => ({ routerState: state.router }))
+@connect(state => ({
+  path: state.router.location.pathname,
+  points: state.progress.points
+}))
 class App extends Component {
   static propTypes = {
-    children: PropTypes.node
+    children: PropTypes.node,
+    path: PropTypes.string.isRequired,
+    points: PropTypes.number.isRequired
   }
 
   render () {
+    const { path, points } = this.props
+
     return (
       <main className="App">
-        <MainNavigation />
+        <MainNavigation currentPath={path} points={points} />
         {this.props.children}
       </main>
     )

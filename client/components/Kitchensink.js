@@ -48,7 +48,7 @@ export default class Kitchensink extends Component {
         <Header />
 
         <SectionTitle>Main navigation</SectionTitle>
-        <MainNavigation />
+        <MainNavigation currentPath='/learn' points={666} />
 
         <SectionTitle>Point log entry</SectionTitle>
         <PointLogEntry type='1' points='10'>For at svare rigtigt på et nemt spørgsmål om flygtninge.</PointLogEntry>
