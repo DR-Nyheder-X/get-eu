@@ -26,6 +26,10 @@ $MainNavigationHeight: 44px;
   z-index: 98;
   line-height: 43px;
 
+  &:hover {
+    color: $turquoise;
+  }
+
   &:active {
     text-decoration: none;
     color: $lightTurquoise;
@@ -86,6 +90,10 @@ $MainNavigationHeight: 44px;
   bottom: 0;
   left: 14px;
   right: 14px;
+
+  &:hover {
+    color: $darkerPurple;
+  }
 
   &:active {
     color: $darkerPurple;
