@@ -1,8 +1,9 @@
+/* @flow */
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import Repo from '../Repo'
 
-@connect(state => ({ progress: state.progress }))
-export default class Test extends Component {
+class Test extends Component {
   static propTypes = {
     progress: PropTypes.object.isRequired
   }
@@ -16,3 +17,7 @@ export default class Test extends Component {
     )
   }
 }
+
+export default connect(state => ({
+  progress: state.progress
+}))(Test)

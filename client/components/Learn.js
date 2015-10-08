@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux'
+import Repo from '../Repo'
 
 export default class Learn extends Component {
   static propTypes = {
@@ -8,7 +8,7 @@ export default class Learn extends Component {
   render () {
     return (
       <div>
-        test
+        learn
       </div>
     )
   }
