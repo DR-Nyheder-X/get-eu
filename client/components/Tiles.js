@@ -61,7 +61,7 @@ export default class Tiles extends Component {
           </div>
         </div>
 
-        <div className="Tile Tile--eu">
+        <div className="Tile Tile--eu Tile--completed">
           <div className="Tile-inner">
             <i></i>
             <h3>EU Generelt</h3>

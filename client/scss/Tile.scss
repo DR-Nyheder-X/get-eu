@@ -11,12 +11,6 @@
   box-shadow: 2px 2px 0 0 $darkTurquoise;
   position: relative;
   min-height: 166px;
-
-  // Remove this junk
-  width: 166px;
-  float: left;
-  margin-left: 1em;
-  //end junk
 }
 
 .Tile h4,
@@ -176,10 +170,39 @@
 }
 
 // Completed
-.Tile--completed .Tile-inner{
+.Tile--completed .Tile-inner {
   background-color: $lightTurquoise;
 }
 
 .Tile--completed h4 {
   color: $darkPurple;
+}
+
+.Tile--completed .Progressbar {
+  background-color: #fff;
+}
+
+// Completed, darker shadows
+.Tile--completed.Tile--migrants i:before {
+
+}
+
+.Tile--completed.Tile--police i:before {
+
+}
+
+.Tile--completed.Tile--family i:before {
+
+}
+
+.Tile--completed.Tile--justice i:before {
+
+}
+
+.Tile--completed.Tile--business i:before {
+
+}
+
+.Tile--completed.Tile--eu i:before {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGMAAAASCAMAAAB4m5DDAAABGlBMVEUAAAAAAAAAgIBmzMxd0dFixMRtyMhmzMxo0dFt0dFv1dVr1s5t09Nx1dVu1s9w09Nt1dVw1dVx09Nx1dVu09Nv09Nx09Nx1dVw1dJv1dVx1dJw1tJy1dVx1NRy1dNw1tNx1dNw1NRy1dNx1tNw1dVx1dNw1tNw1NRx1dRw1dNx1dRx1tRy1NRx1dVx1dRx1dVx1dNw1tRy1dNx1dRy1tRx1dVy1dRy1tRx1tVx1dVx1dRx1dVx1dRx1tRx1dVy1dRy1dRx1tVy1dVx1dRy1dRy1tVx1dVx1dRy1dRy1tVx1tVy1dVx1dRx1tVx1dRx1tVx1tVx1dRx1tVy1dRx1dRx1tVy1tVx1tVy1dRy1dRx1tVy1tVx1tVy1tVaATapAAAAXXRSTlMAAQIFCw0ODxYcHh8jJCUpKjA0NjpFRkhJTk9QVVhcXWhrbm9yent9gYaHiImKk5eeoaSlpqmxs7S1t7u9v8LDys3Oz9XZ2tvc3t/g4+bo6uzt8fT19vf4+fv8/f6Q431IAAABKklEQVR4AbXVDTfCUBzH8b+yIj2LVlhGeVgRSqFaUmolsU0Pd/V//2+DndNlzpmO5fq8hN+993thAa9/kxcOTs4vrm9q962n5xdVexsbMzLU1EG/12415XIhn82IqUTMz4FTwull9VFHJ0ZduZAT40E3/NItLs1QSpIQcoEdLgRfzvCP9LrEe+CbjbRMXi2THiEDpJb2wdzKTnWGH47h0xWyMa0kwRR9oEvuwdz6BJlpRAD4MVLk0A0m7x0yNNmCHlq096Ora7sKMtUBBf9bB7bttme8FUQaaIPlmZuSlSmyR+8u5UvXCFqxfYOUh5fqOlLsW0K5woJUUgxcGm1i2AWLuYNxMVeUuyOnbS/StjvABWKJlJjJ5gtludlq9/oDVRsS2z8qwMHP3gE5v+B7CVN7EAAAAABJRU5ErkJggg==);
 }
