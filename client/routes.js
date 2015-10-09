@@ -8,6 +8,7 @@ import NotFound from './components/NotFound'
 import Learn from './components/Learn'
 import Test from './components/Test'
 import Category from './components/Category'
+import Step from './components/Step'
 
 const routes = (
   <Route>
@@ -20,6 +21,7 @@ const routes = (
       <Route path='test'>
         <IndexRoute component={Test} />
         <Route path='/test/:type' component={Category} />
+        <Route path='/test/:type/:step' component={Step} />
       </Route>
       <Route path='*' component={NotFound} />
     </Route>

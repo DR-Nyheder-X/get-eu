@@ -29,8 +29,6 @@ const dest = document.getElementById('root')
 render(component, dest)
 
 if (__DEVELOPMENT) { // eslint-disable-line
-  store.subscribe(() => console.log(store.getState()))
-
   const { DevTools, DebugPanel, LogMonitor } = require('redux-devtools/lib/react')
 
   render(<div>

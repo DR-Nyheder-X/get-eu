@@ -2,7 +2,6 @@ import React from 'react'
 import { createStore, applyMiddleware, compose } from 'redux'
 import { ReduxRouter, reduxReactRouter } from 'redux-router'
 import { createHistory } from 'history'
-import persistState from 'redux-localStorage'
 import thunk from 'redux-thunk'
 
 import routes from './routes'
@@ -19,7 +18,7 @@ if (__DEVELOPMENT) {
     devTools()
   )(createStore)
 } else {
-  finalCreateStore = createStore
+  finalCreateStore = applyMiddleware(thunk)(createStore)
 }
 
 

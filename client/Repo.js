@@ -1,6 +1,7 @@
 /* @flow */
 
 import { Repo } from './types'
+import _, { times } from 'lodash'
 
 const ids = {}
 function nextId (key) {
@@ -8,8 +9,8 @@ function nextId (key) {
   return ids[key]++
 }
 
-function dummySteps () {
-  return [{
+function dummyStep () {
+  return {
     slides: [{
       text: 'a'
     }, {
@@ -30,7 +31,11 @@ function dummySteps () {
       }],
       correct_answer: 1
     }
-  }]
+  }
+}
+
+function dummySteps () {
+  return times(2).map(dummyStep)
 }
 
 const repo: Repo = {
@@ -65,6 +70,10 @@ const repo: Repo = {
     type: 'family',
     steps: dummySteps()
   }]
+}
+
+export function find (q) {
+  return _.find(repo.categories, q)
 }
 
 export default repo
