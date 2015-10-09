@@ -4,6 +4,8 @@ import { find } from '../Repo'
 import Card from './Card'
 import CardNavigation from './CardNavigation'
 import Question from './Question'
+import { completeQuestion } from '../actions'
+import minMax from '../utils/minMax'
 
 class Slide extends Component {
   static propTypes = {
@@ -36,10 +38,26 @@ export default class Step extends Component {
 
   move (amount) {
     let currentSlide = this.state.currentSlide + amount
-    const { min, max } = Math
-    currentSlide = min(this.step.slides.length,
-                       max(0, currentSlide))
+    currentSlide = minMax(0, this.step.slides.length, currentSlide)
     this.setState({ currentSlide })
+  }
+
+  prev () {
+    if (this.state.currentSlide === 0) {
+      this.props.history.pushState(null, '/test')
+    } else {
+      this.move(-1)
+    }
+  }
+
+  next () {
+    if (this.state.currentSlide === this.step.slides.length) {
+      const { dispatch, history } = this.props
+      dispatch(completeQuestion(this.step.question))
+      history.pushState('/test')
+    } else {
+      this.move(1)
+    }
   }
 
   render () {
@@ -52,14 +70,15 @@ export default class Step extends Component {
     } else {
       slideOrQuestion = <Question question={this.step.question} />
     }
+
     return (
       <div>
         {slideOrQuestion}
 
         <CardNavigation page={this.state.currentSlide}
         total={this.step.slides.length + 1}
-        onPrev={_ => { this.move(-1) }}
-        onNext={_ => { this.move(1) }} />
+        onPrev={this.prev.bind(this)}
+        onNext={this.next.bind(this)} />
       </div>
     )
   }

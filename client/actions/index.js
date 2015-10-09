@@ -1,5 +1,5 @@
-export const SET_POINTS = 'SET_POINTS'
+export const COMPLETE_QUESTION = 'COMPLETE_QUESTION'
 
-export function setPoints (amount) {
-  return { type: SET_POINTS, amout }
+export function completeQuestion (question) {
+  return { type: COMPLETE_QUESTION, question }
 }

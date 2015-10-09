@@ -3,12 +3,14 @@ import { connect } from 'react-redux'
 import Card from './Card'
 import CardNavigation from './CardNavigation'
 import { categories, find } from '../Repo'
+import minMax from '../utils/minMax'
 
 function nextStepIndexInCategory (progress, category) {
   return category.steps.reduce((next, step) => {
     const index =
       progress.completedQuestionIds.indexOf(step.question.id)
-    return index > -1 ? index : next
+    next = index > -1 ? index + 1 : next
+    return minMax(0, category.steps.length, next)
   }, 0)
 }
 
