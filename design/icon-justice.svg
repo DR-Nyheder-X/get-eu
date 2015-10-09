@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="101px" height="71px" viewBox="0 0 101 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="36" height="7"></rect>
+        <rect id="path-3" x="0" y="0" width="32" height="6"></rect>
+        <rect id="path-5" x="0" y="0" width="32" height="6"></rect>
+    </defs>
+    <g id="design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="coral-test-startpage" sketch:type="MSArtboardGroup" transform="translate(-229.000000, -434.000000)">
+            <g id="Group" sketch:type="MSLayerGroup" transform="translate(193.000000, 397.000000)">
+                <g transform="translate(36.000000, 37.000000)">
+                    <rect id="Rectangle-344" fill="#2A3974" sketch:type="MSShapeGroup" transform="translate(50.000000, 8.000000) rotate(-6.000000) translate(-50.000000, -8.000000) " x="11" y="4.5" width="78" height="7" rx="5"></rect>
+                    <rect id="Rectangle-339" fill="#4B61B0" sketch:type="MSShapeGroup" x="42" y="1" width="16" height="70" rx="8"></rect>
+                    <rect id="Rectangle-342" fill="#2A3974" sketch:type="MSShapeGroup" x="42" y="62" width="16" height="2"></rect>
+                    <circle id="Oval-45" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="50" cy="8" r="2"></circle>
+                    <g id="Rectangle-340" transform="translate(32.000000, 64.000000)">
+                        <mask id="mask-2" sketch:name="Mask" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#FFFFFF" sketch:type="MSShapeGroup" transform="translate(18.000000, 3.500000) scale(1, -1) translate(-18.000000, -3.500000) " xlink:href="#path-1"></use>
+                        <rect fill="#4B61B0" sketch:type="MSShapeGroup" mask="url(#mask-2)" x="0" y="0" width="36" height="10" rx="2"></rect>
+                    </g>
+                    <g transform="translate(69.000000, 8.000000)">
+                        <path d="M28.9616667,0.988175676 L16.7864532,29.4249612 C16.3521071,30.4394327 15.6465845,30.4363767 15.2135468,29.4249612 L3.03833333,0.988175676" id="Imported-Layers" stroke="#2A3974" stroke-width="2" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(16.000000, 16.125000) scale(1, -1) translate(-16.000000, -16.125000) "></path>
+                        <path d="M29.9553656,33 C29.9849333,33.3171452 30,33.6377749 30,33.9614065 C30,40.567509 23.7222016,45.9228131 15.9781449,45.9228131 C8.2340881,45.9228131 1.95628971,40.567509 1.95628971,33.9614065 C1.95628971,33.6377749 1.97135643,33.3171452 2.00092415,33 L29.9553656,33 Z" id="Oval-46" fill="#FF758A" sketch:type="MSShapeGroup"></path>
+                        <path d="M14.4781449,45.8551743 C14.9709682,45.8998835 15.4714175,45.9228131 15.9781449,45.9228131 C23.7222016,45.9228131 30,40.567509 30,33.9614065 C30,33.6377749 29.9849333,33.3171452 29.9553656,33 L29.9553656,33 L26.9553656,33 C26.9849333,33.3171452 27,33.6377749 27,33.9614065 C27,40.1352429 21.5168896,45.2166159 14.4781449,45.8551743 L14.4781449,45.8551743 Z" id="Oval-46" fill="#E26174" sketch:type="MSShapeGroup"></path>
+                        <g id="Rectangle-340" transform="translate(16.000000, 33.000000) scale(1, -1) translate(-16.000000, -33.000000) translate(0.000000, 30.000000)">
+                            <mask id="mask-4" sketch:name="Mask" fill="white">
+                                <use xlink:href="#path-3"></use>
+                            </mask>
+                            <use id="Mask" fill="#FFFFFF" sketch:type="MSShapeGroup" transform="translate(16.000000, 3.000000) scale(1, -1) translate(-16.000000, -3.000000) " xlink:href="#path-3"></use>
+                            <rect fill="#2A3974" sketch:type="MSShapeGroup" mask="url(#mask-4)" x="0" y="0" width="32" height="8" rx="2"></rect>
+                        </g>
+                    </g>
+                    <g transform="translate(0.000000, 15.000000)">
+                        <path d="M28.9616667,0.988175676 L16.7864532,29.4249612 C16.3521071,30.4394327 15.6465845,30.4363767 15.2135468,29.4249612 L3.03833333,0.988175676" id="Imported-Layers" stroke="#2A3974" stroke-width="2" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(16.000000, 16.125000) scale(1, -1) translate(-16.000000, -16.125000) "></path>
+                        <path d="M29.9553656,33 C29.9849333,33.3171452 30,33.6377749 30,33.9614065 C30,40.567509 23.7222016,45.9228131 15.9781449,45.9228131 C8.2340881,45.9228131 1.95628971,40.567509 1.95628971,33.9614065 C1.95628971,33.6377749 1.97135643,33.3171452 2.00092415,33 L29.9553656,33 Z" id="Oval-46" fill="#FF758A" sketch:type="MSShapeGroup"></path>
+                        <path d="M14.4781449,45.8551743 C14.9709682,45.8998835 15.4714175,45.9228131 15.9781449,45.9228131 C23.7222016,45.9228131 30,40.567509 30,33.9614065 C30,33.6377749 29.9849333,33.3171452 29.9553656,33 L29.9553656,33 L26.9553656,33 C26.9849333,33.3171452 27,33.6377749 27,33.9614065 C27,40.1352429 21.5168896,45.2166159 14.4781449,45.8551743 L14.4781449,45.8551743 Z" id="Oval-46" fill="#E26174" sketch:type="MSShapeGroup"></path>
+                        <g id="Rectangle-340" transform="translate(16.000000, 33.000000) scale(1, -1) translate(-16.000000, -33.000000) translate(0.000000, 30.000000)">
+                            <mask id="mask-6" sketch:name="Mask" fill="white">
+                                <use xlink:href="#path-5"></use>
+                            </mask>
+                            <use id="Mask" fill="#FFFFFF" sketch:type="MSShapeGroup" transform="translate(16.000000, 3.000000) scale(1, -1) translate(-16.000000, -3.000000) " xlink:href="#path-5"></use>
+                            <rect fill="#2A3974" sketch:type="MSShapeGroup" mask="url(#mask-6)" x="0" y="0" width="32" height="8" rx="2"></rect>
+                        </g>
+                    </g>
+                    <ellipse id="Oval-52" fill="#E6E6E6" sketch:type="MSShapeGroup" cx="16.5" cy="68" rx="9.5" ry="2"></ellipse>
+                    <ellipse id="Oval-52" fill="#E6E6E6" sketch:type="MSShapeGroup" cx="85" cy="69" rx="7" ry="1"></ellipse>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
