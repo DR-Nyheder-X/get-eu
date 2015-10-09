@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Card from './Card'
 import CardNavigation from './CardNavigation'
-import { categories } from '../Repo'
+import { categories, find } from '../Repo'
 
 function nextStepIndexInCategory (progress, category) {
   return category.steps.reduce((next, step) => {
@@ -24,7 +24,7 @@ export default class Category extends Component {
 
   componentDidMount () {
     const { progress, type, pathname, history } = this.props
-    const category = categories.find(c => c.type === type)
+    const category = find(c => c.type === type)
     const nextStep = nextStepIndexInCategory(progress, category)
     history.replaceState(null, `${pathname}/${nextStep}`)
   }

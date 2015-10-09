@@ -3,8 +3,18 @@ import classname from 'classname'
 import Icon from './Icon'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
+import { find } from 'lodash'
 
 import '../scss/MainNavigation.scss'
+
+const tabCls = (paths, currentPath, ...classes) => {
+  if (paths.length === undefined) paths = [paths]
+
+  const active = find(paths, path => currentPath.match(path))
+  return classname('MainNavigation-tab', classes, {
+    ['MainNavigation-tab--active']: active
+  })
+}
 
 export default class MainNavigation extends Component {
   static propTypes = {
@@ -13,22 +23,14 @@ export default class MainNavigation extends Component {
   }
 
   render () {
-    const tabCls = (paths, ...classes) => {
-      if (typeof paths === 'string') {
-        paths = [paths]
-      }
-      const active = paths.indexOf(this.props.currentPath) > -1
-      return classname('MainNavigation-tab', classes, {
-        ['MainNavigation-tab--active']: active
-      })
-    }
+    const { currentPath } = this.props
 
     return (
       <nav className='MainNavigation'>
-        <div className={tabCls('/learn', "MainNavigation-tabWiki")}>
+        <div className={tabCls(/^\/learn/, currentPath, "MainNavigation-tabWiki")}>
           <Link to='/learn'>Lær</Link>
         </div>
-        <div className={tabCls(['/test', '/'], "MainNavigation-tabQuiz")}>
+        <div className={tabCls([/^\/test/, /^\/$/], currentPath, "MainNavigation-tabQuiz")}>
           <Link to='/test'>Test</Link>
         </div>
         <div className="MainNavigation-tab MainNavigation-tab--pill">
