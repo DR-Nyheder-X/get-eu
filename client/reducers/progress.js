@@ -1,15 +1,30 @@
-import { SET_POINTS, setPoints } from '../actions'
+/* @flow weak */
 
-const initialState = {
-  points: 0
+import { Progress } from '../types'
+import { COMPLETE_QUESTION } from '../actions'
+import { union } from 'lodash'
+import { Repo } from '../Repo'
+
+const initialState: Progress = {
+  completedQuestionIds: [],
+  points: calculatePoints(Repo, [])
 }
 
-export default function progressReducer (state = initialState, action) {
+function calculatePoints (repo, completedQuestionIds) {
+  return completedQuestionIds.reduce((total, id) => {
+    return total
+  }, 0)
+}
+
+function progressReducer (state = initialState, action) {
   switch (action.type) {
-    case SET_POINTS: {
+    case COMPLETE_QUESTION: {
+      const completedQuestionIds =
+        union(state.completedQuestionIds, [action.question.id])
+      const points = calculatePoints(Repo, completedQuestionIds)
       return {
         ...state,
-        points: action.points
+        completedQuestionIds
       }
     }
     default: {
@@ -18,3 +33,4 @@ export default function progressReducer (state = initialState, action) {
   }
 }
 
+export default progressReducer

@@ -8,7 +8,9 @@ import SectionTitle from './SectionTitle'
 import Header from './Header'
 import PointLogEntry from './PointLogEntry'
 import CardNavigation from './CardNavigation'
-import Tiles from './Tiles'
+import { Tiles, Tile } from './Tiles'
+import { categories } from '../Repo'
+import { find } from 'lodash'
 
 export default class Kitchensink extends Component {
   render () {
@@ -39,10 +41,10 @@ export default class Kitchensink extends Component {
         </PageTitle>
 
         <SectionTitle>Progress bars</SectionTitle>
-        <Progressbar percent='20' />
-        <Progressbar percent='80' type='dimmed' />
-        <Progressbar percent='40' type='small' />
-        <Progressbar percent='70' type='small dimmed' />
+        <Progressbar percent={20} />
+        <Progressbar percent={80} type='dimmed' />
+        <Progressbar percent={40} type='small' />
+        <Progressbar percent={70} type='small dimmed' />
 
         <SectionTitle>Header</SectionTitle>
         <Header />
@@ -61,7 +63,11 @@ export default class Kitchensink extends Component {
         <CardNavigation />
 
         <SectionTitle>Tiles</SectionTitle>
-        <Tiles />
+        <Tiles>
+          {categories.map(category => (
+            <Tile key={category.type} category={category} />
+          ))}
+        </Tiles>
       </div>
     )
   }

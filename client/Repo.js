@@ -1,50 +1,69 @@
 /* @flow */
 
-export type Question = {
-  text: string,
-  answers: Array<Answer>,
-  correct_answer: number
+import { Repo } from './types'
+
+const ids = {}
+function nextId (key) {
+  ids[key] = ids[key] || 1
+  return ids[key]++
 }
 
-export type Answer = {
-  text: string
-}
-
-export type Card = {
-  text: string
-}
-
-export type Step = {
-  slides: Array<Card>,
-  question: Question
-}
-
-export type Category = {
-  title: string,
-  steps: Array<Step>
-}
-
-export type Repo = {
-  categories: Array<Category>
+function dummySteps () {
+  return [{
+    slides: [{
+      text: 'a'
+    }, {
+      text: 'b'
+    }],
+    question: {
+      id: nextId('question'),
+      text: 'Wut?',
+      answers: [{
+        id: nextId('answer'),
+        text: 'a'
+      }, {
+        id: nextId('answer'),
+        text: 'b'
+      }, {
+        id: nextId('answer'),
+        text: 'c'
+      }],
+      correct_answer: 1
+    }
+  }]
 }
 
 const repo: Repo = {
   categories: [{
-    title: 'Thing',
-    steps: [{
-      slides: [{
-        text: 'a'
-      }, {
-        text: 'b'
-      }],
-      question: {
-        text: 'Wut?',
-        answers: [{
-          text: 'a'
-        }],
-        correct_answer: 0
-      }
-    }]
+    id: nextId('category'),
+    title: 'Indvandrere',
+    type: 'migrants',
+    steps: dummySteps()
+  }, {
+    id: nextId('category'),
+    title: 'Politi',
+    type: 'police',
+    steps: dummySteps()
+  }, {
+    id: nextId('category'),
+    title: 'Lov',
+    type: 'justice',
+    steps: dummySteps()
+  }, {
+    id: nextId('category'),
+    title: 'Erhverv',
+    type: 'business',
+    steps: dummySteps()
+  }, {
+    id: nextId('category'),
+    title: 'EU',
+    type: 'eu',
+    steps: dummySteps()
+  }, {
+    id: nextId('category'),
+    title: 'Familie',
+    type: 'family',
+    steps: dummySteps()
   }]
 }
 

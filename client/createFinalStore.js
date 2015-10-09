@@ -15,7 +15,7 @@ if (__DEVELOPMENT) {
   finalCreateStore = compose(
     applyMiddleware(thunk),
     reduxReactRouter({ routes, createHistory }),
-    persistState('progress'),
+    // persistState('progress'),
     devTools()
   )(createStore)
 } else {

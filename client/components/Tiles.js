@@ -6,69 +6,51 @@ import Progressbar from './Progressbar'
 import '../scss/Tiles.scss'
 import '../scss/Tile.scss'
 
-export default class Tiles extends Component {
-  static get propTypes () {
-    return {
-      className: PropTypes.string
-    }
+function categoryProgress (category, progress) {
+  return {
+    done: 1,
+    total: 30,
+    percent: 55
   }
+}
+
+export class Tile extends Component {
+  static propTypes = {
+    category: PropTypes.object.isRequired,
+    progress: PropTypes.object
+  }
+
   render () {
-    const cls = classname('Tiles', this.props.className)
+    const { category, progress } = this.props
+    const typeClasses = formatTypeClasses('Tile', category.type)
+    const cls = classname('Tile', typeClasses, {
+      'Tile--completed': false
+    })
+    const { done, total, percent } =
+      categoryProgress(category, progress)
+
     return (
-      <section className={cls} {...this.props}>
-        <div className="Tile Tile-migrants">
-          <div className="Tile-inner">
-            <i></i>
-            <h3>Flygtninge</h3>
-            <h4>4/30</h4>
-            <Progressbar percent='70' type='small dimmed' />
-          </div>
+      <div className={cls}>
+        <div className="Tile-inner">
+          <i></i>
+          <h3>{category.title}</h3>
+          <h4>{done}/{total}</h4>
+          <Progressbar percent={percent} type='small dimmed' />
         </div>
+      </div>
+    )
+  }
+}
 
-        <div className="Tile Tile--police">
-          <div className="Tile-inner">
-            <i></i>
-            <h3>Politi</h3>
-            <h4>4/30</h4>
-            <Progressbar percent='30' type='small dimmed' />
-          </div>
-        </div>
+export class Tiles extends Component {
+  static propTypes = {
+    children: PropTypes.node
+  }
 
-        <div className="Tile Tile--family">
-          <div className="Tile-inner">
-            <i></i>
-            <h3>Familie</h3>
-            <h4>4/30</h4>
-            <Progressbar percent='80' type='small dimmed' />
-          </div>
-        </div>
-
-        <div className="Tile Tile--justice">
-          <div className="Tile-inner">
-            <i></i>
-            <h3>Familie</h3>
-            <h4>30/30</h4>
-            <Progressbar percent='100' type='small dimmed' />
-          </div>
-        </div>
-
-        <div className="Tile Tile--business">
-          <div className="Tile-inner">
-            <i></i>
-            <h3>Erhverv</h3>
-            <h4>4/30</h4>
-            <Progressbar percent='10' type='small dimmed' />
-          </div>
-        </div>
-
-        <div className="Tile Tile--eu Tile--completed">
-          <div className="Tile-inner">
-            <i></i>
-            <h3>EU Generelt</h3>
-            <h4>20/30</h4>
-            <Progressbar percent='50' type='small dimmed' />
-          </div>
-        </div>
+  render () {
+    return (
+      <section className='Tiles'>
+        {this.props.children}
       </section>
     )
   }
