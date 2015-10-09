@@ -7,17 +7,21 @@ import '../scss/Tiles.scss'
 import '../scss/Tile.scss'
 
 function categoryProgress (category, progress) {
-  return {
-    done: 1,
-    total: 30,
-    percent: 55
-  }
+  const total = category.steps.length
+  const done = category.steps.reduce((total, s) => {
+    const completed =
+      progress.completedQuestionIds.indexOf(s.question.id) > -1
+    return completed ? total + 1 : total
+  }, 0)
+  const percent = done / total * 100.0
+
+  return { done, total, percent }
 }
 
 export class Tile extends Component {
   static propTypes = {
     category: PropTypes.object.isRequired,
-    progress: PropTypes.object
+    progress: PropTypes.object.isRequired
   }
 
   render () {
@@ -44,13 +48,19 @@ export class Tile extends Component {
 
 export class Tiles extends Component {
   static propTypes = {
-    children: PropTypes.node
+    categories: PropTypes.array,
+    progress: PropTypes.object
   }
 
   render () {
+    const { categories, progress } = this.props
     return (
       <section className='Tiles'>
-        {this.props.children}
+        {categories.map(category => (
+          <Tile key={category.type}
+          category={category}
+          progress={progress} />
+        ))}
       </section>
     )
   }

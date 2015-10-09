@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+
+import { categories } from '../Repo'
+import { connect } from 'react-redux'
+
 import Button from './Button'
 import PageTitle, { PreHeading } from './PageTitle'
 import Progressbar from './Progressbar'
@@ -9,11 +13,12 @@ import Header from './Header'
 import PointLogEntry from './PointLogEntry'
 import CardNavigation from './CardNavigation'
 import { Tiles, Tile } from './Tiles'
-import { categories } from '../Repo'
-import { find } from 'lodash'
 
+@connect(state => ({ progress: state.progress }))
 export default class Kitchensink extends Component {
   render () {
+    const { progress } = this.props
+
     return (
       <div className='Kitchensink'>
         <PageTitle type='boxed'>Kitchensink</PageTitle>
@@ -63,11 +68,7 @@ export default class Kitchensink extends Component {
         <CardNavigation />
 
         <SectionTitle>Tiles</SectionTitle>
-        <Tiles>
-          {categories.map(category => (
-            <Tile key={category.type} category={category} />
-          ))}
-        </Tiles>
+        <Tiles categories={categories} progress={progress} />
       </div>
     )
   }
