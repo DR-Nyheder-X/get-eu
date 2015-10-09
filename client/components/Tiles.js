@@ -2,21 +2,10 @@ import React, { Component, PropTypes } from 'react'
 import classname from 'classname'
 import formatTypeClasses from '../utils/formatTypeClasses'
 import Progressbar from './Progressbar'
+import { categoryProgress } from '../reducers/progress'
 
 import '../scss/Tiles.scss'
 import '../scss/Tile.scss'
-
-function categoryProgress (category, progress) {
-  const total = category.steps.length
-  const done = category.steps.reduce((total, s) => {
-    const completed =
-      progress.completedQuestionIds.indexOf(s.question.id) > -1
-    return completed ? total + 1 : total
-  }, 0)
-  const percent = done / total * 100.0
-
-  return { done, total, percent }
-}
 
 export class Tile extends Component {
   static propTypes = {
@@ -48,19 +37,13 @@ export class Tile extends Component {
 
 export class Tiles extends Component {
   static propTypes = {
-    categories: PropTypes.array,
-    progress: PropTypes.object
+    children: PropTypes.node
   }
 
   render () {
-    const { categories, progress } = this.props
     return (
       <section className='Tiles'>
-        {categories.map(category => (
-          <Tile key={category.type}
-          category={category}
-          progress={progress} />
-        ))}
+        {this.props.children}
       </section>
     )
   }

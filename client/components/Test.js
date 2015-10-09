@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Repo from '../Repo'
+import { Link } from 'react-router'
+import { Tiles, Tile } from './Tiles'
 
 @connect(state => ({
   progress: state.progress
@@ -11,10 +13,20 @@ export default class Test extends Component {
   }
 
   render () {
+    const categories = Repo.categories
+    const { progress } = this.props
     return (
       <div>
-        test
-        {Repo.categories.map(categoryElm)}
+        <br />
+        <Tiles>
+          {categories.map(category => (
+            <Link to={`/test/${category.type}`} key={category.id}>
+              <Tile
+              category={category}
+              progress={progress} />
+            </Link>
+          ))}
+        </Tiles>
       </div>
     )
   }

@@ -68,7 +68,11 @@ export default class Kitchensink extends Component {
         <CardNavigation />
 
         <SectionTitle>Tiles</SectionTitle>
-        <Tiles categories={categories} progress={progress} />
+        <Tiles>
+          {categories.map(c => (
+            <Tile key={c.id} category={c} progress={progress} />
+          ))}
+        </Tiles>
       </div>
     )
   }
