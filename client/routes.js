@@ -7,6 +7,7 @@ import Kitchensink from './components/Kitchensink'
 import NotFound from './components/NotFound'
 import Learn from './components/Learn'
 import Test from './components/Test'
+import Category from './components/Category'
 
 const routes = (
   <Route>
@@ -18,6 +19,7 @@ const routes = (
       </Route>
       <Route path='test'>
         <IndexRoute component={Test} />
+        <Route path='/test/:type' component={Category} />
       </Route>
       <Route path='*' component={NotFound} />
     </Route>
