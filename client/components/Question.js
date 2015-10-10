@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import '../scss/Question.scss'
 
 export default class Question extends Component {
   static propTypes = {
@@ -10,13 +11,15 @@ export default class Question extends Component {
 
     return (
       <div className='Question'>
-        <h2>{question.text}</h2>
+        <h2 className="Question-text">
+          <span>{question.text}</span>
+        </h2>
         <form className="Question-options">
           <ul>
             {question.answers.map(answer => (
               <li key={answer.id}>
-                <label>
-                  <input type='radio' name='answer' />
+                <input type='radio' name='answer' id={answer.id} />
+                <label htmlFor={answer.id}>
                   {answer.text}
                 </label>
               </li>

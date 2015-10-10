@@ -18,16 +18,16 @@ function dummyStep () {
     }],
     question: {
       id: nextId('question'),
-      text: 'Wut?',
+      text: 'Hvornår giver en mellemstatslig samarbejdsaftale EU lov til at påvirke dansk lovgivning direkte?',
       answers: [{
         id: nextId('answer'),
-        text: 'a'
+        text: 'I tilfælde af større kriser (naturkatastrofer, borgerkrig eller lignende).'
       }, {
         id: nextId('answer'),
-        text: 'b'
+        text: 'Mellemstatslige samarbejdsaftaler giver aldrig EU lov til direkte påvirkning.'
       }, {
         id: nextId('answer'),
-        text: 'c'
+        text: 'I alle tilfælde. Med mindre Folketinget beslutter at afholde en folkeafstemning.'
       }],
       correct_answer: 1
     }
