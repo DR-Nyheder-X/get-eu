@@ -52,6 +52,10 @@ $MainNavigationHeight: 44px;
   box-shadow: 2px 2px 0 $black;
   z-index: 99;
 
+  &:hover {
+    color: $darkerPurple;
+  }
+
   &:active {
     color: $darkerPurple;
     background: $turquoise;

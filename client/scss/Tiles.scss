@@ -3,4 +3,16 @@
 
 .Tiles {
   @include pagePadding;
+  margin: 0 -7px;
+
+  .Tile {
+    width: 50%;
+    float: left;
+    margin-bottom: 14px;
+  }
+
+  .Tile-inner {
+
+    margin: 0 7px;
+  }
 }
