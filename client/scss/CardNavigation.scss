@@ -4,6 +4,7 @@
 .CardNavigation {
   @include pagePadding;
   position: relative;
+  margin-top: .5em;
 }
 
 .CardNavigation-next,

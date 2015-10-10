@@ -12,9 +12,9 @@ function nextId (key) {
 function dummyStep () {
   return {
     slides: [{
-      text: 'a'
+      text: 'Dette flashkort indeholder noget afgrænset info om flygtninge og EU. Lorem ipsum dolor sit amet, ea eos putent platonem, nec doctus mandamus scripserit id. Alia epicuri scribentur ei sit.'
     }, {
-      text: 'b'
+      text: 'How about those shampoo bottles, eh? I mean, what the fudge? You know? No?'
     }],
     question: {
       id: nextId('question'),

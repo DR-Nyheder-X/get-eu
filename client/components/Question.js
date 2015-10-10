@@ -9,9 +9,9 @@ export default class Question extends Component {
     const { question } = this.props
 
     return (
-      <div>
+      <div className='Question'>
         <h2>{question.text}</h2>
-        <form>
+        <form className="Question-options">
           <ul>
             {question.answers.map(answer => (
               <li key={answer.id}>
@@ -27,5 +27,3 @@ export default class Question extends Component {
     )
   }
 }
-
-

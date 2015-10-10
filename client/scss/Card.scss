@@ -1,0 +1,21 @@
+@import 'settings.scss';
+@import 'mixins.scss';
+
+.Card {
+  padding: 0 1em;
+  margin: 14px;
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 2em 1.1em 2.2em;
+  box-shadow: 2px 2px 0 0 $darkTurquoise;
+  height: 240px;
+  display: table;
+}
+
+.Card-inner {
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
