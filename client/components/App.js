@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import MainNavigation from './MainNavigation'
+import Header from './Header'
 
 require('../scss/App.scss')
 
@@ -20,6 +21,7 @@ class App extends Component {
 
     return (
       <main className="App">
+        <Header />
         <MainNavigation currentPath={path} points={points} />
         {this.props.children}
       </main>
