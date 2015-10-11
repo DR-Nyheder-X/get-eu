@@ -3,19 +3,23 @@
 
 .Card {
   padding: 0 1em;
-  margin: 14px;
-  background-color: #fff;
-  border-radius: 2px;
-  padding: 2em 1.1em 2.2em;
-  box-shadow: 2px 2px 0 0 $darkTurquoise;
   height: 240px;
   display: table;
+  width: 100%;
 }
 
 .Card-inner {
-  font-size: 16px;
-  line-height: 1.4;
-  text-align: center;
+  background-color: #fff;
+  box-shadow: 2px 2px 0 0 $darkTurquoise;
+  border-radius: 2px;
   display: table-cell;
   vertical-align: middle;
+  padding: 2em;
+}
+
+.Card-text {
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.45;
+  color: $darkerPurple;
 }

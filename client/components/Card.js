@@ -17,7 +17,9 @@ export default class Card extends Component {
     return (
       <div className={cls} {...this.props}>
         <div className="Card-inner">
-          {this.props.text}
+          <p className="Card-text">
+            {this.props.text}
+          </p>
         </div>
       </div>
     )
