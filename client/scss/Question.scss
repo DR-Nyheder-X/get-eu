@@ -23,6 +23,17 @@
     display: none;
   }
 
+  // Adding a bit of line for spacing
+  ul:before {
+    content: "";
+    display: block;
+    height: 1em;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAHOBAMAAAAsw5dpAAAAJ1BMVEUAAABFxMRJxcVIyMRJycVKyMRJyMVKyMVKyMVJyMZKyMVJycZKycbvFaDyAAAADHRSTlMAGiM8QnmZvtft8vo5KvSEAAAAaUlEQVRo3u3LMQ3DQBBFwdUpUtrQMYcUhuEiEAwhEAzh2rD4oExgj0A0rx29SlJtAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA/4KZvFr4JnsLn+TXLu/01XMF41pAbSsY5wLqccwGbnyzrRrjqE18AAAAAElFTkSuQmCC);
+    background-size: 14px;
+    background-repeat: no-repeat;
+    background-position: 28px 0;
+  }
+
   li {
     @include pagePadding;
     padding-left: 3em;
@@ -67,7 +78,7 @@
     padding-left: 49px;
     display: block;
     min-height: 38px;
-    max-width: 300px;
+    max-width: 400px;
     margin: 0;
   }
 
