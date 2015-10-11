@@ -13,6 +13,7 @@ import Header from './Header'
 import PointLogEntry from './PointLogEntry'
 import CardNavigation from './CardNavigation'
 import { Tiles, Tile } from './Tiles'
+import CategoryHeader from './CategoryHeader'
 
 @connect(state => ({ progress: state.progress }))
 export default class Kitchensink extends Component {
@@ -74,6 +75,9 @@ export default class Kitchensink extends Component {
             <Tile key={c.id} category={c} progress={progress} />
           ))}
         </Tiles>
+
+        <SectionTitle>Category Header</SectionTitle>
+        <CategoryHeader type='migrants'>Noget</CategoryHeader>
       </div>
     )
   }
