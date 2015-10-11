@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { categories } from '../Repo'
+import Repo from '../Repo'
 import { connect } from 'react-redux'
 
 import Button from './Button'
@@ -18,6 +18,7 @@ import { Tiles, Tile } from './Tiles'
 export default class Kitchensink extends Component {
   render () {
     const { progress } = this.props
+    const categories = Repo.categories
 
     return (
       <div className='Kitchensink'>
@@ -65,7 +66,7 @@ export default class Kitchensink extends Component {
         <PointLogEntry type='5' points='50'>For at gennemføre testen for erhverv.</PointLogEntry>
 
         <SectionTitle>Card navigation</SectionTitle>
-        <CardNavigation />
+        <CardNavigation page={2} total={3} />
 
         <SectionTitle>Tiles</SectionTitle>
         <Tiles>
