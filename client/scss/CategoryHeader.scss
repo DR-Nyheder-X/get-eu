@@ -1,6 +1,53 @@
 @import 'settings.scss';
 @import 'mixins.scss';
+@import 'Button.scss';
 
 .CategoryHeader {
-  
+  @include pagePadding;
+  position: relative;
+  margin-bottom: 2.2em;
+
+  h2 {
+    font-size: 28px;
+    font-family: $mediumFontFamily;
+    text-transform: uppercase;
+    position: relative;
+  }
+}
+
+// Category icons
+.CategoryHeader h2 > i {
+  display: block;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -6px;
+  left:0;
+}
+
+// Migrants icon
+.CategoryHeader--migrants h2 {
+  padding-left: 60px;
+
+   > i {
+      width: 52px;
+      height: 35px;
+      background-image: url(data:image/png;base64,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);
+      background-size: 52px;
+   }
+}
+
+// Close button
+.CategoryHeader > a {
+  @extend .Button;
+  @extend .Button--light;
+  @extend .Button--small;
+  position: absolute;
+  top: -2px;
+  right: 14px;
+
+  // Icon
+  .Icon {
+    margin-right: .2em;
+  }
 }

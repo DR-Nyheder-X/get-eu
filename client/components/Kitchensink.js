@@ -76,8 +76,13 @@ export default class Kitchensink extends Component {
           ))}
         </Tiles>
 
-        <SectionTitle>Category Header</SectionTitle>
-        <CategoryHeader type='migrants'>Noget</CategoryHeader>
+        <SectionTitle>Category Headers</SectionTitle>
+        <CategoryHeader type='migrants'>Flygtninge</CategoryHeader>
+        <CategoryHeader type='police'>Politi</CategoryHeader>
+        <CategoryHeader type='justice'>Lov</CategoryHeader>
+        <CategoryHeader type='business'>Erhverv</CategoryHeader>
+        <CategoryHeader type='eu'>EU generelt</CategoryHeader>
+        <CategoryHeader type='family'>Familie</CategoryHeader>
       </div>
     )
   }
