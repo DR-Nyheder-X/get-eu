@@ -70,14 +70,14 @@ export default class Step extends Component {
       slideOrQuestion = <div>
         <Slide text={slide.text} />
         <CardNavigation page={this.state.currentSlide}
-        total={this.state.step.slides.length + 1}
-        onPrev={_ => this.move(-1)} canPrev={currentSlide !== 0}
-        onNext={_ => this.move(1)} canNext={true} />
+          total={this.state.step.slides.length + 1}
+          onPrev={_ => this.move(-1)} canPrev={currentSlide !== 0}
+          onNext={_ => this.move(1)} canNext={true} />
       </div>
     } else {
       slideOrQuestion =
         <Question question={step.question}
-        onDone={this.done.bind(this)} />
+          onDone={this.done.bind(this)} />
     }
 
     const abort = _ => {

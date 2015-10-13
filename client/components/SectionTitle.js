@@ -14,7 +14,9 @@ export default class SectionTitle extends Component {
   render () {
     const cls = classname('SectionTitle', formatTypeClasses('SectionTitle', this.props.type))
     return (
-      <div className={cls} {...this.props}><h2>{this.props.children}</h2></div>
+      <div className={cls} {...this.props}>
+        <h2>{this.props.children}</h2>
+      </div>
     )
   }
 }

@@ -18,6 +18,7 @@ export default class Button extends Component {
     const { category, onAbort } = this.props
     const cls = classname('CategoryHeader',
       formatTypeClasses('CategoryHeader', category.type))
+
     return (
       <header className={cls}>
         <h2>

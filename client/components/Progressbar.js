@@ -19,7 +19,7 @@ export default class Progressbar extends Component {
     return (
       <div className={cls} {...this.props}>
         <div className='Progressbar-fill'
-        style={{width: `${this.props.percent}%`}}></div>
+          style={{width: `${this.props.percent}%`}}></div>
       </div>
     )
   }

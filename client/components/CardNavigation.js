@@ -30,9 +30,9 @@ export default class CardNavigation extends Component {
     return (
       <nav className='CardNavigation'>
         <a href="" onClick={canPrev ? cc(onPrev) : () => {}}
-        className={prevCls}>Forrige</a>
+          className={prevCls}>Forrige</a>
         <a href="" onClick={canNext ? cc(onNext) : () => {}}
-        className={nextCls}>Næste</a>
+          className={nextCls}>Næste</a>
 
         <ul>
           {times(total, i => {

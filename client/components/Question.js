@@ -19,7 +19,7 @@ export default class Answer extends Component {
     return (
       <li key={answer.id} className={cls}>
         <input type='radio' name='answer'
-        ref='radio' value={answer.id} id={answer.id} />
+          ref='radio' value={answer.id} id={answer.id} />
         <label htmlFor={answer.id}>
           {answer.text}
         </label>
@@ -54,15 +54,13 @@ export default class Question extends Component {
           <span>{question.text}</span>
         </h2>
         <form className='Question-options'
-        onChange={this.onChange.bind(this)}>
+          onChange={this.onChange.bind(this)}>
           <ul>
             {question.answers.map(answer => {
               const isCorrect = answer.id === question.correct_answer
               const isChecked = answer.id === this.state.checked
-              return (
-                <Answer key={answer.id} answer={answer}
+              return <Answer key={answer.id} answer={answer}
                 isCorrect={isCorrect} isChecked={isChecked} />
-              )
             })}
           </ul>
         </form>

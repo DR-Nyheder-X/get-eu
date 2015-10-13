@@ -14,9 +14,10 @@ export default class Header extends Component {
   }
   render () {
     const cls = classname('Header', this.props.className)
+
     return (
       <header className={cls} {...this.props}>
-        <a href="#" className="Header-logo">DR Forstå Forbeholdet</a>
+        <Link to='/' className="Header-logo">DR Forstå Forbeholdet</Link>
       </header>
     )
   }

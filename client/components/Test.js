@@ -29,7 +29,7 @@ export default class Test extends Component {
       if (done) {
         return (
           <Tile key={category.id} category={category}
-          progress={progress} />
+            progress={progress} />
         )
       } else {
         return (
