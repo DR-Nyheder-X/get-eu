@@ -4,6 +4,7 @@ import { find } from '../Repo'
 import Card from './Card'
 import CardNavigation from './CardNavigation'
 import Question from './Question'
+import CategoryHeader from './CategoryHeader'
 import { completeQuestion } from '../actions'
 import minMax from '../utils/minMax'
 
@@ -30,16 +31,20 @@ export default class Step extends Component {
   constructor (props) {
     super(props)
 
-    this.state = { currentSlide: 0 }
-    this.category = find({ type: props.type })
-    this.stepIndex = parseInt(this.props.step, 10)
-    this.step = this.category.steps[this.stepIndex]
+    const category = find({ type: props.type })
+    const stepIndex = parseInt(props.step, 10)
+    const step = category.steps[stepIndex]
+
+    this.state = {
+      currentSlide: 0,
+      category, stepIndex, step
+    }
   }
 
   move (amount) {
     let currentSlide = this.state.currentSlide + amount
-    currentSlide = minMax(0, this.step.slides.length, currentSlide)
-    this.setState({ currentSlide })
+    currentSlide = minMax(0, this.state.step.slides.length, currentSlide)
+    this.setState({ ...this.state, currentSlide })
   }
 
   prev () {
@@ -51,9 +56,9 @@ export default class Step extends Component {
   }
 
   next () {
-    if (this.state.currentSlide === this.step.slides.length) {
+    if (this.state.currentSlide === this.state.step.slides.length) {
       const { dispatch, history } = this.props
-      dispatch(completeQuestion(this.step.question))
+      dispatch(completeQuestion(this.state.step.question))
       history.pushState('/test')
     } else {
       this.move(1)
@@ -61,22 +66,27 @@ export default class Step extends Component {
   }
 
   render () {
-    const { currentSlide } = this.state
-    const slide = this.step.slides[currentSlide]
+    const { currentSlide, step, category } = this.state
+    const slide = step.slides[currentSlide]
 
     let slideOrQuestion
     if (slide) {
       slideOrQuestion = <Slide text={slide.text} />
     } else {
-      slideOrQuestion = <Question question={this.step.question} />
+      slideOrQuestion = <Question question={step.question} />
+    }
+
+    const abort = _ => {
+      this.props.history.pushState(null, '/test')
     }
 
     return (
       <div>
+        <CategoryHeader category={category} onAbort={abort} />
         {slideOrQuestion}
 
         <CardNavigation page={this.state.currentSlide}
-        total={this.step.slides.length + 1}
+        total={this.state.step.slides.length + 1}
         onPrev={this.prev.bind(this)}
         onNext={this.next.bind(this)} />
       </div>
