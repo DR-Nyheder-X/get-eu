@@ -28,7 +28,7 @@
     display: block;
     height: 1em;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAHOBAMAAAAsw5dpAAAAJ1BMVEUAAABFxMRJxcVIyMRJycVKyMRJyMVKyMVKyMVJyMZKyMVJycZKycbvFaDyAAAADHRSTlMAGiM8QnmZvtft8vo5KvSEAAAAaUlEQVRo3u3LMQ3DQBBFwdUpUtrQMYcUhuEiEAwhEAzh2rD4oExgj0A0rx29SlJtAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA/4KZvFr4JnsLn+TXLu/01XMF41pAbSsY5wLqccwGbnyzrRrjqE18AAAAAElFTkSuQmCC);
-    background-size: 14px;
+    background-size: 16px;
     background-repeat: no-repeat;
     background-position: 28px 0;
   }
@@ -47,12 +47,12 @@
       content: "";
       display: block;
       width: 14px;
-      height: 152px;
+      height: 154px;
       position: absolute;
-      top: -104px;
+      top: -124px;
       left: 28px;
       background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAHOBAMAAAAsw5dpAAAAJ1BMVEUAAABFxMRJxcVIyMRJycVKyMRJyMVKyMVKyMVJyMZKyMVJycZKycbvFaDyAAAADHRSTlMAGiM8QnmZvtft8vo5KvSEAAAAaUlEQVRo3u3LMQ3DQBBFwdUpUtrQMYcUhuEiEAwhEAzh2rD4oExgj0A0rx29SlJtAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA/4KZvFr4JnsLn+TXLu/01XMF41pAbSsY5wLqccwGbnyzrRrjqE18AAAAAElFTkSuQmCC);
-      background-size: 14px;
+      background-size: 16px;
       background-repeat: no-repeat;
     }
 
@@ -79,6 +79,7 @@
     min-height: 38px;
     max-width: 400px;
     margin: 0;
+    position: relative;
   }
 
   // A
@@ -133,3 +134,98 @@
   }
 
 }//.Question-options
+
+// Right / Wrong
+.Question-options li.right label:after,
+.Question-options li.wrong label:after {
+  content: "";
+  display: block;
+  width: 23px;
+  height: 23px;
+  background-size: 23px;
+  position: absolute;
+  top: 8px;
+  left: 5px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAABFCAMAAAArU9sbAAAAt1BMVEUAAAD/bW3/YID/aoD/aYf/aID/cYf/bYP/cYj/b4f/cYf/cYf/cYf/cob/cof/c4b/cof/cof/coj/c4f/cof/coj/coj/c4j/cof/c4j/cof/coj/c4j/cof/c4j/coj/coj/c4f/coj/c4j/dIj/dov/eY3/gZT/g5b/h5n/ipz/jp//lKT/rLj/vcf/v8n/x8//ydH/1tz/193/3OL/4+f/6u3/6+7/8PL/9vf/+Pn/+/z///8nPgfFAAAAI3RSTlMABwgMERYiIy01Rkhxcn+DiJOYv8DFzc/Z3Obr8vP09vr7/MmhImMAAAIJSURBVHgBpNX/UtpAFMXxk4I0hPCDUCCECMIhDWqtitUi5v2fq9GZHZbODTcJnwf4/rFz5yyKNTw/GIVRvI6jcBT4XgOVuf3xiqdW476LCprdKWXTbhPlXA1iFosHV9A5vSXPW/YcKDoz6mYdnOMMWc7QQaHWhGVNWijQnrO8eRsib8EqFp4YuWE1N0KmvWBVizb+833O6uYtnHAmrGPiwDZkPUNYOqzLuuJvM9Y1c2D0WF/PRK6WrG9phmLASwzwpRnzEnETn7q8TBefpixpQ9EUOZeSn0+H98eElof9x8uWEhdAn5KnLLezMr+z3OuGgj6AMSWHzGRM5MsdBWOgsaLkPbMzJpLdUrBqwKPoMbMzJvKHIg8+RcnOypjIW0qRj4BqRoswwA9qmb9ahCOEVDNahCEi6hklwgjXVDJ6hNdY81zGvMlhyzPWiCmzj82+YkmMSI3omQihGtEzIUZq5KBmRgi0yNt2p2UC+FokZaJlfHgUPRwjPGaeKfKK9mVvRaxMWrAv8tZtPqyIlbmnYFy4uy8mcpLZJ0W761Kyfc2XLeVR8pxHflHiFv9Hm7tbnkrvk3+t2LENACAQw0DpG6ZIw/5DQkcBEl9clojt9x+xbwQ/TZjB8AthKcN1hDEJ7xr2Jh5AnIT4EXU17417Azgs8Gni9mfV6Azlm4fvL7YF3V0qM98utQDR0xqdqNyWZwAAAABJRU5ErkJggg==);
+
+  // Animation
+  -webkit-animation-duration: .2s;
+  animation-duration: .2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+
+.Question-options li.right label:after {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAABFCAMAAAArU9sbAAABL1BMVEUAAAAk220gv4Ar1YAt0ocu3Ist2ocs24ot3Y4r3Ywv24ou3I4v3Ywv3Y0u3Y0v3owv3Y0v3I0v3Y0v3o4w3o0w3Y0v3Y4v3o4v3Y0w3Y0w3o4w3Y0v3Y0v3Y4v3o0w3o0w3Y4w3Y0w3o4w3o4x3o4y3o803pA235E535M835Q84JVA4JZB4JdI4ZtJ4ptJ4pxN4p1O4p5P459R46BT46Fb5KVh5ali5qlo5qxo561v6LB56baA6rmB67qD67uI7L6K7L+R7cOZ7sed78mk8M2l8M6p8dCt8dK189a/9NzD9d7E9d/F9d/G9uDL9uPM9uPN9+PS9+bT+OfV+OjY+Orb+evf+e3g+u7j+u/k+vDp+/Pq+/Pt/PXu/Pby/Pf1/fn4/fv6/vz8/v39/v7///8x7OtvAAAAI3RSTlMABwgMERYiIy01Rkhxcn+DiJOYv8DFzc/Z3Obr8vP09vr7/MmhImMAAAI3SURBVHjatdjpctowFAVgBRMCjsFg12CMgZiTdEmX1Gm6pUvSfV/TNW3Tkur9n6EEDRRqWZIt+v0Bj2bOYOy5ulcknWFajusH4SAMfNexTINkVra9CPMizy5niShWW+BrVYuKGcv1EOnC+jKRW6r1IdavLclCVtuQa6+Kf0gDahqCn1NqQlWzlBZS6UBdp8IPMXvIomdyQ9aQzRonptJDVr3ETa10kF2n9M8jbiKP5vwDbyCfxtwbi7xm3uJCG3m1/95TDfnVpqWgr5HSnxSKOnTUWUgxhI6QVb8q9FTHKS3oaY2rPZTdPRw+v4iEk53Bhqp9OvIBCfYoxYOim8f0xE5iwSPEiKBm+4iObSdWIoOYULP5mYW85ayZxIKSjVcs5PsWZ9EiDpQ8YiHDa+BwyCmouEOZ2+BxiQ8F14cs5CG4fBKA49zjL+92MbX1g4W83ABXQLrgeEFH9idXZz+ykE+b4OuSAZIuUToTs/6MXR7FSDEgvLIQ09mYB+zi+AbShPz/5WAm5hZl9pAq4D+jy4fTmKu/2LcnSOcTFzzxJOb+N/b55rQgxSUOxDHM1/MQcIgFhZifOxCxiAl5zO9dCJnEiOQx9yAUGazWiWOeQsxjdVcc8/4MxGzJHhAfUPr6AiTKsv1o/Uqsth/p740L26f1e4aF9i/6vZR+X7fgHlO/39XvvfXngEXPJPrzkf6spj838q1ozLD687T+bM9XUDhnKPzfMw/98xf9syD5uVR30JWeS/0Bs2Q2eu36XSYAAAAASUVORK5CYII=);
+}
+
+// Animate right/wrong icons
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+// Shake wrong answers
+.Question-options li.wrong label {
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: shake;
+  animation-name: shake;
+}
+
+@-webkit-keyframes shake {
+  from, to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(5px, 0, 0);
+  }
+}
+
+@keyframes shake {
+  from, to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(5px, 0, 0);
+  }
+}
