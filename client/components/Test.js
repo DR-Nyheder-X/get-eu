@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import Repo from '../Repo'
 import { Link } from 'react-router'
 import { Tiles, Tile } from './Tiles'
-import {PageTitle, PreHeading} from './PageTitle'
+import PageTitle, { PreHeading } from './PageTitle'
 
 @connect(state => ({
   progress: state.progress
