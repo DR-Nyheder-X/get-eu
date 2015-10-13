@@ -72,7 +72,7 @@ const repo: Repo = {
   }]
 }
 
-export function find (q) {
+export function find (q: string) {
   return _.find(repo.categories, q)
 }
 
