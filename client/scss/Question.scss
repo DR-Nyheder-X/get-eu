@@ -229,3 +229,11 @@
     transform: translate3d(5px, 0, 0);
   }
 }
+
+// "Next" button layout
+.Question-next {
+  @include pagePadding;
+  text-align: right;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}

@@ -65,7 +65,9 @@ export default class Question extends Component {
             })}
           </ul>
         </form>
-        <Button type="rightArrow" disabled={!correctAnswerSelected}>Videre</Button>
+        <div className="Question-next">
+          <Button type="rightArrow" disabled={!correctAnswerSelected}>Videre</Button>
+        </div>
       </div>
     )
   }

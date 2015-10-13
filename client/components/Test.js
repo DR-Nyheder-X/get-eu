@@ -17,7 +17,7 @@ export default class Test extends Component {
     const categories = Repo.categories
     const { progress } = this.props
     return (
-      <div>
+      <div className="Test">
         <PageTitle type="centered">
           <PreHeading>Test din viden om</PreHeading>
           <h1>retsforbeholdet</h1>
