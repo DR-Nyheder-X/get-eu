@@ -34,6 +34,8 @@ export default class Kitchensink extends Component {
           <p><Button type='shadow'>Default with shadow</Button></p>
           <p><Button type='red darkShadow'>Red with dark shadow</Button></p>
           <p><Button type='shadow fullWidth'>Full width with shadow</Button></p>
+          <p><Button type='rightArrow'>Button with an arrow</Button></p>
+          <p><Button type='rightArrow' disabled>Button with an arrow</Button></p>
         </Copy>
 
         <SectionTitle>Headings</SectionTitle>

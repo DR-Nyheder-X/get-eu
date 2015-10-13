@@ -16,7 +16,7 @@ export default class Button extends Component {
     const type = formatTypeClasses('Button', this.props.type)
     const cls = classname('Button', this.props.className, type)
     return (
-      <a className={cls} {...this.props}>{this.props.children}</a>
+      <a className={cls} {...this.props}>{this.props.children} <i></i></a>
     )
   }
 }
