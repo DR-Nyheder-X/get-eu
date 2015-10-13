@@ -3,6 +3,7 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import { ReduxRouter, reduxReactRouter } from 'redux-router'
 import { createHistory } from 'history'
 import thunk from 'redux-thunk'
+import persistState from 'redux-localstorage'
 
 import routes from './routes'
 
@@ -13,12 +14,16 @@ if (__DEVELOPMENT) {
 
   finalCreateStore = compose(
     applyMiddleware(thunk),
+    persistState('progress'),
     reduxReactRouter({ routes, createHistory }),
-    // persistState('progress'),
     devTools()
   )(createStore)
 } else {
-  finalCreateStore = applyMiddleware(thunk)(createStore)
+  finalCreateStore = compose(
+    applyMiddleware(thunk),
+    persistState('progress'),
+    reduxReactRouter({ routes, createHistory }),
+  )(createStore)
 }
 
 

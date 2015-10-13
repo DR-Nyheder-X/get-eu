@@ -10,18 +10,29 @@ export default class CardNavigation extends Component {
     page: PropTypes.number.isRequired,
     total: PropTypes.number.isRequired,
     onNext: PropTypes.func,
-    onPrev: PropTypes.func
+    onPrev: PropTypes.func,
+    canNext: PropTypes.bool,
+    canPrev: PropTypes.bool
   }
 
   render () {
-    const { page, total, onNext, onPrev } = this.props
+    const {
+      page, total,
+      onNext, onPrev,
+      canPrev, canNext
+    } = this.props
+
+    const prevCls = classname('CardNavigation-previous',
+                              { disabled: !canPrev })
+    const nextCls = classname('CardNavigation-next',
+                              { disabled: !canNext })
 
     return (
       <nav className='CardNavigation'>
-        <a href="" onClick={cc(onPrev)}
-        className="CardNavigation-previous">Forrige</a>
-        <a href="" onClick={cc(onNext)}
-        className="CardNavigation-next">Næste</a>
+        <a href="" onClick={canPrev ? cc(onPrev) : () => {}}
+        className={prevCls}>Forrige</a>
+        <a href="" onClick={canNext ? cc(onNext) : () => {}}
+        className={nextCls}>Næste</a>
 
         <ul>
           {times(total, i => {

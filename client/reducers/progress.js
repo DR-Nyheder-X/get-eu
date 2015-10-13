@@ -33,7 +33,8 @@ export default function progressReducer (state = initialState, action) {
       const points = calculatePoints(completedQuestionIds)
       return {
         ...state,
-        completedQuestionIds
+        completedQuestionIds,
+        points
       }
     }
     default: {

@@ -17,6 +17,10 @@
   background-size: 22px;
   background-repeat: no-repeat;
   background-position: 14px 17px;
+
+  &.disabled {
+    opacity: .5;
+  }
 }
 
 .CardNavigation-previous {

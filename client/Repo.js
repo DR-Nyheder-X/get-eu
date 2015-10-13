@@ -10,26 +10,28 @@ function nextId (key) {
 }
 
 function dummyStep () {
+  const slides = [{
+    text: 'Dette flashkort indeholder noget afgrænset info om flygtninge og EU. Lorem ipsum dolor sit amet, ea eos putent platonem, nec doctus mandamus scripserit id. Alia epicuri scribentur ei sit.'
+  }, {
+    text: 'How about those shampoo bottles, eh? I mean, what the fudge? You know? No?'
+  }]
+  const answers = [{
+    id: nextId('answer'),
+    text: 'I tilfælde af større kriser (naturkatastrofer, borgerkrig eller lignende).'
+  }, {
+    id: nextId('answer'),
+    text: 'Mellemstatslige samarbejdsaftaler giver aldrig EU lov til direkte påvirkning.'
+  }, {
+    id: nextId('answer'),
+    text: 'I alle tilfælde. Med mindre Folketinget beslutter at afholde en folkeafstemning.'
+  }]
   return {
-    slides: [{
-      text: 'Dette flashkort indeholder noget afgrænset info om flygtninge og EU. Lorem ipsum dolor sit amet, ea eos putent platonem, nec doctus mandamus scripserit id. Alia epicuri scribentur ei sit.'
-    }, {
-      text: 'How about those shampoo bottles, eh? I mean, what the fudge? You know? No?'
-    }],
+    slides,
     question: {
       id: nextId('question'),
       text: 'Hvornår giver en mellemstatslig samarbejdsaftale EU lov til at påvirke dansk lovgivning direkte?',
-      answers: [{
-        id: nextId('answer'),
-        text: 'I tilfælde af større kriser (naturkatastrofer, borgerkrig eller lignende).'
-      }, {
-        id: nextId('answer'),
-        text: 'Mellemstatslige samarbejdsaftaler giver aldrig EU lov til direkte påvirkning.'
-      }, {
-        id: nextId('answer'),
-        text: 'I alle tilfælde. Med mindre Folketinget beslutter at afholde en folkeafstemning.'
-      }],
-      correct_answer: 1
+      answers,
+      correct_answer: answers[0].id
     }
   }
 }
