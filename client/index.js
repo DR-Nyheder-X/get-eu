@@ -4,12 +4,20 @@ import React, { Component } from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { ReduxRouter } from 'redux-router'
+import { RESET_PROGRESS } from './actions'
 
 // STORE ------------------------------------------------
 
 import createFinalStore from './createFinalStore'
 
 const store = createFinalStore()
+
+function resetProgress () {
+  store.dispatch({ type: RESET_PROGRESS })
+  return true
+}
+window.resetProgress = resetProgress
+
 
 import { DevTools, DebugPanel, LogMonitor } from 'redux-devtools/lib/react'
 

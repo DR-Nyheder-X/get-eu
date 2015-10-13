@@ -4,6 +4,7 @@ import Icon from './Icon'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import { find } from 'lodash'
+import Counter from './Counter'
 
 import '../scss/MainNavigation.scss'
 
@@ -34,7 +35,10 @@ export default class MainNavigation extends Component {
           <Link to='/test'>Test</Link>
         </div>
         <div className="MainNavigation-tab MainNavigation-tab--pill">
-          <a href="#"><Icon type="coins" /> {this.props.points} point</a>
+          <a href="">
+            <Icon type="coins" />
+            <Counter begin={0} end={this.props.points} time={3000} /> point
+          </a>
         </div>
       </nav>
     )

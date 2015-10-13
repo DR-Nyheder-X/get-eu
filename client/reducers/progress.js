@@ -1,7 +1,7 @@
 /* @flow weak */
 
 import { Progress } from '../types'
-import { COMPLETE_QUESTION } from '../actions'
+import { COMPLETE_QUESTION, RESET_PROGRESS } from '../actions'
 import { union } from 'lodash'
 
 const initialState: Progress = {
@@ -37,8 +37,15 @@ export default function progressReducer (state = initialState, action) {
         points
       }
     }
+    case RESET_PROGRESS: {
+      return {
+        ...state,
+        ...initialState
+      }
+    }
     default: {
       return state
     }
   }
 }
+
