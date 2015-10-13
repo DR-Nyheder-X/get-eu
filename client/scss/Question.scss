@@ -2,14 +2,13 @@
 @import 'mixins.scss';
 
 .Question-text {
-  padding: 0 1em;
   margin: 14px;
   margin-bottom: 0;
   background-color: #fff;
   border-radius: 2px;
-  padding: 1.5em 1.1em 1.6em;
+  padding: 2.5em 1.1em 2.7em;
   box-shadow: 2px 2px 0 0 $darkTurquoise;
-  min-height: 150px;
+  // min-height: 150px;
 }
 .Question-text > span {
   font-family: $mediumFontFamily;
