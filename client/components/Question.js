@@ -8,7 +8,8 @@ export default class Answer extends Component {
   static propTypes = {
     answer: PropTypes.object.isRequired,
     isCorrect: PropTypes.bool.isRequired,
-    isChecked: PropTypes.bool.isRequired
+    isChecked: PropTypes.bool.isRequired,
+    onDone: PropTypes.func
   }
 
   render () {
@@ -44,7 +45,7 @@ export default class Question extends Component {
   }
 
   render () {
-    const { question } = this.props
+    const { question, onDone } = this.props
     const correctAnswerSelected = this.state.checked === question.correct_answer
 
     return (
@@ -65,7 +66,7 @@ export default class Question extends Component {
             })}
           </ul>
         </form>
-        <Button disabled={!correctAnswerSelected}>Videre &rarr;</Button>
+        <Button disabled={!correctAnswerSelected} onClick={onDone}>Videre &rarr;</Button>
       </div>
     )
   }

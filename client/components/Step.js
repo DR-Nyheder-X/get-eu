@@ -48,21 +48,17 @@ export default class Step extends Component {
   }
 
   prev () {
-    if (this.state.currentSlide === 0) {
-      this.props.history.pushState(null, '/test')
-    } else {
-      this.move(-1)
-    }
+    this.move(-1)
   }
 
   next () {
-    if (this.state.currentSlide === this.state.step.slides.length) {
-      const { dispatch, history } = this.props
-      dispatch(completeQuestion(this.state.step.question))
-      history.pushState('/test')
-    } else {
-      this.move(1)
-    }
+    this.move(1)
+  }
+
+  done () {
+    const { dispatch, history } = this.props
+    dispatch(completeQuestion(this.state.step.question))
+    history.pushState('/test')
   }
 
   render () {
@@ -75,11 +71,13 @@ export default class Step extends Component {
         <Slide text={slide.text} />
         <CardNavigation page={this.state.currentSlide}
         total={this.state.step.slides.length + 1}
-        onPrev={this.prev.bind(this)}
-        onNext={this.next.bind(this)} />
+        onPrev={_ => this.move(-1)} canPrev={currentSlide !== 0}
+        onNext={_ => this.move(1)} canNext={true} />
       </div>
     } else {
-      slideOrQuestion = <Question question={step.question} />
+      slideOrQuestion =
+        <Question question={step.question}
+        onDone={this.done.bind(this)} />
     }
 
     const abort = _ => {
