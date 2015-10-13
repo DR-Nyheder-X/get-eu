@@ -71,7 +71,13 @@ export default class Step extends Component {
 
     let slideOrQuestion
     if (slide) {
-      slideOrQuestion = <Slide text={slide.text} />
+      slideOrQuestion = <div>
+        <Slide text={slide.text} />
+        <CardNavigation page={this.state.currentSlide}
+        total={this.state.step.slides.length + 1}
+        onPrev={this.prev.bind(this)}
+        onNext={this.next.bind(this)} />
+      </div>
     } else {
       slideOrQuestion = <Question question={step.question} />
     }
@@ -84,11 +90,6 @@ export default class Step extends Component {
       <div>
         <CategoryHeader category={category} onAbort={abort} />
         {slideOrQuestion}
-
-        <CardNavigation page={this.state.currentSlide}
-        total={this.state.step.slides.length + 1}
-        onPrev={this.prev.bind(this)}
-        onNext={this.next.bind(this)} />
       </div>
     )
   }

@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { findDOMNode } from 'react-dom'
 import classname from 'classname'
 import '../scss/Question.scss'
+import Button from './Button'
 
 export default class Answer extends Component {
   static propTypes = {
@@ -44,6 +45,7 @@ export default class Question extends Component {
 
   render () {
     const { question } = this.props
+    const correctAnswerSelected = this.state.checked === question.correct_answer
 
     return (
       <div className='Question'>
@@ -63,6 +65,7 @@ export default class Question extends Component {
             })}
           </ul>
         </form>
+        <Button disabled={!correctAnswerSelected}>Videre &rarr;</Button>
       </div>
     )
   }
