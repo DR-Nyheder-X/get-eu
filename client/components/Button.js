@@ -4,6 +4,10 @@ import formatTypeClasses from '../utils/formatTypeClasses'
 
 import '../scss/Button.scss'
 
+const typesWithIcon = [
+  'rightArrow', 'leftArrow'
+]
+
 export default class Button extends Component {
   static get propTypes () {
     return {
@@ -15,8 +19,14 @@ export default class Button extends Component {
   render () {
     const type = formatTypeClasses('Button', this.props.type)
     const cls = classname('Button', this.props.className, type)
+    const hasIcon = typesWithIcon.indexOf(this.props.type) > -1
+
     return (
-      <a className={cls} {...this.props}>{this.props.children} <i></i></a>
+      <a className={cls} {...this.props}>
+        {this.props.children}
+        {hasIcon && (<i></i>)}
+      </a>
     )
   }
 }
+

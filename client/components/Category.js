@@ -4,14 +4,11 @@ import Card from './Card'
 import CardNavigation from './CardNavigation'
 import { categories, find } from '../Repo'
 import minMax from '../utils/minMax'
+import { categoryProgress } from '../reducers/progress'
 
 function nextStepIndexInCategory (progress, category) {
-  return category.steps.reduce((next, step) => {
-    const index =
-      progress.completedQuestionIds.indexOf(step.question.id)
-    next = index > -1 ? index + 1 : next
-    return minMax(0, category.steps.length, next)
-  }, 0)
+  const { done, total } = categoryProgress(category, progress)
+  return minMax(0, total - 1, done)
 }
 
 @connect(state => ({
