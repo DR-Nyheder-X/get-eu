@@ -18,7 +18,10 @@ export default class Test extends Component {
     const { progress } = this.props
     return (
       <div>
-        <PageTitle>Smakk</PageTitle>
+        <PageTitle type="centered">
+          <PreHeading>Test din viden om</PreHeading>
+          <h1>retsforbeholdet</h1>
+        </PageTitle>
         <Tiles>
           {categories.map(category => (
             <Link to={`/test/${category.type}`} key={category.id}>
