@@ -16,11 +16,11 @@ export class Tile extends Component {
   render () {
     const { category, progress } = this.props
     const typeClasses = formatTypeClasses('Tile', category.type)
-    const cls = classname('Tile', typeClasses, {
-      'Tile--completed': false
-    })
     const { done, total, percent } =
       categoryProgress(category, progress)
+    const cls = classname('Tile', typeClasses, {
+      'Tile--completed': percent == 100
+    })
 
     return (
       <div className={cls}>
