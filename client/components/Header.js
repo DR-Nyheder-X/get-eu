@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import classname from 'classname'
 import formatTypeClasses from '../utils/formatTypeClasses'
 import Icon from './Icon'
+import { Link } from 'react-router'
 
 import '../scss/Header.scss'
 
