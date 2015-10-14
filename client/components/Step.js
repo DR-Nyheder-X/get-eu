@@ -8,6 +8,8 @@ import CategoryHeader from './CategoryHeader'
 import { completeQuestion } from '../actions'
 import minMax from '../utils/minMax'
 import Progressbar from './Progressbar'
+import Button from './Button'
+import { categoryProgress } from '../reducers/progress'
 
 import '../scss/Step.scss'
 
@@ -22,6 +24,7 @@ class Slide extends Component {
 }
 
 @connect(state => ({
+  progress: state.progress,
   type: state.router.params.type,
   step: state.router.params.step
 }))
@@ -46,7 +49,9 @@ export default class Step extends Component {
 
   move (amount) {
     let currentSlide = this.state.currentSlide + amount
-    currentSlide = minMax(0, this.state.step.slides.length, currentSlide)
+    currentSlide = minMax(0,
+                          this.state.step.slides.length,
+                          currentSlide)
     this.setState({ ...this.state, currentSlide })
   }
 
@@ -66,6 +71,7 @@ export default class Step extends Component {
 
   render () {
     const { currentSlide, step, category } = this.state
+    const { progress } = this.props
     const slide = step.slides[currentSlide]
 
     let slideOrQuestion
@@ -88,12 +94,18 @@ export default class Step extends Component {
       this.props.history.pushState(null, '/test')
     }
 
+    const { percent } = categoryProgress(category, progress)
+
     return (
       <div>
         <CategoryHeader category={category} onAbort={abort} />
+
         {slideOrQuestion}
+
+        <Button>Test din pik</Button>
+
         <div className='Step-progressbar'>
-          <Progressbar percent={20} />
+          <Progressbar percent={percent} />
         </div>
       </div>
     )
