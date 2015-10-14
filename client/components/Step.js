@@ -8,6 +8,8 @@ import CategoryHeader from './CategoryHeader'
 import { completeQuestion } from '../actions'
 import minMax from '../utils/minMax'
 import Progressbar from './Progressbar'
+import Button from './Button'
+import Icon from './Icon'
 
 import '../scss/Step.scss'
 
@@ -92,6 +94,10 @@ export default class Step extends Component {
       <div>
         <CategoryHeader category={category} onAbort={abort} />
         {slideOrQuestion}
+        <div className='Step-skipToQuestion'>
+          <Button type='shadow'>Test din viden</Button>
+          <p><Icon type='dimmedCoins' /> 10 Point</p>
+        </div>
         <div className='Step-progressbar'>
           <Progressbar percent={20} />
         </div>
