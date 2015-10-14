@@ -7,6 +7,9 @@ import Question from './Question'
 import CategoryHeader from './CategoryHeader'
 import { completeQuestion } from '../actions'
 import minMax from '../utils/minMax'
+import Progressbar from './Progressbar'
+
+import '../scss/Step.scss'
 
 class Slide extends Component {
   static propTypes = {
@@ -80,6 +83,7 @@ export default class Step extends Component {
           onDone={this.done.bind(this)} />
     }
 
+
     const abort = _ => {
       this.props.history.pushState(null, '/test')
     }
@@ -88,8 +92,10 @@ export default class Step extends Component {
       <div>
         <CategoryHeader category={category} onAbort={abort} />
         {slideOrQuestion}
+        <div className='Step-progressbar'>
+          <Progressbar percent={20} />
+        </div>
       </div>
     )
   }
 }
-
