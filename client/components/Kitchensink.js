@@ -14,6 +14,7 @@ import PointLogEntry from './PointLogEntry'
 import CardNavigation from './CardNavigation'
 import { Tiles, Tile } from './Tiles'
 import CategoryHeader from './CategoryHeader'
+import Start from './Start'
 
 @connect(state => ({ progress: state.progress }))
 export default class Kitchensink extends Component {
@@ -82,6 +83,9 @@ export default class Kitchensink extends Component {
         {categories.map(c => (
           <CategoryHeader category={c} onAbort={_ => alert(c.title)} />
         ))}
+
+        <SectionTitle>Start screen</SectionTitle>
+        <Start />
       </div>
     )
   }
