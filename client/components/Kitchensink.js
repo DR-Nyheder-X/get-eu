@@ -15,6 +15,7 @@ import CardNavigation from './CardNavigation'
 import { Tiles, Tile } from './Tiles'
 import CategoryHeader from './CategoryHeader'
 import Start from './Start'
+import CategoryDone from './CategoryDone'
 
 @connect(state => ({ progress: state.progress }))
 export default class Kitchensink extends Component {
@@ -35,8 +36,8 @@ export default class Kitchensink extends Component {
           <p><Button type='shadow'>Default with shadow</Button></p>
           <p><Button type='red darkShadow'>Red with dark shadow</Button></p>
           <p><Button type='shadow fullWidth'>Full width with shadow</Button></p>
-          <p><Button type='rightArrow'>Button with an arrow</Button></p>
-          <p><Button type='rightArrow' disabled>Button with an arrow</Button></p>
+          <p><Button type='rightArrowAtRight'>Button with an arrow</Button></p>
+          <p><Button type='rightArrowAtRight' disabled>Button with an arrow</Button></p>
         </Copy>
 
         <SectionTitle>Headings</SectionTitle>
@@ -86,6 +87,9 @@ export default class Kitchensink extends Component {
 
         <SectionTitle>Start screen</SectionTitle>
         <Start />
+
+        <SectionTitle>Category is done</SectionTitle>
+        <CategoryDone points={200} category='Flygtninge' />
       </div>
     )
   }

@@ -76,16 +76,30 @@
   padding: .5em .75em .55em;
 }
 
-.Button--rightArrow i {
+.Button--rightArrowAtRight i {
   display: inline-block;
   width: 15px;
   height: 12px;
   background-size: 15px;
   background-repeat: no-repeat;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAhCAMAAAB6BtLTAAAAk1BMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////ROyVeAAAAMHRSTlMAAgMJDA0UFRchJSgtMjg9PkRGR09QUVZyd4eOkZ26vsDDxcbMzdXd6PDx+Pn7/f5ORlseAAAAjUlEQVR42u3URxKCABBE0QFzxgAqBsyAgvb9T+eUsFV7Snf612/95WtVw82qxWJnB+DcJ7UHGLgPC2+kJh7kJj79XV4Lt8cXxbeCZ4Fozh5c167qAdjWqie0Pqiup6yeiTZOOBzJI7fTe94wLvFS3tc8lXjxx8VPaCyeBYtvwfoTHmujBJe50LntinzQHWitUD9DiKTJAAAAAElFTkSuQmCC);
-  margin-left: .2em;
+  margin-left: .5em;
+  position: relative;
+  bottom: -1px;
 }
 
-.Button--rightArrow[disabled] i {
+.Button--rightArrowAtRight[disabled] i {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAhCAMAAAB6BtLTAAAAk1BMVEUAAAAAAAAAVVUcVVUVVVUUYmIaWVkYYWEhZGQfZF0cYGAgYGAcYGAfYWEgZGAhZGAhY2MeYmIhYmIgZWEgZGEgY2MfZWIhZWIfZWIgZWMiZGIgZWMhZGQgZWMhZGQiZWMhZWQiZWMiZWQhZGMhZGMiZWQiZWMhZGMhZGMiZWQiZWMiZWQiZGMiZWQhZWQhZGMiZWSsgQYRAAAAMHRSTlMAAgMJDA0UFRchJSgtMjg9PkRGR09QUVZyd4eOkZ26vsDDxcbMzdXd6PDx+Pn7/f5ORlseAAAAjUlEQVR42u3URxKCABBE0QFzxgAqBsyAgvb9T+eUsFV7Snf612/95WtVw82qxWJnB+DcJ7UHGLgPC2+kJh7kJj79XV4Lt8cXxbeCZ4Fozh5c167qAdjWqie0Pqiup6yeiTZOOBzJI7fTe94wLvFS3tc8lXjxx8VPaCyeBYtvwfoTHmujBJe50LntinzQHWitUD9DiKTJAAAAAElFTkSuQmCC);
+}
+
+.Button--leftArrowAtLeft i {
+  display: inline-block;
+  width: 15px;
+  height: 12px;
+  background-size: 15px;
+  background-repeat: no-repeat;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAhCAMAAAB6BtLTAAAAk1BMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////ROyVeAAAAMHRSTlMAAgMJDA0UFRchJSgtMjg9PkRGR09QUVZyd4eOkZ66vsDDxcbMzdXd6PDx+Pn7/f7tEN23AAAAiUlEQVR42u3KRxKCABAAwcGEWQygYsYAGPf/rxMKrlq7pTftc/OB1mob1lDqn0UkctQ551my+JacuoZ8Cyx5+s8QXIv8iI9v7MI6me5ddPYOsBatAXBQ7wkw0+a0QWajy8kYckspxMPea50KpUXZT00UfrFHjql7WLqPoacuSvOLJCPUqu0KX/MExAhQP51mRHIAAAAASUVORK5CYII=);
+  margin-right: .5em;
+  position: relative;
+  bottom: -1px;
 }

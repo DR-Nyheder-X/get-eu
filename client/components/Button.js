@@ -4,9 +4,8 @@ import formatTypeClasses from '../utils/formatTypeClasses'
 
 import '../scss/Button.scss'
 
-const typesWithIcon = [
-  'rightArrow', 'leftArrow'
-]
+const typesWithIconAtRight = [ 'rightArrowAtRight', 'leftArrowAtRight' ]
+const typesWithIconAtLeft = [ 'rightArrowAtLeft', 'leftArrowAtLeft' ]
 
 export default class Button extends Component {
   static get propTypes () {
@@ -19,14 +18,15 @@ export default class Button extends Component {
   render () {
     const type = formatTypeClasses('Button', this.props.type)
     const cls = classname('Button', this.props.className, type)
-    const hasIcon = typesWithIcon.indexOf(this.props.type) > -1
+    const hasIconAtRight = typesWithIconAtRight.indexOf(this.props.type) > -1
+    const hasIconAtLeft = typesWithIconAtLeft.indexOf(this.props.type) > -1
 
     return (
       <a className={cls} {...this.props}>
+        {hasIconAtLeft && (<i></i>)}
         {this.props.children}
-        {hasIcon && (<i></i>)}
+        {hasIconAtRight && (<i></i>)}
       </a>
     )
   }
 }
-

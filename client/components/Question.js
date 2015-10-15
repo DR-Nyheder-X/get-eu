@@ -65,7 +65,7 @@ export default class Question extends Component {
           </ul>
         </form>
         <div className="Question-next">
-          <Button type="rightArrow" disabled={!correctAnswerSelected} onClick={onDone}>Videre</Button>
+          <Button type="rightArrowAtRight" disabled={!correctAnswerSelected} onClick={onDone}>Videre</Button>
         </div>
       </div>
     )
