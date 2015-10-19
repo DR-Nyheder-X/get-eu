@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Frontend components for a quiz and dictionary webapp. The app makes it easier to learn about the Danish opt-outs from EU policies on police and justice.",
   "main": "server/index.js",
+  "repository": "https://github.com/DR-Nyheder-X/get-eu.git",
   "scripts": {
     "start": "NODE_ENV=production node server/index.js",
     "dev": "NODE_ENV=development ./node_modules/nodemon/bin/nodemon.js -w server -w views",
