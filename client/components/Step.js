@@ -102,11 +102,6 @@ export default class Step extends Component {
         <CategoryHeader category={category} onAbort={abort} />
         {slideOrQuestion}
 
-        <div className='Step-skipToQuestion'>
-          <Button type='shadow'>Test din viden</Button>
-          <p><Icon type='dimmedCoins' /> 10 Point</p>
-        </div>
-
         <div className='Step-progressbar'>
           <Progressbar percent={percent} />
         </div>
