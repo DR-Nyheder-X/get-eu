@@ -10,13 +10,10 @@ import routes from './routes'
 let finalCreateStore
 
 if (__DEVELOPMENT) {
-  const { devTools } = require('redux-devtools')
-
   finalCreateStore = compose(
     applyMiddleware(thunk),
     persistState('progress'),
     reduxReactRouter({ routes, createHistory }),
-    devTools()
   )(createStore)
 } else {
   finalCreateStore = compose(
