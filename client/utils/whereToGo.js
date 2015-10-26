@@ -22,12 +22,20 @@ export function nextStep (progress) {
 
 export function whereToGo (progress) {
   const { category, step } = nextStep(progress)
-  return `/quiz/${category.type}/${step.id}`
+  if (category && step) {
+    return `/quiz/${category.type}/${step.id}`
+  } else {
+    return '/quiz'
+  }
 }
 
 export function whereToGoInCategory (progress, category) {
   const step = nextStepInCategory(progress, category)
-  return `/quiz/${category.type}/${step.id}`
+  if (step) {
+    return `/quiz/${category.type}/${step.id}`
+  } else {
+    return `/quiz/${category.type}/done`
+  }
 }
 
 export default {
