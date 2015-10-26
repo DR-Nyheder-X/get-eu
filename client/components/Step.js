@@ -72,6 +72,7 @@ export default class Step extends Component {
     const { dispatch, progress } = this.props
     dispatch(completeQuestion(this.state.step.question))
     history.pushState(whereToGo(progress))
+  }
 
   done () {
     const { history } = this.props
