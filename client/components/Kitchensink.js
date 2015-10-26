@@ -32,6 +32,7 @@ export default class Kitchensink extends Component {
           <p><Button>Default Button</Button></p>
           <p><Button disabled>Disabled button</Button></p>
           <p><Button type='red'>Red button</Button></p>
+          <p><Button type='yellow darkShadow'>Yellow button</Button></p>
           <p><Button type='light'>Light button</Button></p>
           <p><Button type='shadow'>Default with shadow</Button></p>
           <p><Button type='red darkShadow'>Red with dark shadow</Button></p>
@@ -82,7 +83,7 @@ export default class Kitchensink extends Component {
 
         <SectionTitle>Category Headers</SectionTitle>
         {categories.map(c => (
-          <CategoryHeader category={c} onAbort={_ => alert(c.title)} />
+          <CategoryHeader category={c} />
         ))}
 
         <SectionTitle>Start screen</SectionTitle>
