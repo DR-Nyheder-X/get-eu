@@ -115,7 +115,7 @@ export default class Step extends Component {
 
 
     const abort = _ => {
-      this.props.history.pushState(null, '/test')
+      this.props.history.pushState(null, '/quiz')
     }
 
     const { percent } = categoryProgress(category, progress)

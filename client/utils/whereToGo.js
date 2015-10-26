@@ -26,7 +26,7 @@ export function whereToGo (progress) {
 }
 
 export function whereToGoInCategory (progress, category) {
-  const { step } = nextStepInCategory(progress, category)
+  const step = nextStepInCategory(progress, category)
   return `/quiz/${category.type}/${step.id}`
 }
 
