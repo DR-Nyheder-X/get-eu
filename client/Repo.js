@@ -43,6 +43,11 @@ function dummySteps () {
 const repo: Repo = {
   categories: [{
     id: nextId('category'),
+    title: 'EU generelt',
+    type: 'eu',
+    steps: dummySteps()
+  }, {
+    id: nextId('category'),
     title: 'Flygtninge',
     type: 'migrants',
     steps: dummySteps()
@@ -60,11 +65,6 @@ const repo: Repo = {
     id: nextId('category'),
     title: 'Erhverv',
     type: 'business',
-    steps: dummySteps()
-  }, {
-    id: nextId('category'),
-    title: 'EU generelt',
-    type: 'eu',
     steps: dummySteps()
   }, {
     id: nextId('category'),

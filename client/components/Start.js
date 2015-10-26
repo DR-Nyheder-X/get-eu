@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import formatTypeClasses from '../utils/formatTypeClasses'
 import Header from './Header'
 import Button from './Button'
+import { Link } from 'react-router'
 
 import '../scss/Start.scss'
 
@@ -21,7 +22,9 @@ export default class Start extends Component {
         <h2>Tag et lynkursus i lovområderne<br />og test din viden</h2>
         <div className='Start-baseballs'></div>
         <div className='Start-cta'>
-          <Button type='yellow darkShadow fullWidth'>Kom i gang</Button>
+          <Button to='/quiz' type='yellow darkShadow fullWidth'>
+            Kom i gang
+          </Button>
         </div>
       </div>
     )
