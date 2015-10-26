@@ -14,6 +14,7 @@ import Button from './Button'
 import StepDone from './StepDone'
 import Icon from './Icon'
 import { categoryProgress } from '../reducers/progress'
+import { whereToGo } from '../utils/whereToGo'
 
 import '../scss/Step.scss'
 
@@ -42,12 +43,12 @@ export default class Step extends Component {
     super(props)
 
     const category = find({ type: props.type })
-    const stepIndex = parseInt(props.step, 10)
-    const step = category.steps[stepIndex]
+    const stepId = parseInt(props.step, 10)
+    const step = _.find(category.steps, { id: stepId })
 
     this.state = {
       currentSlide: 0,
-      category, stepIndex, step
+      category, step
     }
   }
 
@@ -68,9 +69,9 @@ export default class Step extends Component {
   }
 
   submit () {
-    const { dispatch } = this.props
+    const { dispatch, progress } = this.props
     dispatch(completeQuestion(this.state.step.question))
-  }
+    history.pushState(whereToGo(progress))
 
   done () {
     const { history } = this.props

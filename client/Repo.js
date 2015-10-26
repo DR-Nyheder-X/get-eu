@@ -26,6 +26,7 @@ function dummyStep () {
     text: 'I alle tilfælde. Med mindre Folketinget beslutter at afholde en folkeafstemning.'
   }]
   return {
+    id: nextId('step'),
     slides,
     question: {
       id: nextId('question'),

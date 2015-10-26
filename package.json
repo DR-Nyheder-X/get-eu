@@ -43,5 +43,8 @@
     "webpack": "^1.11.0",
     "webpack-dev-middleware": "^1.2.0",
     "webpack-hot-middleware": "^2.4.1"
+  },
+  "standard": {
+    "parser": "babel-eslint"
   }
 }

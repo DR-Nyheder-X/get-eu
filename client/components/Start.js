@@ -3,26 +3,44 @@ import formatTypeClasses from '../utils/formatTypeClasses'
 import Header from './Header'
 import Button from './Button'
 import { Link } from 'react-router'
+import { connect } from 'react-redux'
+import { whereToGo } from '../utils/whereToGo'
 
 import '../scss/Start.scss'
 
+@connect(state => ({ progress: state.progress }))
 export default class Start extends Component {
   static get propTypes () {
     return {
-      className: PropTypes.string
+      className: PropTypes.string,
+      progress: PropTypes.object
     }
   }
+
+  componentDidMount () {
+    const { progress, history } = this.props
+
+    // Redirect to next relevant step
+    if (progress.completedQuestionIds.length > 0) {
+      history.replaceState(null, whereToGo(progress))
+    }
+  }
+
   render () {
-    const cls = 'Start'
+    const goTo = whereToGo(this.props.progress)
 
     return (
-      <div className={cls}>
+      <div className='Start'>
         <Header />
-        <h1>Bliv klar til<br />afstemningen om<br /><em>retsforbeholdet</em></h1>
-        <h2>Tag et lynkursus i lovområderne<br />og test din viden</h2>
+        <h1>
+          Bliv klar til<br />afstemningen om<br /><em>retsforbeholdet</em>
+        </h1>
+        <h2>
+          Tag et lynkursus i lovområderne<br />og test din viden
+        </h2>
         <div className='Start-baseballs'></div>
         <div className='Start-cta'>
-          <Button to='/quiz' type='yellow darkShadow fullWidth'>
+          <Button to={goTo} type='yellow darkShadow fullWidth'>
             Kom i gang
           </Button>
         </div>
