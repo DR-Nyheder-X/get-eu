@@ -3,6 +3,10 @@
 
 @import 'settings.scss';
 
+html, body {
+  height: 100%;
+}
+
 html {
   font-family: $fontFamily;
   -ms-text-size-adjust: 100%;
