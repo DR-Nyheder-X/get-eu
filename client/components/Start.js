@@ -21,9 +21,8 @@ export default class Start extends Component {
         <h2>Tag et lynkursus i lovområderne<br />og test din viden</h2>
         <div className='Start-baseballs'></div>
         <div className='Start-cta'>
-          <Button type='red darkShadow fullWidth'>Kom i gang</Button>
+          <Button type='yellow darkShadow fullWidth'>Kom i gang</Button>
         </div>
-        <a href='#' className='Start-close'>Luk</a>
       </div>
     )
   }

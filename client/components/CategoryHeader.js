@@ -15,7 +15,7 @@ export default class Button extends Component {
   }
 
   render () {
-    const { category, onAbort } = this.props
+    const { category } = this.props
     const cls = classname('CategoryHeader',
       formatTypeClasses('CategoryHeader', category.type))
 
@@ -24,9 +24,6 @@ export default class Button extends Component {
         <h2>
           <i></i> {category.title}
         </h2>
-        <a href='' onClick={cc(onAbort)}>
-          <Icon type='cross' /> Afslut
-        </a>
       </header>
     )
   }

@@ -7,7 +7,7 @@
   font-size: 16px;
   letter-spacing: .015em;
   color: $white;
-  background-color: $darkPurple;
+  background-color: $darkerPurple;
   display: inline-block;
   border-radius: 2px;
   padding: .85em 1.4em .925em;
@@ -17,7 +17,7 @@
   &:hover,
   &:active {
     color: $white;
-    background: $purple;
+    background: $darkPurple;
     text-decoration: none;
     cursor: pointer;
   }
@@ -26,13 +26,13 @@
 .Button--disabled,
 .Button[disabled] {
   background-color: $darkTurquoise;
-  color: $darkerTurquoise;
+  color: $darkestTurquoise;
   cursor: default;
 
   &:hover,
   &:active {
     background-color: $darkTurquoise;
-    color: $darkerTurquoise;
+    color: $darkestTurquoise;
     cursor: default;
   }
 }
@@ -45,6 +45,17 @@
   &:active {
     color: $darkerPurple;
     background: $lightRed;
+  }
+}
+
+.Button--yellow {
+  background-color: $yellow;
+  color: $darkerPurple;
+
+  &:hover,
+  &:active {
+    color: $darkerPurple;
+    background: $lightYellow;
   }
 }
 
@@ -89,7 +100,7 @@
 }
 
 .Button--rightArrowAtRight[disabled] i {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAhCAMAAAB6BtLTAAAAk1BMVEUAAAAAAAAAVVUcVVUVVVUUYmIaWVkYYWEhZGQfZF0cYGAgYGAcYGAfYWEgZGAhZGAhY2MeYmIhYmIgZWEgZGEgY2MfZWIhZWIfZWIgZWMiZGIgZWMhZGQgZWMhZGQiZWMhZWQiZWMiZWQhZGMhZGMiZWQiZWMhZGMhZGMiZWQiZWMiZWQiZGMiZWQhZWQhZGMiZWSsgQYRAAAAMHRSTlMAAgMJDA0UFRchJSgtMjg9PkRGR09QUVZyd4eOkZ26vsDDxcbMzdXd6PDx+Pn7/f5ORlseAAAAjUlEQVR42u3URxKCABBE0QFzxgAqBsyAgvb9T+eUsFV7Snf612/95WtVw82qxWJnB+DcJ7UHGLgPC2+kJh7kJj79XV4Lt8cXxbeCZ4Fozh5c167qAdjWqie0Pqiup6yeiTZOOBzJI7fTe94wLvFS3tc8lXjxx8VPaCyeBYtvwfoTHmujBJe50LntinzQHWitUD9DiKTJAAAAAElFTkSuQmCC);
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAhCAMAAAB6BtLTAAAAmVBMVEUAAAAAgIAAqlUcqo4VqpUUnZ0apqYYqp4WppsXqqIcpaUapqYXqqQaqKMbqKQZp6MdqaUaqaUaqKQdqaUaqKUdqaYZqqQcqqQbqaMbqqYcqaUcqqQdqaUcq6UcqaYbqqYcqaUcqqUdqqUcqqYcqqUdqqUdqaUdqqUdqqUdqqYdqaYdqqYdqaUdqqYdqqYcqqYcqqYcqqYdqqZBgtbUAAAAMnRSTlMAAgMJDA0UFRchJSgtMjg9PkRGR09QUVFWcneHjpGdur7Aw8XGzM3V3d3o8PH4+fv9/mtQ0F4AAACNSURBVHgB7dTHHsFgEEXxm+g9ShTRu0Rh3v/hDGaL+/3YyVn/1wc/KxvNJyUWe0sROdRJHSjmeSguvJA48d7Ziff/l+eixeZN++uTn7p37K2E61JV3RC2qeoOrdeq8wmrB9DaMYdneORXaq9r7gyP8bni1vAoxfYTFiNwwQh5bD8xzNSK5TgEnV/O4Itu1ZlTY25l+r4AAAAASUVORK5CYII=);
 }
 
 .Button--leftArrowAtLeft i {
