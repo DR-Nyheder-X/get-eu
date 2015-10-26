@@ -1,3 +1,5 @@
+// TODO: Clean up this mess
+
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { find } from '../Repo'
@@ -9,6 +11,7 @@ import { completeQuestion } from '../actions'
 import minMax from '../utils/minMax'
 import Progressbar from './Progressbar'
 import Button from './Button'
+import StepDone from './StepDone'
 import Icon from './Icon'
 import { categoryProgress } from '../reducers/progress'
 
@@ -64,10 +67,19 @@ export default class Step extends Component {
     this.move(1)
   }
 
-  done () {
-    const { dispatch, history } = this.props
+  submit () {
+    const { dispatch } = this.props
     dispatch(completeQuestion(this.state.step.question))
+  }
+
+  done () {
+    const { history } = this.props
     history.pushState('/test')
+  }
+
+  next () {
+    const { history } = this.props
+    history.pushState(`/test`)
   }
 
   render () {
@@ -76,7 +88,15 @@ export default class Step extends Component {
     const slide = step.slides[currentSlide]
 
     let slideOrQuestion
-    if (slide) {
+
+    if (progress.completedQuestionIds.indexOf(step.question.id) > -1) {
+      slideOrQuestion = (
+        <StepDone step={step} progress={progress}
+          onDone={this.done.bind(this)}
+          onNext={this.next.bind(this)} />
+      )
+    }
+    else if (slide) {
       slideOrQuestion = <div>
         <Slide text={slide.text} />
         <CardNavigation page={this.state.currentSlide}
@@ -84,10 +104,12 @@ export default class Step extends Component {
           onPrev={_ => this.move(-1)} canPrev={currentSlide !== 0}
           onNext={_ => this.move(1)} canNext={true} />
       </div>
-    } else {
+
+    }
+    else {
       slideOrQuestion =
         <Question question={step.question}
-          onDone={this.done.bind(this)} />
+          onSubmit={this.submit.bind(this)} />
     }
 
 

@@ -26,18 +26,11 @@ export default class Test extends Component {
 
     const tileElm = category => {
       const done = categoryProgress(category, progress).percent == 100
-      if (done) {
-        return (
-          <Tile key={category.id} category={category}
-            progress={progress} />
-        )
-      } else {
-        return (
-          <Link to={`/test/${category.type}`} key={category.id}>
-            <Tile category={category} progress={progress} />
-          </Link>
-        )
-      }
+      return (
+        <Link to={`/test/${category.type}`} key={category.id}>
+          <Tile category={category} progress={progress} />
+        </Link>
+      )
     }
 
     return (
