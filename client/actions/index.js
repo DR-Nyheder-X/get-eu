@@ -1,3 +1,5 @@
+import Promise from 'bluebird'
+
 export const COMPLETE_STEP = 'COMPLETE_STEP'
 export const RESET_PROGRESS = 'RESET_PROGRESS'
 

@@ -35,18 +35,19 @@ describe('whereToGo', () => {
     })
   })
   describe('when there are no more questions', () => {
-    it('should move to quiz page', () => {
+    it('should move to the end', () => {
       const progress = progressWithIds(
         flatten(Repo.categories.map(c => (
           c.steps.map(s => s.id)
         ))))
-      assert.equal(whereToGo(progress), '/quiz')
+      assert.equal(whereToGo(progress), '/the_end')
     })
   })
 })
 
 describe('whereToGoInCategory', () => {
   const category = Repo.categories[0]
+
   describe('when nothing is done', () => {
     it('goes to first step', () => {
       const progress = progressWithIds([])
@@ -60,11 +61,20 @@ describe('whereToGoInCategory', () => {
       assert.equal(whereToGoInCategory(progress, category), '/quiz/eu/2')
     })
   })
-  describe('when category is done', () => {
-    it('should move to next category', () => {
+  describe('when all questions in category are done', () => {
+    it('goes to next step', () => {
       const progress = progressWithIds(
         Repo.categories[0].steps.map(s => s.id))
       assert.equal(whereToGoInCategory(progress, category), `/quiz/eu/done`)
+    })
+  })
+  describe('when all is done', () => {
+    it('should move to the end', () => {
+      const progress = progressWithIds(
+        flatten(Repo.categories.map(c => (
+          c.steps.map(s => s.id)
+        ))))
+      assert.equal(whereToGoInCategory(progress, category), `/the_end`)
     })
   })
 })

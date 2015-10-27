@@ -1,6 +1,13 @@
 import Repo from '../Repo'
 import { find } from 'lodash'
 
+function allDone (progress) {
+  const allIds = Repo.categories.reduce((stepIds, cat) => {
+    return stepIds.concat(cat.steps.map(s => s.id))
+  }, [])
+  return allIds.length === progress.completedStepIds.length
+}
+
 export function nextStepInCategory (progress, category) {
   const completed = progress.completedStepIds
 
@@ -25,7 +32,7 @@ export function whereToGo (progress) {
   if (category && step) {
     return `/quiz/${category.type}/${step.id}`
   } else {
-    return '/quiz'
+    return '/the_end'
   }
 }
 
@@ -34,7 +41,11 @@ export function whereToGoInCategory (progress, category) {
   if (step) {
     return `/quiz/${category.type}/${step.id}`
   } else {
-    return `/quiz/${category.type}/done`
+    if (allDone(progress)) {
+      return `/the_end`
+    } else {
+      return `/quiz/${category.type}/done`
+    }
   }
 }
 
