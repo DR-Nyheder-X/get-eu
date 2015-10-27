@@ -2,10 +2,10 @@ import Repo from '../Repo'
 import { find } from 'lodash'
 
 export function nextStepInCategory (progress, category) {
-  const completed = progress.completedQuestionIds
+  const completed = progress.completedStepIds
 
   return find(category.steps, step => {
-    return completed.indexOf(step.question.id) === -1
+    return completed.indexOf(step.id) === -1
   })
 }
 

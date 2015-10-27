@@ -7,7 +7,7 @@ import Card from './Card'
 import CardNavigation from './CardNavigation'
 import Question from './Question'
 import CategoryHeader from './CategoryHeader'
-import { completeQuestion } from '../actions'
+import { completeStep } from '../actions'
 import minMax from '../utils/minMax'
 import Progressbar from './Progressbar'
 import { categoryProgress } from '../reducers/progress'
@@ -45,24 +45,16 @@ export default class Step extends Component {
 
   move (amount) {
     let currentSlide = this.state.currentSlide + amount
-    currentSlide = minMax(0,
-                          this.state.step.slides.length,
+    currentSlide = minMax(0, this.state.step.slides.length,
                           currentSlide)
     this.setState({ ...this.state, currentSlide })
   }
 
-  prev () {
-    this.move(-1)
-  }
-
-  next () {
-    this.move(1)
-  }
-
   submit () {
     const { dispatch, progress, history } = this.props
-    dispatch(completeQuestion(this.state.step.question))
-    const goTo = whereToGoInCategory(progress, this.state.category)
+    const { category, step } = this.state
+    dispatch(completeStep(step))
+    const goTo = whereToGoInCategory(progress, category)
     console.log(goTo)
     history.pushState(goTo)
   }

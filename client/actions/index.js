@@ -1,6 +1,6 @@
-export const COMPLETE_QUESTION = 'COMPLETE_QUESTION'
+export const COMPLETE_STEP = 'COMPLETE_STEP'
 export const RESET_PROGRESS = 'RESET_PROGRESS'
 
-export function completeQuestion (question) {
-  return { type: COMPLETE_QUESTION, question }
+export function completeStep (step) {
+  return { type: COMPLETE_STEP, step }
 }

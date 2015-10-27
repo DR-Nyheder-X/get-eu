@@ -10,15 +10,14 @@ import '../scss/Start.scss'
 export default class Start extends Component {
   static propTypes = {
     className: PropTypes.string,
-    progress: PropTypes.object,
-    history: PropTypes.object
+    progress: PropTypes.object
   }
 
   componentDidMount () {
     const { progress, history } = this.props
 
     // Redirect to next relevant step
-    if (progress.completedQuestionIds.length > 0) {
+    if (progress.completedStepIds.length > 0) {
       history.replaceState(null, whereToGo(progress))
     }
   }

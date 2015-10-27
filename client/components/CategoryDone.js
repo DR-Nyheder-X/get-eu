@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import PageTitle, { PreHeading } from './PageTitle'
 import { Tiles, Tile } from './Tiles'
-import Repo, { find } from '../Repo'
+import Repo, { where } from '../Repo'
 import { nextStep } from '../utils/whereToGo'
 import { Link } from 'react-router'
 import { whereToGoInCategory } from '../utils/whereToGo'
@@ -21,7 +21,7 @@ export default class StepDone extends Component {
     super(props)
 
     this.state = {
-      category: find({ type: props.type })
+      category: where({ type: props.type })
     }
   }
 
