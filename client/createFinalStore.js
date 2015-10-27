@@ -8,7 +8,7 @@ import { reduxReactRouter } from 'redux-router'
 import { createHistory } from 'history'
 import thunk from 'redux-thunk'
 import persistState from 'redux-localstorage'
-
+import DevTools from './DevTools'
 import routes from './routes'
 
 let finalCreateStore
@@ -18,6 +18,7 @@ if (__DEVELOPMENT) {
     applyMiddleware(thunk),
     persistState('progress'),
     reduxReactRouter({ routes, createHistory }),
+    DevTools.instrument(),
   )(createStore)
 } else {
   finalCreateStore = compose(
