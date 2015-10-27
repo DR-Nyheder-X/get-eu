@@ -13,6 +13,7 @@ import Progressbar from './Progressbar'
 import { categoryProgress } from '../reducers/progress'
 import { whereToGoInCategory } from '../utils/whereToGo'
 import { find } from 'lodash'
+import { pushState } from 'redux-router'
 
 import '../scss/Step.scss'
 
@@ -20,6 +21,9 @@ import '../scss/Step.scss'
   progress: state.progress,
   type: state.router.params.type,
   step: state.router.params.step
+}), dispatch => ({
+  pushState,
+  dispatch
 }))
 export default class Step extends Component {
   static propTypes = {
@@ -27,17 +31,25 @@ export default class Step extends Component {
     step: PropTypes.string,
     progress: PropTypes.object,
     dispatch: PropTypes.func,
-    history: PropTypes.object
+    pushState: PropTypes.func
   }
 
   constructor (props) {
     super(props)
 
+    this.state = this.stateFromProps(props)
+  }
+
+  componentWillReceiveProps (props) {
+    this.state = this.stateFromProps(props)
+  }
+
+  stateFromProps (props) {
     const category = where({ type: props.type })
     const stepId = parseInt(props.step, 10)
     const step = find(category.steps, { id: stepId })
 
-    this.state = {
+    return {
       currentSlide: 0,
       category, step
     }
@@ -51,12 +63,13 @@ export default class Step extends Component {
   }
 
   submit () {
-    const { dispatch, progress, history } = this.props
+    const { dispatch, pushState } = this.props
     const { category, step } = this.state
-    dispatch(completeStep(step))
-    const goTo = whereToGoInCategory(progress, category)
-    console.log(goTo)
-    history.pushState(goTo)
+
+    dispatch(completeStep(step)).then(progress => {
+      const goTo = whereToGoInCategory(progress, category)
+      dispatch(pushState(null, goTo))
+    }, e => { console.error(e) })
   }
 
   render () {

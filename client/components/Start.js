@@ -3,22 +3,26 @@ import Header from './Header'
 import Button from './Button'
 import { connect } from 'react-redux'
 import { whereToGo } from '../utils/whereToGo'
+import { replaceState } from 'redux-router'
 
 import '../scss/Start.scss'
 
-@connect(state => ({ progress: state.progress }))
+@connect(state => ({
+  progress: state.progress
+}), { replaceState })
 export default class Start extends Component {
   static propTypes = {
     className: PropTypes.string,
-    progress: PropTypes.object
+    progress: PropTypes.object,
+    replaceState: PropTypes.func
   }
 
   componentDidMount () {
-    const { progress, history } = this.props
+    const { progress, replaceState } = this.props
 
     // Redirect to next relevant step
     if (progress.completedStepIds.length > 0) {
-      history.replaceState(null, whereToGo(progress))
+      replaceState(null, whereToGo(progress))
     }
   }
 
