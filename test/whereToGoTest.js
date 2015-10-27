@@ -1,3 +1,4 @@
+import { describe, it } from 'mocha'
 import assert from 'assert'
 import Repo from '../client/Repo'
 import { flatten } from 'lodash'
@@ -63,7 +64,6 @@ describe('whereToGoInCategory', () => {
     it('should move to next category', () => {
       const progress = progressWithIds(
         Repo.categories[0].steps.map(s => s.question.id))
-      const nextCategory = Repo.categories[1]
       assert.equal(whereToGoInCategory(progress, category), `/quiz/eu/done`)
     })
   })

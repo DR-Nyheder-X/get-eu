@@ -75,7 +75,7 @@ const repo: Repo = {
   }]
 }
 
-export function find (q: any) {
+export function where (q: any) {
   return _.find(repo.categories, q)
 }
 

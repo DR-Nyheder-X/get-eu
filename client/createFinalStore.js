@@ -1,6 +1,10 @@
+/* global __DEVELOPMENT */
+
+/* eslint-disable no-unused-vars */
 import React from 'react'
+/* eslint-enable no-unused-vars */
 import { createStore, applyMiddleware, compose } from 'redux'
-import { ReduxRouter, reduxReactRouter } from 'redux-router'
+import { reduxReactRouter } from 'redux-router'
 import { createHistory } from 'history'
 import thunk from 'redux-thunk'
 import persistState from 'redux-localstorage'
@@ -22,7 +26,6 @@ if (__DEVELOPMENT) {
     reduxReactRouter({ routes, createHistory }),
   )(createStore)
 }
-
 
 import { createFinalReducer } from './reducers'
 

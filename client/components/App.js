@@ -9,7 +9,7 @@ require('../scss/App.scss')
   path: state.router.location.pathname,
   progress: state.progress
 }))
-class App extends Component {
+export default class App extends Component {
   static propTypes = {
     children: PropTypes.node,
     path: PropTypes.string.isRequired,
@@ -20,7 +20,7 @@ class App extends Component {
     const { path, progress } = this.props
 
     return (
-      <main className="App">
+      <main className='App'>
         <Header />
         <MainNavigation currentPath={path} progress={progress} />
         {this.props.children}
@@ -28,5 +28,3 @@ class App extends Component {
     )
   }
 }
-
-export default App

@@ -1,6 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import Button from './Button'
-import cc from '../utils/cleanClick'
 import PageTitle, { PreHeading } from './PageTitle'
 import { Tiles, Tile } from './Tiles'
 import Repo, { find } from '../Repo'
@@ -28,7 +26,7 @@ export default class StepDone extends Component {
   }
 
   render () {
-    const { progress, tesp, history } = this.props
+    const { progress } = this.props
 
     const nextCategory = nextStep(progress).category
 

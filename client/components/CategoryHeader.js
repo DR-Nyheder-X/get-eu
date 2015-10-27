@@ -1,8 +1,6 @@
 import React, { Component, PropTypes } from 'react'
-import Icon from './Icon'
 import classname from 'classname'
 import formatTypeClasses from '../utils/formatTypeClasses'
-import cc from '../utils/cleanClick'
 
 import '../scss/CategoryHeader.scss'
 

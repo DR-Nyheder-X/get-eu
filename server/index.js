@@ -1,5 +1,4 @@
 import express from 'express'
-import path from 'path'
 import useDev from './useDev'
 
 const isProduction = process.env.NODE_ENV === 'production'
@@ -25,4 +24,3 @@ app.listen(port, err => {
   if (err) console.log(err)
   console.log(`Running server on port ${port}`)
 })
-

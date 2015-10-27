@@ -1,6 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import { findDOMNode } from 'react-dom'
-import classname from 'classname'
 import Button from './Button'
 import cc from '../utils/cleanClick'
 
@@ -66,8 +64,8 @@ export default class Question extends Component {
             })}
           </ul>
         </form>
-        <div className="Question-next">
-          <Button type="rightArrowAtRight" disabled={!correctAnswerSelected} onClick={cc(onSubmit)}>Videre</Button>
+        <div className='Question-next'>
+          <Button type='rightArrowAtRight' disabled={!correctAnswerSelected} onClick={cc(onSubmit)}>Videre</Button>
         </div>
       </div>
     )

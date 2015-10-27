@@ -1,8 +1,6 @@
 import React, { Component, PropTypes } from 'react'
-import formatTypeClasses from '../utils/formatTypeClasses'
 import Header from './Header'
 import Button from './Button'
-import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import { whereToGo } from '../utils/whereToGo'
 
@@ -10,11 +8,10 @@ import '../scss/Start.scss'
 
 @connect(state => ({ progress: state.progress }))
 export default class Start extends Component {
-  static get propTypes () {
-    return {
-      className: PropTypes.string,
-      progress: PropTypes.object
-    }
+  static propTypes = {
+    className: PropTypes.string,
+    progress: PropTypes.object,
+    history: PropTypes.object
   }
 
   componentDidMount () {

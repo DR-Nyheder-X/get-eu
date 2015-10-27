@@ -19,12 +19,12 @@ export class Tile extends Component {
     const { done, total, percent } =
       categoryProgress(category, progress)
     const cls = classname('Tile', typeClasses, {
-      'Tile--completed': percent == 100
+      'Tile--completed': percent === 100
     })
 
     return (
       <div className={cls}>
-        <div className="Tile-inner">
+        <div className='Tile-inner'>
           <i></i>
           <h3>{category.title}</h3>
           <h4>{done}/{total}</h4>

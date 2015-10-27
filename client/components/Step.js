@@ -2,7 +2,7 @@
 
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { find } from '../Repo'
+import { where } from '../Repo'
 import Card from './Card'
 import CardNavigation from './CardNavigation'
 import Question from './Question'
@@ -10,23 +10,11 @@ import CategoryHeader from './CategoryHeader'
 import { completeQuestion } from '../actions'
 import minMax from '../utils/minMax'
 import Progressbar from './Progressbar'
-import Button from './Button'
-import StepDone from './StepDone'
-import Icon from './Icon'
 import { categoryProgress } from '../reducers/progress'
-import { whereToGo, whereToGoInCategory } from '../utils/whereToGo'
+import { whereToGoInCategory } from '../utils/whereToGo'
+import { find } from 'lodash'
 
 import '../scss/Step.scss'
-
-class Slide extends Component {
-  static propTypes = {
-    text: PropTypes.string
-  }
-
-  render () {
-    return <Card text={this.props.text} />
-  }
-}
 
 @connect(state => ({
   progress: state.progress,
@@ -36,15 +24,18 @@ class Slide extends Component {
 export default class Step extends Component {
   static propTypes = {
     type: PropTypes.string,
-    step: PropTypes.string
+    step: PropTypes.string,
+    progress: PropTypes.object,
+    dispatch: PropTypes.func,
+    history: PropTypes.object
   }
 
   constructor (props) {
     super(props)
 
-    const category = find({ type: props.type })
+    const category = where({ type: props.type })
     const stepId = parseInt(props.step, 10)
-    const step = _.find(category.steps, { id: stepId })
+    const step = find(category.steps, { id: stepId })
 
     this.state = {
       currentSlide: 0,
@@ -85,31 +76,24 @@ export default class Step extends Component {
 
     if (slide) {
       slideOrQuestion = <div>
-        <Slide text={slide.text} />
+        <Card text={slide.text} />
         <CardNavigation page={this.state.currentSlide}
           total={this.state.step.slides.length + 1}
           onPrev={_ => this.move(-1)} canPrev={currentSlide !== 0}
-          onNext={_ => this.move(1)} canNext={true} />
+          onNext={_ => this.move(1)} canNext />
       </div>
-
-    }
-    else {
+    } else {
       slideOrQuestion = <Question
         question={step.question}
         onSubmit={this.submit.bind(this)}
       />
     }
 
-
-    const abort = _ => {
-      this.props.history.pushState(null, '/quiz')
-    }
-
     const { percent } = categoryProgress(category, progress)
 
     return (
       <div>
-        <CategoryHeader category={category} onAbort={abort} />
+        <CategoryHeader category={category} />
         {slideOrQuestion}
 
         <div className='Step-progressbar'>
