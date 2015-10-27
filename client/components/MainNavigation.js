@@ -29,10 +29,12 @@ export default class MainNavigation extends Component {
     return (
       <nav className='MainNavigation'>
         <div className={tabCls([/^\/test/, /^\/$/], currentPath, "MainNavigation-tabQuiz")}>
-          <Link to='/test'>Test</Link>
+          <Link to='/learn'>Lær</Link>
         </div>
         <div className={tabCls(/^\/points/, currentPath, "MainNavigation-tabPoints")}>
-          <Link to='/points'>Point</Link>
+          <Link to='/points'>
+            <Counter begin={0} end={this.props.points} time={3000} /> point
+          </Link>
         </div>
       </nav>
     )
