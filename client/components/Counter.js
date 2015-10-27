@@ -21,7 +21,6 @@ var Counter = React.createClass({
 
   componentWillReceiveProps (a, b) {
     if (this.state.value === a.end || !this.stop) return
-    console.log(this.state.value, a.end)
 
     this.start = Date.now()
     this.stop = false

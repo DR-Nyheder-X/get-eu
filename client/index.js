@@ -6,7 +6,6 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { ReduxRouter } from 'redux-router'
 import { RESET_PROGRESS } from './actions'
-import DevTools from './DevTools'
 
 // STORE ------------------------------------------------
 
@@ -19,6 +18,8 @@ class Root extends Component {
     let contents
 
     if (__DEVELOPMENT) {
+      const DevTools = require('./DevTools')
+
       contents = <div>
         <DevTools />
         <ReduxRouter />
