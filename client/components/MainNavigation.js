@@ -28,7 +28,7 @@ export default class MainNavigation extends Component {
 
     return (
       <nav className='MainNavigation'>
-        <div className={tabCls([/^\/test/, /^\/$/], currentPath, "MainNavigation-tabQuiz")}>
+        <div className={tabCls([/^\/learn/, /^\/$/], currentPath, "MainNavigation-tabQuiz")}>
           <Link to='/learn'>Lær</Link>
         </div>
         <div className={tabCls(/^\/points/, currentPath, "MainNavigation-tabPoints")}>
