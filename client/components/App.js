@@ -7,22 +7,22 @@ require('../scss/App.scss')
 
 @connect(state => ({
   path: state.router.location.pathname,
-  points: state.progress.points
+  progress: state.progress
 }))
 class App extends Component {
   static propTypes = {
     children: PropTypes.node,
     path: PropTypes.string.isRequired,
-    points: PropTypes.number.isRequired
+    progress: PropTypes.object.isRequired
   }
 
   render () {
-    const { path, points } = this.props
+    const { path, progress } = this.props
 
     return (
       <main className="App">
         <Header />
-        <MainNavigation currentPath={path} points={points} />
+        <MainNavigation currentPath={path} progress={progress} />
         {this.props.children}
       </main>
     )

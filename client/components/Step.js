@@ -14,7 +14,7 @@ import Button from './Button'
 import StepDone from './StepDone'
 import Icon from './Icon'
 import { categoryProgress } from '../reducers/progress'
-import { whereToGo } from '../utils/whereToGo'
+import { whereToGo, whereToGoInCategory } from '../utils/whereToGo'
 
 import '../scss/Step.scss'
 
@@ -69,8 +69,11 @@ export default class Step extends Component {
   }
 
   submit () {
-    const { dispatch, progress } = this.props
+    const { dispatch, progress, history } = this.props
     dispatch(completeQuestion(this.state.step.question))
+    const goTo = whereToGoInCategory(progress, this.state.category)
+    console.log(goTo)
+    history.pushState(goTo)
   }
 
   render () {
@@ -80,14 +83,7 @@ export default class Step extends Component {
 
     let slideOrQuestion
 
-    if (progress.completedQuestionIds.indexOf(step.question.id) > -1) {
-      slideOrQuestion = <StepDone
-        step={step}
-        progress={progress}
-        onNext={this.next.bind(this)}
-      />
-    }
-    else if (slide) {
+    if (slide) {
       slideOrQuestion = <div>
         <Slide text={slide.text} />
         <CardNavigation page={this.state.currentSlide}

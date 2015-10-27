@@ -8,6 +8,7 @@ import NotFound from './components/NotFound'
 import Quiz from './components/Quiz'
 import Category from './components/Category'
 import Step from './components/Step'
+import StepDone from './components/StepDone'
 import Start from './components/Start'
 
 const routes = (
@@ -18,6 +19,7 @@ const routes = (
       <Route path='quiz' component={App}>
         <IndexRoute component={Quiz} />
         <Route path='/quiz/:type' component={Category} />
+        <Route path='/quiz/:type/done' component={StepDone} />
         <Route path='/quiz/:type/:step' component={Step} />
       </Route>
       <Route path='*' component={NotFound} />

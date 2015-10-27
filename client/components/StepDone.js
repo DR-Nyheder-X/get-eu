@@ -3,28 +3,43 @@ import Button from './Button'
 import cc from '../utils/cleanClick'
 import PageTitle, { PreHeading } from './PageTitle'
 import { Tiles, Tile } from './Tiles'
-import Repo from '../Repo'
+import Repo, { find } from '../Repo'
 import { nextStep } from '../utils/whereToGo'
 import { Link } from 'react-router'
 import { whereToGoInCategory } from '../utils/whereToGo'
+import { connect } from 'react-redux'
 
+@connect(state => ({
+  type: state.router.params.type,
+  progress: state.progress
+}))
 export default class StepDone extends Component {
   static propTypes = {
-    step: PropTypes.object.isRequired,
+    type: PropTypes.string.isRequired,
     progress: PropTypes.object.isRequired
+  }
+
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      category: find({ type: props.type })
+    }
   }
 
   render () {
     const { progress, tesp, history } = this.props
 
     const nextCategory = nextStep(progress).category
+
     const rest = Repo.categories
     .filter(c => c.id !== nextCategory.id)
     .sort(c => c.id)
 
     const categoryTileWithProgress = progress => category => {
-      return <Link to={whereToGoInCategory(progress, category)}>
-        <Tile key={category.id} category={category} progress={progress} />
+      const to = whereToGoInCategory(progress, category)
+      return <Link key={category.id} to={to}>
+        <Tile category={category} progress={progress} />
       </Link>
     }
 
