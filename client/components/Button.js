@@ -29,9 +29,9 @@ export default class Button extends Component {
     const { to } = this.props
 
     const contents = [
-      hasIconAtLeft && (<i></i>),
+      hasIconAtLeft && (<i key='iconLeft'></i>),
       this.props.children,
-      hasIconAtRight && (<i></i>)
+      hasIconAtRight && (<i key='iconRight'></i>)
     ]
 
     if (to) {
@@ -39,7 +39,7 @@ export default class Button extends Component {
         {contents}
       </Link>
     } else {
-      return <a href='' classname={cls} {...this.props}>
+      return <a href='' className={cls} {...this.props}>
         {contents}
       </a>
     }

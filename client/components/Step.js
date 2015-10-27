@@ -71,17 +71,6 @@ export default class Step extends Component {
   submit () {
     const { dispatch, progress } = this.props
     dispatch(completeQuestion(this.state.step.question))
-    history.pushState(whereToGo(progress))
-  }
-
-  done () {
-    const { history } = this.props
-    history.pushState('/test')
-  }
-
-  next () {
-    const { history } = this.props
-    history.pushState(`/test`)
   }
 
   render () {
@@ -92,11 +81,11 @@ export default class Step extends Component {
     let slideOrQuestion
 
     if (progress.completedQuestionIds.indexOf(step.question.id) > -1) {
-      slideOrQuestion = (
-        <StepDone step={step} progress={progress}
-          onDone={this.done.bind(this)}
-          onNext={this.next.bind(this)} />
-      )
+      slideOrQuestion = <StepDone
+        step={step}
+        progress={progress}
+        onNext={this.next.bind(this)}
+      />
     }
     else if (slide) {
       slideOrQuestion = <div>
@@ -109,9 +98,10 @@ export default class Step extends Component {
 
     }
     else {
-      slideOrQuestion =
-        <Question question={step.question}
-          onSubmit={this.submit.bind(this)} />
+      slideOrQuestion = <Question
+        question={step.question}
+        onSubmit={this.submit.bind(this)}
+      />
     }
 
 
