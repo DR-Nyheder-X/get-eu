@@ -6,7 +6,9 @@
   "repository": "https://github.com/DR-Nyheder-X/get-eu.git",
   "scripts": {
     "start": "NODE_ENV=production node server/index.js",
-    "dev": "NODE_ENV=development ./node_modules/nodemon/bin/nodemon.js -w server -w views"
+    "dev": "NODE_ENV=development ./node_modules/nodemon/bin/nodemon.js -w server -w views",
+    "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js -p",
+    "test": "NODE_ENV=test bin/test"
   },
   "author": "Jacques Mourier",
   "license": "ISC",
@@ -36,6 +38,7 @@
     "babel-loader": "^5.3.2",
     "css-loader": "^0.21.0",
     "http-proxy": "^1.12.0",
+    "mocha": "^2.3.3",
     "node-sass": "^3.4.0",
     "nodemon": "^1.8.0",
     "sass-loader": "^3.1.1",
@@ -43,5 +46,8 @@
     "webpack": "^1.11.0",
     "webpack-dev-middleware": "^1.2.0",
     "webpack-hot-middleware": "^2.4.1"
+  },
+  "standard": {
+    "parser": "babel-eslint"
   }
 }

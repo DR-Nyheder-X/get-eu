@@ -1,15 +1,16 @@
 import React, { Component, PropTypes } from 'react'
 import { findDOMNode } from 'react-dom'
 import classname from 'classname'
-import '../scss/Question.scss'
 import Button from './Button'
+import cc from '../utils/cleanClick'
 
-export default class Answer extends Component {
+import '../scss/Question.scss'
+
+class Answer extends Component {
   static propTypes = {
     answer: PropTypes.object.isRequired,
     isCorrect: PropTypes.bool.isRequired,
-    isChecked: PropTypes.bool.isRequired,
-    onDone: PropTypes.func
+    isChecked: PropTypes.bool.isRequired
   }
 
   render () {
@@ -30,7 +31,8 @@ export default class Answer extends Component {
 
 export default class Question extends Component {
   static propTypes = {
-    question: PropTypes.object
+    question: PropTypes.object,
+    onSubmit: PropTypes.func
   }
 
   constructor (props) {
@@ -45,7 +47,7 @@ export default class Question extends Component {
   }
 
   render () {
-    const { question, onDone } = this.props
+    const { question, onSubmit } = this.props
     const correctAnswerSelected = this.state.checked === question.correct_answer
 
     return (
@@ -65,7 +67,7 @@ export default class Question extends Component {
           </ul>
         </form>
         <div className="Question-next">
-          <Button type="rightArrowAtRight" disabled={!correctAnswerSelected} onClick={onDone}>Videre</Button>
+          <Button type="rightArrowAtRight" disabled={!correctAnswerSelected} onClick={cc(onSubmit)}>Videre</Button>
         </div>
       </div>
     )

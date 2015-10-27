@@ -14,6 +14,7 @@ import Button from './Button'
 import StepDone from './StepDone'
 import Icon from './Icon'
 import { categoryProgress } from '../reducers/progress'
+import { whereToGo } from '../utils/whereToGo'
 
 import '../scss/Step.scss'
 
@@ -42,12 +43,12 @@ export default class Step extends Component {
     super(props)
 
     const category = find({ type: props.type })
-    const stepIndex = parseInt(props.step, 10)
-    const step = category.steps[stepIndex]
+    const stepId = parseInt(props.step, 10)
+    const step = _.find(category.steps, { id: stepId })
 
     this.state = {
       currentSlide: 0,
-      category, stepIndex, step
+      category, step
     }
   }
 
@@ -68,18 +69,8 @@ export default class Step extends Component {
   }
 
   submit () {
-    const { dispatch } = this.props
+    const { dispatch, progress } = this.props
     dispatch(completeQuestion(this.state.step.question))
-  }
-
-  done () {
-    const { history } = this.props
-    history.pushState('/test')
-  }
-
-  next () {
-    const { history } = this.props
-    history.pushState(`/test`)
   }
 
   render () {
@@ -90,11 +81,11 @@ export default class Step extends Component {
     let slideOrQuestion
 
     if (progress.completedQuestionIds.indexOf(step.question.id) > -1) {
-      slideOrQuestion = (
-        <StepDone step={step} progress={progress}
-          onDone={this.done.bind(this)}
-          onNext={this.next.bind(this)} />
-      )
+      slideOrQuestion = <StepDone
+        step={step}
+        progress={progress}
+        onNext={this.next.bind(this)}
+      />
     }
     else if (slide) {
       slideOrQuestion = <div>
@@ -107,14 +98,15 @@ export default class Step extends Component {
 
     }
     else {
-      slideOrQuestion =
-        <Question question={step.question}
-          onSubmit={this.submit.bind(this)} />
+      slideOrQuestion = <Question
+        question={step.question}
+        onSubmit={this.submit.bind(this)}
+      />
     }
 
 
     const abort = _ => {
-      this.props.history.pushState(null, '/test')
+      this.props.history.pushState(null, '/quiz')
     }
 
     const { percent } = categoryProgress(category, progress)
