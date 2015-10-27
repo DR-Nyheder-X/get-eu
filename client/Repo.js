@@ -26,6 +26,7 @@ function dummyStep () {
     text: 'I alle tilfælde. Med mindre Folketinget beslutter at afholde en folkeafstemning.'
   }]
   return {
+    id: nextId('step'),
     slides,
     question: {
       id: nextId('question'),
@@ -42,6 +43,11 @@ function dummySteps () {
 
 const repo: Repo = {
   categories: [{
+    id: nextId('category'),
+    title: 'EU generelt',
+    type: 'eu',
+    steps: dummySteps()
+  }, {
     id: nextId('category'),
     title: 'Flygtninge',
     type: 'migrants',
@@ -60,11 +66,6 @@ const repo: Repo = {
     id: nextId('category'),
     title: 'Erhverv',
     type: 'business',
-    steps: dummySteps()
-  }, {
-    id: nextId('category'),
-    title: 'EU generelt',
-    type: 'eu',
     steps: dummySteps()
   }, {
     id: nextId('category'),

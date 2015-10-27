@@ -5,11 +5,12 @@ import { Link } from 'react-router'
 import { Tiles, Tile } from './Tiles'
 import PageTitle, { PreHeading } from './PageTitle'
 import { categoryProgress } from '../reducers/progress'
+import { whereToGoInCategory } from '../utils/whereToGo'
 
 @connect(state => ({
   progress: state.progress
 }))
-export default class Test extends Component {
+export default class Quiz extends Component {
   static propTypes = {
     progress: PropTypes.object.isRequired
   }
@@ -24,24 +25,25 @@ export default class Test extends Component {
       return result
     }, { complete: [], incomplete: [] })
 
-    const tileElm = category => {
-      const done = categoryProgress(category, progress).percent == 100
+    const tileElm = (progress, category) => {
+      const goTo = whereToGoInCategory(progress, category)
+
       return (
-        <Link to={`/test/${category.type}`} key={category.id}>
+        <Link to={goTo} key={category.id}>
           <Tile category={category} progress={progress} />
         </Link>
       )
     }
 
     return (
-      <div className="Test">
+      <div className="Quiz">
         <PageTitle type="centered">
           <PreHeading>Test din viden om</PreHeading>
           <h1>retsforbeholdet</h1>
         </PageTitle>
         <Tiles>
-          {incomplete.map(tileElm)}
-          {complete.map(tileElm)}
+          {incomplete.map(c => tileElm(progress, c))}
+          {complete.map(c => tileElm(progress, c))}
         </Tiles>
       </div>
     )

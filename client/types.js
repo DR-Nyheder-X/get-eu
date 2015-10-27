@@ -33,5 +33,6 @@ export type Repo = {
 }
 
 export type Progress = {
-  completedQuestionIds: Array<number>
+  completedQuestionIds: Array<number>,
+  points: number
 }

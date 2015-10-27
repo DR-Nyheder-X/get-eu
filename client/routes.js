@@ -5,23 +5,20 @@ import App from './components/App'
 import Home from './components/Home'
 import Kitchensink from './components/Kitchensink'
 import NotFound from './components/NotFound'
-import Learn from './components/Learn'
-import Test from './components/Test'
+import Quiz from './components/Quiz'
 import Category from './components/Category'
 import Step from './components/Step'
+import Start from './components/Start'
 
 const routes = (
   <Route>
-    <Route path='/' component={App}>
-      <IndexRoute component={Test} />
+    <Route path='/'>
+      <IndexRoute component={Start} />
       <Route path='kitchensink' component={Kitchensink} />
-      <Route path='learn'>
-        <IndexRoute component={Learn} />
-      </Route>
-      <Route path='test'>
-        <IndexRoute component={Test} />
-        <Route path='/test/:type' component={Category} />
-        <Route path='/test/:type/:step' component={Step} />
+      <Route path='quiz' component={App}>
+        <IndexRoute component={Quiz} />
+        <Route path='/quiz/:type' component={Category} />
+        <Route path='/quiz/:type/:step' component={Step} />
       </Route>
       <Route path='*' component={NotFound} />
     </Route>

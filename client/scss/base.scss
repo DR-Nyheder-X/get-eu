@@ -1,7 +1,8 @@
-// Resetting browser styles and fixing cross-browser quirks. Based on
-// normalize.css.
-
 @import 'settings.scss';
+
+html, body {
+  height: 100%;
+}
 
 html {
   font-family: $fontFamily;
