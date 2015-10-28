@@ -9,7 +9,6 @@ import Progressbar from './Progressbar'
 import Copy from './Copy'
 import MainNavigation from './MainNavigation'
 import SectionTitle from './SectionTitle'
-import Header from './Header'
 import PointLogEntry from './PointLogEntry'
 import CardNavigation from './CardNavigation'
 import { Tiles, Tile } from './Tiles'
@@ -61,9 +60,6 @@ export default class Kitchensink extends Component {
         <Progressbar percent={80} type='dimmed' />
         <Progressbar percent={40} type='small' />
         <Progressbar percent={70} type='small dimmed' />
-
-        <SectionTitle>Header</SectionTitle>
-        <Header />
 
         <SectionTitle>Main navigation</SectionTitle>
         <MainNavigation currentPath='/learn' points={666} />
