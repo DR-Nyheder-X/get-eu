@@ -3,7 +3,6 @@ import classname from 'classname'
 import { Link } from 'react-router'
 import { find } from 'lodash'
 import Counter from './Counter'
-import { whereToGo } from '../utils/whereToGo'
 
 import '../scss/MainNavigation.scss'
 
