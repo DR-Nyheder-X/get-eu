@@ -11,7 +11,7 @@ import { connect } from 'react-redux'
   type: state.router.params.type,
   progress: state.progress
 }))
-export default class StepDone extends Component {
+export default class CategoryDone extends Component {
   static propTypes = {
     type: PropTypes.string.isRequired,
     progress: PropTypes.object.isRequired

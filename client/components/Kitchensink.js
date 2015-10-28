@@ -83,14 +83,11 @@ export default class Kitchensink extends Component {
 
         <SectionTitle>Category Headers</SectionTitle>
         {categories.map(c => (
-          <CategoryHeader category={c} />
+          <CategoryHeader key={c.id} category={c} />
         ))}
 
         <SectionTitle>Start screen</SectionTitle>
         <Start disableRedirect />
-
-        <SectionTitle>Category is done</SectionTitle>
-        <CategoryDone points={200} category='Flygtninge' />
       </div>
     )
   }
