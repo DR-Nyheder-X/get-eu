@@ -55,6 +55,9 @@
     "webpack-hot-middleware": "^2.4.1"
   },
   "standard": {
-    "parser": "babel-eslint"
+    "parser": "babel-eslint",
+    "ignore": [
+      "public/"
+    ]
   }
 }
