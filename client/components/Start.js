@@ -13,14 +13,15 @@ export default class Start extends Component {
   static propTypes = {
     className: PropTypes.string,
     progress: PropTypes.object,
-    replaceState: PropTypes.func
+    replaceState: PropTypes.func,
+    disableRedirect: PropTypes.bool
   }
 
   componentDidMount () {
-    const { progress, replaceState } = this.props
+    const { progress, replaceState, disableRedirect } = this.props
 
     // Redirect to next relevant step
-    if (progress.completedStepIds.length > 0) {
+    if (progress.completedStepIds.length > 0 && !disableRedirect) {
       replaceState(null, whereToGo(progress))
     }
   }

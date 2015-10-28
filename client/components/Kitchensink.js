@@ -62,7 +62,7 @@ export default class Kitchensink extends Component {
         <Progressbar percent={70} type='small dimmed' />
 
         <SectionTitle>Main navigation</SectionTitle>
-        <MainNavigation currentPath='/learn' points={666} />
+        <MainNavigation currentPath='/learn' progress={{points: 666}} />
 
         <SectionTitle>Point log entry</SectionTitle>
         <PointLogEntry type='1' points='10'>For at svare rigtigt på et nemt spørgsmål om flygtninge.</PointLogEntry>
@@ -87,7 +87,7 @@ export default class Kitchensink extends Component {
         ))}
 
         <SectionTitle>Start screen</SectionTitle>
-        <Start />
+        <Start disableRedirect />
 
         <SectionTitle>Category is done</SectionTitle>
         <CategoryDone points={200} category='Flygtninge' />
