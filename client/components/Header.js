@@ -1,7 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 import classname from 'classname'
-import formatTypeClasses from '../utils/formatTypeClasses'
-import Icon from './Icon'
 import { Link } from 'react-router'
 
 import '../scss/Header.scss'
@@ -18,7 +16,7 @@ export default class Header extends Component {
 
     return (
       <header className={cls} {...this.props}>
-        <Link to='/' className="Header-logo">DR Forstå Forbeholdet</Link>
+        <Link to='/' className='Header-logo'>DR Forstå Forbeholdet</Link>
       </header>
     )
   }

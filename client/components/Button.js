@@ -39,7 +39,7 @@ export default class Button extends Component {
         {contents}
       </Link>
     } else {
-      return <a href='' className={cls} {...this.props}>
+      return <a className={cls} {...this.props}>
         {contents}
       </a>
     }

@@ -1,10 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import classname from 'classname'
-import Icon from './Icon'
-import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import { find } from 'lodash'
 import Counter from './Counter'
+import { whereToGo } from '../utils/whereToGo'
 
 import '../scss/MainNavigation.scss'
 
@@ -20,25 +19,28 @@ const tabCls = (paths, currentPath, ...classes) => {
 export default class MainNavigation extends Component {
   static propTypes = {
     currentPath: PropTypes.string.isRequired,
-    points: PropTypes.number.isRequired
+    progress: PropTypes.object.isRequired
   }
 
   render () {
-    const { currentPath } = this.props
+    const { currentPath, progress } = this.props
+    const { points } = progress
+    const quizTo = whereToGo(progress)
+
+    const quizCls = tabCls([/^\/quiz/, /^\/$/],
+                           currentPath, 'MainNavigation-tabQuiz')
+    const pointsCls = tabCls(/^\/points/,
+                             currentPath, 'MainNavigation-tabPoints')
 
     return (
       <nav className='MainNavigation'>
-        <div className={tabCls(/^\/learn/, currentPath, "MainNavigation-tabWiki")}>
-          <Link to='/learn'>Lær</Link>
+        <div className={quizCls}>
+          <Link to={quizTo}>Lær</Link>
         </div>
-        <div className={tabCls([/^\/test/, /^\/$/], currentPath, "MainNavigation-tabQuiz")}>
-          <Link to='/test'>Test</Link>
-        </div>
-        <div className="MainNavigation-tab MainNavigation-tab--pill">
-          <a href="">
-            <Icon type="coins" />
-            <Counter begin={0} end={this.props.points} time={3000} /> point
-          </a>
+        <div className={pointsCls}>
+          <Link to='/points'>
+            <Counter begin={0} end={points} time={3000} /> point
+          </Link>
         </div>
       </nav>
     )

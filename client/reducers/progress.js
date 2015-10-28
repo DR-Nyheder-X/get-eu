@@ -1,23 +1,23 @@
 /* @flow weak */
 
 import { Progress } from '../types'
-import { COMPLETE_QUESTION, RESET_PROGRESS } from '../actions'
+import { COMPLETE_STEP, RESET_PROGRESS } from '../actions'
 import { union } from 'lodash'
 
 const initialState: Progress = {
-  completedQuestionIds: [],
+  completedStepIds: [],
   points: calculatePoints([])
 }
 
-function calculatePoints (completedQuestionIds) {
-  return completedQuestionIds.length * 10
+function calculatePoints (completedStepIds) {
+  return completedStepIds.length * 10
 }
 
 export function categoryProgress (category, progress) {
   const total = category.steps.length
   const done = category.steps.reduce((total, s) => {
     const completed =
-      progress.completedQuestionIds.indexOf(s.question.id) > -1
+      progress.completedStepIds.indexOf(s.id) > -1
     return completed ? total + 1 : total
   }, 0)
   const percent = done / total * 100.0
@@ -27,13 +27,13 @@ export function categoryProgress (category, progress) {
 
 export default function progressReducer (state = initialState, action) {
   switch (action.type) {
-    case COMPLETE_QUESTION: {
-      const completedQuestionIds =
-        union(state.completedQuestionIds, [action.question.id])
-      const points = calculatePoints(completedQuestionIds)
+    case COMPLETE_STEP: {
+      const completedStepIds =
+        union(state.completedStepIds, [action.step.id])
+      const points = calculatePoints(completedStepIds)
       return {
         ...state,
-        completedQuestionIds,
+        completedStepIds,
         points
       }
     }
@@ -48,4 +48,3 @@ export default function progressReducer (state = initialState, action) {
     }
   }
 }
-

@@ -1,3 +1,4 @@
+/* globals __DEVELOPMENT */
 require('babel-core/polyfill')
 
 import React, { Component } from 'react'
@@ -14,9 +15,22 @@ const store = createFinalStore()
 
 class Root extends Component {
   render () {
+    let contents
+
+    if (__DEVELOPMENT) {
+      const DevTools = require('./DevTools')
+
+      contents = <div>
+        <DevTools />
+        <ReduxRouter />
+      </div>
+    } else {
+      contents = <ReduxRouter />
+    }
+
     return (
       <Provider store={store}>
-        <ReduxRouter />
+        {contents}
       </Provider>
     )
   }

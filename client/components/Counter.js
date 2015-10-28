@@ -1,35 +1,40 @@
 var React = require('react')
-var ReactDOM = require('react-dom')
 var raf = require('raf')
 var ease = require('ease-component')
 
 var Counter = React.createClass({
-  getInitialState: function() {
+  propTypes: {
+    begin: React.PropTypes.number,
+    end: React.PropTypes.number,
+    time: React.PropTypes.number,
+    easing: React.PropTypes.string
+  },
+
+  getInitialState: function () {
     return { value: this.props.begin }
   },
 
-  componentDidMount: function() {
+  componentDidMount: function () {
     this.start = Date.now()
     raf(this.animate)
   },
 
   componentWillReceiveProps (a, b) {
     if (this.state.value === a.end || !this.stop) return
-    console.log(this.state.value, a.end)
 
     this.start = Date.now()
     this.stop = false
     raf(this.animate)
   },
 
-  animate: function() {
+  animate: function () {
     if (this.stop) return
 
     raf(this.animate)
     this.draw()
   },
 
-  draw: function() {
+  draw: function () {
     if (!this.isMounted()) return
 
     var time = this.props.time
@@ -48,7 +53,7 @@ var Counter = React.createClass({
     this.setState({ value: val })
   },
 
-  render: function() {
+  render: function () {
     return <span className='counter'>{Math.round(this.state.value)}</span>
   }
 })

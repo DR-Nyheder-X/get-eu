@@ -1,3 +1,4 @@
+import { describe, it } from 'mocha'
 import assert from 'assert'
 
 describe('The truth', () => {
@@ -5,4 +6,3 @@ describe('The truth', () => {
     assert(true)
   })
 })
-

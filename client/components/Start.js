@@ -1,28 +1,28 @@
 import React, { Component, PropTypes } from 'react'
-import formatTypeClasses from '../utils/formatTypeClasses'
 import Header from './Header'
 import Button from './Button'
-import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import { whereToGo } from '../utils/whereToGo'
+import { replaceState } from 'redux-router'
 
 import '../scss/Start.scss'
 
-@connect(state => ({ progress: state.progress }))
+@connect(state => ({
+  progress: state.progress
+}), { replaceState })
 export default class Start extends Component {
-  static get propTypes () {
-    return {
-      className: PropTypes.string,
-      progress: PropTypes.object
-    }
+  static propTypes = {
+    className: PropTypes.string,
+    progress: PropTypes.object,
+    replaceState: PropTypes.func
   }
 
   componentDidMount () {
-    const { progress, history } = this.props
+    const { progress, replaceState } = this.props
 
     // Redirect to next relevant step
-    if (progress.completedQuestionIds.length > 0) {
-      history.replaceState(null, whereToGo(progress))
+    if (progress.completedStepIds.length > 0) {
+      replaceState(null, whereToGo(progress))
     }
   }
 

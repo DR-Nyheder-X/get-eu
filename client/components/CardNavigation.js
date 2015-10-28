@@ -29,14 +29,14 @@ export default class CardNavigation extends Component {
 
     return (
       <nav className='CardNavigation'>
-        <a href="" onClick={canPrev ? cc(onPrev) : () => {}}
+        <a href='' onClick={canPrev ? cc(onPrev) : () => {}}
           className={prevCls}>Forrige</a>
-        <a href="" onClick={canNext ? cc(onNext) : () => {}}
+        <a href='' onClick={canNext ? cc(onNext) : () => {}}
           className={nextCls}>Næste</a>
 
         <ul>
           {times(total, i => {
-            const cls = classname({ active: page === i})
+            const cls = classname({ active: page === i })
             return <li className={cls} key={i}></li>
           })}
         </ul>

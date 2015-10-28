@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 
 import Repo from '../Repo'
 import { connect } from 'react-redux'
@@ -19,6 +19,10 @@ import CategoryDone from './CategoryDone'
 
 @connect(state => ({ progress: state.progress }))
 export default class Kitchensink extends Component {
+  static propTypes = {
+    progress: PropTypes.object.isRequired
+  }
+
   render () {
     const { progress } = this.props
     const categories = Repo.categories

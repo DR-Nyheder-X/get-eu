@@ -1,26 +1,60 @@
 import React, { Component, PropTypes } from 'react'
-import classname from 'classname'
-import formatTypeClasses from '../utils/formatTypeClasses'
-import Button from './Button'
+import PageTitle, { PreHeading } from './PageTitle'
+import { Tiles, Tile } from './Tiles'
+import Repo, { where } from '../Repo'
+import { nextStep } from '../utils/whereToGo'
+import { Link } from 'react-router'
+import { whereToGoInCategory } from '../utils/whereToGo'
+import { connect } from 'react-redux'
 
-import '../scss/CategoryDone.scss'
+@connect(state => ({
+  type: state.router.params.type,
+  progress: state.progress
+}))
+export default class StepDone extends Component {
+  static propTypes = {
+    type: PropTypes.string.isRequired,
+    progress: PropTypes.object.isRequired
+  }
 
-export default class CategoryDone extends Component {
-  static get propTypes () {
-    return {
-      points: PropTypes.number.isRequired,
-      category: PropTypes.string.isRequired
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      category: where({ type: props.type })
     }
   }
+
   render () {
-    const points = this.props.points
-    const category = this.props.category
+    const { progress } = this.props
+
+    const nextCategory = nextStep(progress).category
+
+    const rest = Repo.categories
+    .filter(c => c.id !== nextCategory.id)
+    .sort(c => c.id)
+
+    const categoryTileWithProgress = progress => category => {
+      const to = whereToGoInCategory(progress, category)
+      return <Link key={category.id} to={to}>
+        <Tile category={category} progress={progress} />
+      </Link>
+    }
 
     return (
-      <div className='CategoryDone' {...this.props}>
-        <h1>Godt gået!</h1>
-        <p>Du fik <span className='CategoryDone-inlinePoints'><i></i> {points} point</span> for at svare rigtigt på alle spørgsmål omkring {category}.</p>
-        <Button type="leftArrowAtLeft">Til oversigten</Button>
+      <div>
+        <PageTitle type='small centered'>
+          <h1>Godt gået!</h1>
+          <PreHeading>NU ER DU (NÆSTEN) EKSPERT INDENFOR</PreHeading>
+        </PageTitle>
+        <ul>
+          <li>Blah</li>
+        </ul>
+        <PageTitle>Næste</PageTitle>
+        {categoryTileWithProgress(progress)(nextCategory)}
+        <Tiles>
+          {rest.map(categoryTileWithProgress(progress))}
+        </Tiles>
       </div>
     )
   }

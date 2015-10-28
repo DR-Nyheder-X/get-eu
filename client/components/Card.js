@@ -7,7 +7,6 @@ export default class Card extends Component {
   static propTypes = {
     text: PropTypes.string.isRequired,
     type: PropTypes.string,
-    children: PropTypes.node,
     className: PropTypes.string
   }
 
@@ -16,8 +15,8 @@ export default class Card extends Component {
     const cls = classname('Card', this.props.className, type)
     return (
       <div className={cls} {...this.props}>
-        <div className="Card-inner">
-          <p className="Card-text">
+        <div className='Card-inner'>
+          <p className='Card-text'>
             {this.props.text}
           </p>
         </div>

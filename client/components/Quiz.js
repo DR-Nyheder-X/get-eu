@@ -20,7 +20,7 @@ export default class Quiz extends Component {
     const { progress } = this.props
 
     const { complete, incomplete } = categories.reduce((result, c) => {
-      const done = categoryProgress(c, progress).percent == 100
+      const done = categoryProgress(c, progress).percent === 100
       result[done ? 'complete' : 'incomplete'].push(c)
       return result
     }, { complete: [], incomplete: [] })
@@ -36,8 +36,8 @@ export default class Quiz extends Component {
     }
 
     return (
-      <div className="Quiz">
-        <PageTitle type="centered">
+      <div className='Quiz'>
+        <PageTitle type='centered'>
           <PreHeading>Test din viden om</PreHeading>
           <h1>retsforbeholdet</h1>
         </PageTitle>
@@ -48,10 +48,4 @@ export default class Quiz extends Component {
       </div>
     )
   }
-}
-
-function categoryElm (category) {
-  return (
-    <div key={category.title}>{category.title}</div>
-  )
 }
