@@ -37,7 +37,7 @@ class Root extends Component {
 }
 
 const component = <Root />
-const dest = document.getElementById('root')
+const dest = document.querySelector('.quiz')
 
 render(component, dest)
 

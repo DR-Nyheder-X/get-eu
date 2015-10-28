@@ -6,7 +6,7 @@
   text-transform: uppercase;
   font-size: 16px;
   letter-spacing: .015em;
-  color: $white;
+  color: $white !important;
   background-color: $darkerPurple;
   display: inline-block;
   border-radius: 2px;
@@ -26,7 +26,7 @@
 .Button--disabled,
 .Button[disabled] {
   background-color: $darkTurquoise;
-  color: $darkestTurquoise;
+  color: $darkestTurquoise !important;
   cursor: default;
 
   &:hover,
@@ -39,7 +39,7 @@
 
 .Button--red {
   background-color: $red;
-  color: $darkerPurple;
+  color: $darkerPurple !important;
 
   &:hover,
   &:active {
@@ -50,7 +50,7 @@
 
 .Button--yellow {
   background-color: $yellow;
-  color: $darkerPurple;
+  color: $darkerPurple !important;
 
   &:hover,
   &:active {
@@ -61,7 +61,7 @@
 
 .Button--light {
   background-color: $lightTurquoise;
-  color: $darkerPurple;
+  color: $darkerPurple !important;
 
   &:hover,
   &:active {
