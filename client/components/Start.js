@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import Header from './Header'
 import Button from './Button'
 import { connect } from 'react-redux'
 import { whereToGo } from '../utils/whereToGo'
@@ -31,13 +30,9 @@ export default class Start extends Component {
 
     return (
       <div className='Start'>
-        <Header />
         <h1>
           Bliv klar til<br />afstemningen om<br /><em>retsforbeholdet</em>
         </h1>
-        <h2>
-          Tag et lynkursus i lovområderne<br />og test din viden
-        </h2>
         <div className='Start-baseballs'></div>
         <div className='Start-cta'>
           <Button to={goTo} type='yellow darkShadow fullWidth'>
