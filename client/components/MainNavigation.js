@@ -25,7 +25,6 @@ export default class MainNavigation extends Component {
   render () {
     const { currentPath, progress } = this.props
     const { points } = progress
-    const quizTo = whereToGo(progress)
 
     const quizCls = tabCls([/^\/quiz/, /^\/$/],
                            currentPath, 'MainNavigation-tabQuiz')
@@ -35,7 +34,7 @@ export default class MainNavigation extends Component {
     return (
       <nav className='MainNavigation'>
         <div className={quizCls}>
-          <Link to={quizTo}>Lær</Link>
+          <Link to='/quiz'>Lær</Link>
         </div>
         <div className={pointsCls}>
           <Link to='/points'>

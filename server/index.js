@@ -15,7 +15,8 @@ if (!isProduction) {
   useDev(app)
 }
 
-app.get('*', (req, res) => {
+app.get('/', (req, res) => res.redirect('/nyheder/politik/eu15/quiz'))
+app.get('/nyheder/politik/eu15/quiz', (req, res) => {
   res.render('index', { isProduction })
 })
 

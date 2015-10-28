@@ -5,7 +5,7 @@ import React from 'react'
 /* eslint-enable no-unused-vars */
 import { createStore, applyMiddleware, compose } from 'redux'
 import { reduxReactRouter } from 'redux-router'
-import { createHistory } from 'history'
+import createHistory from 'history/lib/createHashHistory'
 import thunk from 'redux-thunk'
 import persistState from 'redux-localstorage'
 import routes from './routes'
