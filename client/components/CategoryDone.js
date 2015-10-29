@@ -56,8 +56,8 @@ export default class CategoryDone extends Component {
           <Term>Dublin III</Term>
           <Term>Rumænske roer</Term>
         </ul>
-        <div className="CategoryDone-next">Næste<br />udfordring</div>
-        <div className="CategoryDone-nextCategory">
+        <div className='CategoryDone-next'>Næste<br />udfordring</div>
+        <div className='CategoryDone-nextCategory'>
           {categoryTileWithProgress(progress)(nextCategory)}
         </div>
         <Tiles>

@@ -14,7 +14,6 @@ import CardNavigation from './CardNavigation'
 import { Tiles, Tile } from './Tiles'
 import CategoryHeader from './CategoryHeader'
 import Start from './Start'
-import CategoryDone from './CategoryDone'
 
 @connect(state => ({ progress: state.progress }))
 export default class Kitchensink extends Component {
