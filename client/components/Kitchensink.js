@@ -15,6 +15,7 @@ import { Tiles, Tile } from './Tiles'
 import CategoryHeader from './CategoryHeader'
 import Start from './Start'
 import CategoryDone from './CategoryDone'
+import Done from './Done'
 
 @connect(state => ({ progress: state.progress }))
 export default class Kitchensink extends Component {
@@ -88,6 +89,9 @@ export default class Kitchensink extends Component {
 
         <SectionTitle>Start screen</SectionTitle>
         <Start disableRedirect />
+
+        <SectionTitle>The end</SectionTitle>
+        <Done />
       </div>
     )
   }
