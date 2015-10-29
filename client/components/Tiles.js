@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import classname from 'classname'
 import formatTypeClasses from '../utils/formatTypeClasses'
-import Progressbar from './Progressbar'
 import { categoryProgress } from '../reducers/progress'
 
 import '../scss/Tiles.scss'
@@ -27,8 +26,6 @@ export class Tile extends Component {
         <div className='Tile-inner'>
           <i></i>
           <h3>{category.title}</h3>
-          <h4>{done}/{total}</h4>
-          <Progressbar percent={percent} type='small dimmed' />
         </div>
       </div>
     )

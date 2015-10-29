@@ -2,41 +2,69 @@
 @import 'mixins.scss';
 
 .CategoryDone {
+  padding-bottom: 1em;
+
+  .PageTitle {
+    margin-bottom: .4em;
+  }
+
+}//.CategoryDone
+
+.CategoryDone-terms {
   @include pagePadding;
+  margin-right: auto;
+  margin-bottom: 1.5em;
+  margin-left: auto;
   text-align: center;
-  padding-bottom: 20px;
+  max-width: 375px;
+}
 
-  h1 {
-    font-size: 28px;
-    font-family: $mediumFontFamily;
-    margin-bottom: .1em;
-  }
+.CategoryDone-next {
+  text-align: center;
+  font-size: 12px;
+  font-family: $gibsonRegular;
+  color: $purple;
+  line-height: $lineHeight*.75;
+  margin-bottom: 1.5em;
 
-  p {
-    max-width:300px;
-    margin: 0 auto;
-    margin-bottom: 3em;
-  }
-
-  .Button {
-    box-shadow: 2px 2px 0 0 $darkTurquoise;
+  &:after {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 29px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAABXCAMAAACHkWPyAAAATlBMVEUAAABVVVVAYJ9VZplVap9aaZ5XbZ1YbZ9aa6BYbKBabZ9ZbaFZbKJba6FabKFbbKFabKFbbKJabaFabKJbbKFabKJbbKFabKIBHGhbbaLPBw9WAAAAGHRSTlMAAwgPGCIvPT5OYHWJip6xwdDc3efw9/yeY7B1AAAA8ElEQVR42u3TSQ7CMBBE0cpM4sxk6vtfFAQSYrBVdoLY0G9dqt2H1eYAG734wYU46IVe6IVe6IVe6IVe6MV/Xmw24mAd68V3L2o5qAZaOaQFEHVyQBfhKu5ltz7GTTLITkMC3KWj7DKmeMgm2WHK8CSfJdic40WxSKClwJtylSBriQ+VBKlgYSSAgVUdEoZD6x+GS9R5h+EU975huCWDbxhu6egRBpFNNAwqn1kYXLGwMLhyZWFwFQ2DMzQMrhGLBkFa7zBoLjwMlgsPg+RCwuDSszycSRgkFxIGy4WFwZ2WWxgnECQXHgbPpcJBxoC4AGVEAl7anFRbAAAAAElFTkSuQmCC);
+    background-size: 22px;
+    background-repeat: no-repeat;
+    margin: .75em auto 0;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-iteration-count: 3;
+    animation-name: bounce;
+    transform-origin: center bottom;
   }
 }
 
-.CategoryDone-inlinePoints {
-  margin: 0 .2em;
-  font-family: $mediumFontFamily;
-  text-transform: uppercase;
-  color: $darkerPurple;
-
-  i {
-    text-indent: -999em;
-    display: inline-block;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAAqCAMAAAAzmnPFAAABzlBMVEUAAAC/QEC/gEDMZjPMZma/alXPYFDylHnRaFHQXkzjhGhHxr9FyMH4lHnlfGL5j3bQa1P5lH3YdljQbVDSa1HSa1L7lHtIxsZHx8PPa1X7lHpIx8RHyMXRbFPRbVVIycRKx8VJyMbRbFT7ln3RblX7lXz7lX1IyMTRbVXSblT8lXzRbFTSblXmgGhJyMXSbVXzjHPRbVb8lX38lnxJyMX8lX1JycZJyMVSwr7SblX7lHrSblX9ln1KyMX9ln3SbVZJycXSblX9lnxKyMZKyMX9lnz6knnRbVXSblXogmnZdVzSblX9ln3SblX4kHjrhWzzjHPOcVncd179lX39ln1JycbSbVXUb1fngmj6k3lKycZMx8NQxMBSw75usKdxrqR2q6GNm46SmIqWlYagj36ijX2oiXe2gGzEdmDIdF3Kc1zNcVnOcFjRblbSblbTblbTb1fUb1fUcFjVcFjWcVnXc1vYc1vZdFzadl3cd1/ceF/deGDeeWHeemHgemLge2Lhe2PifWXkf2bngWnog2rqhGvqhGzth27tiG/wiXHwinHxi3Lyi3PyjHP0jnX1j3b2kHf3kHf4knn5k3r6k3r6lHv7lHv7lXz8lXz9ln0JzYoEAAAAWnRSTlMABAQFBQwQExYbGyQlJicpKys0Njk+PkNERUVOT1NUcXJ0f4+QkJGUoqOmp66ur6+vsrKzub7Aw8XFyMzM193i5ubm6O7w8vT19ff5+fv7/Pz9/f39/v7+/v7aeFcdAAACQUlEQVR4AZ3U+VsSYRAH8JVI7EgjzYruA0u6Ia2UsiiszNTSqMiKyFKzpqTDkGo7CEGTCkh3/tuWQdj22JeX/fz07vP4dZiZd1dQsbvcXn+gP+D37nfZhVq1eoKoCHpaa0o7fajlc3KnbW3DqDfitvHFHR1orMvBE99wHs30NnFUp7iJgcaqvXcgy1CLwNaGbIPN7MUNI5vU18DK+7Ca+Z46xq3D6uLt5nkPRz4d2mQWtwc58gW4dWKtcd6FPBKweO9ovVHejTxS8BmlazsN8l7kkYHXEuLdffq8H3lkARYQJVH/DwLIIwfwDRHzd3Qt9COPZYBPKEterbda/wPKlqaPWO3/LR3E0Bpr84dXdJiD41b2/6NcPws3Vlu6f9Q/DWKXlftfmj8t4pCF9w9K+6f63RbefwBYKC/iYu3fHwCISSvzh+uavHME2aQZAPiCRKT6tX1/UyBbxNL9U/dPbF3I8hNkH5Ekgeav4ehlxP+8AdkvOudjoN0/aRowj7+HyvIkEQBunjl2cPf2dYJK45DZj6fqs6XhfwdZNEwun9qzXlC0DEpGk09B0bs8PVB88gHFSecWoaK5b16/95lS/Df1LoLsZST8n9t7hYqGnni6gIpCOg5ktlh9KRmDosdhlQuCoq49BIlUJptbzmUzqQSs+Po3l50Tp4GqU9yoPtl4FpgmI+p451ZBY/PhK6B4/vRRdArKpqLK6JT5a63aduBk98SLifFnTx7el/9uNDI2Xnwci4xS7tK50/L+d5T3/w//n6iNehBbXwAAAABJRU5ErkJggg==);
-    width: 21px;
-    height: 14px;
-    background-size: 21px;
-    position: relative;
-    bottom: -1px;
+@keyframes bounce {
+  from, 20%, 53%, 80%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transform: translate3d(0,0,0);
   }
+
+  40%, 43% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -8px, 0);
+  }
+
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -7px, 0);
+  }
+
+  90% {
+    transform: translate3d(0,-3px,0);
+  }
+}
+
+.CategoryDone-nextCategory {
+  @include pagePadding;
 }

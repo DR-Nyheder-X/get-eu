@@ -1,0 +1,13 @@
+@import 'settings.scss';
+@import 'mixins.scss';
+
+.Term {
+  font-family: $georgia;
+  font-size: 12px;
+  border: 1px solid $darkerPurple;
+  display: inline-block;
+  padding: .35em .6em;
+  margin: 0 3px 3px 0;
+  border-radius: 2px;
+  text-align: center;
+}
