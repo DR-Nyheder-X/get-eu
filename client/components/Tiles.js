@@ -9,17 +9,18 @@ import '../scss/Tile.scss'
 export class Tile extends Component {
   static propTypes = {
     category: PropTypes.object.isRequired,
-    progress: PropTypes.object.isRequired
+    progress: PropTypes.object.isRequired,
+    type: PropTypes.string
   }
 
   render () {
-    const { category, progress } = this.props
-    const typeClasses = formatTypeClasses('Tile', category.type)
+    const { category, progress, type } = this.props
+    const typeClasses = formatTypeClasses('Tile', type)
     const { percent } =
       categoryProgress(category, progress)
     const cls = classname('Tile', typeClasses, {
       'Tile--completed': percent === 100
-    })
+    }, `Tile--${category.type}`)
 
     return (
       <div className={cls}>

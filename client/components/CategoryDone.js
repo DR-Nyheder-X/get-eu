@@ -37,10 +37,10 @@ export default class CategoryDone extends Component {
     .filter(c => c.id !== nextCategory.id)
     .sort(c => c.id)
 
-    const categoryTileWithProgress = progress => category => {
+    const categoryTileWithProgress = (progress, cls) => category => {
       const to = whereToGoInCategory(progress, category)
       return <Link key={category.id} to={to}>
-        <Tile category={category} progress={progress} />
+        <Tile category={category} progress={progress} type={cls} />
       </Link>
     }
 
@@ -61,7 +61,7 @@ export default class CategoryDone extends Component {
           {categoryTileWithProgress(progress)(nextCategory)}
         </div>
         <Tiles>
-          {rest.map(categoryTileWithProgress(progress))}
+          {rest.map(categoryTileWithProgress(progress, 'small'))}
         </Tiles>
       </div>
     )
