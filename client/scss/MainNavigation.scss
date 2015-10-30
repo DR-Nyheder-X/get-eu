@@ -62,6 +62,10 @@ $MainNavigationHeight: 44px;
   }
 }
 
+.MainNavigation-tabPoints.MainNavigation-tab--active a {
+  background: #fff;
+}
+
 // Quiz
 .MainNavigation-tabQuiz a {
   border-radius: 0;

@@ -66,11 +66,11 @@ export default class Kitchensink extends Component {
         <MainNavigation currentPath='/learn' progress={{points: 666}} />
 
         <SectionTitle>Point log entry</SectionTitle>
-        <PointLogEntry type='1' points='10'>For at svare rigtigt på et nemt spørgsmål om flygtninge.</PointLogEntry>
-        <PointLogEntry type='2' points='20'>For at svare rigtigt på et svært spørgsmål om familie.</PointLogEntry>
-        <PointLogEntry type='3' points='30'>For at svare rigtigt på et nemt spørgsmål om flygtninge.</PointLogEntry>
-        <PointLogEntry type='4' points='40'>For at svare rigtigt på et nemt spørgsmål om flygtninge.</PointLogEntry>
-        <PointLogEntry type='5' points='50'>For at gennemføre testen for erhverv.</PointLogEntry>
+        <PointLogEntry type='1' points='10'>for at lære om...</PointLogEntry>
+        <PointLogEntry type='2' points='20'>for at lære om...</PointLogEntry>
+        <PointLogEntry type='3' points='30'>for at lære om...</PointLogEntry>
+        <PointLogEntry type='4' points='40'>for at lære om...</PointLogEntry>
+        <PointLogEntry type='5' points='50'>for at lære alt om Erhverv.</PointLogEntry>
 
         <SectionTitle>Card navigation</SectionTitle>
         <CardNavigation page={2} total={3} />
