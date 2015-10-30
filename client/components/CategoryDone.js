@@ -6,6 +6,9 @@ import { nextStep } from '../utils/whereToGo'
 import { Link } from 'react-router'
 import { whereToGoInCategory } from '../utils/whereToGo'
 import { connect } from 'react-redux'
+import Term from './Term'
+
+import '../scss/CategoryDone.scss'
 
 @connect(state => ({
   type: state.router.params.type,
@@ -34,26 +37,31 @@ export default class CategoryDone extends Component {
     .filter(c => c.id !== nextCategory.id)
     .sort(c => c.id)
 
-    const categoryTileWithProgress = progress => category => {
+    const categoryTileWithProgress = (progress, cls) => category => {
       const to = whereToGoInCategory(progress, category)
       return <Link key={category.id} to={to}>
-        <Tile category={category} progress={progress} />
+        <Tile category={category} progress={progress} type={cls} />
       </Link>
     }
 
     return (
-      <div>
-        <PageTitle type='small centered'>
+      <div className='CategoryDone'>
+        <PageTitle type='small centered shadow'>
           <h1>Godt gået!</h1>
-          <PreHeading>NU ER DU (NÆSTEN) EKSPERT INDENFOR</PreHeading>
+          <PreHeading>Nu er du (næsten) ekspert indenfor</PreHeading>
         </PageTitle>
-        <ul>
-          <li>Blah</li>
+        <ul className='CategoryDone-terms'>
+          <Term>Lovgivnings-halløj</Term>
+          <Term>Sandalforordning</Term>
+          <Term>Dublin III</Term>
+          <Term>Rumænske roer</Term>
         </ul>
-        <PageTitle>Næste</PageTitle>
-        {categoryTileWithProgress(progress)(nextCategory)}
+        <div className='CategoryDone-next'>Næste<br />udfordring</div>
+        <div className='CategoryDone-nextCategory'>
+          {categoryTileWithProgress(progress)(nextCategory)}
+        </div>
         <Tiles>
-          {rest.map(categoryTileWithProgress(progress))}
+          {rest.map(categoryTileWithProgress(progress, 'small'))}
         </Tiles>
       </div>
     )
