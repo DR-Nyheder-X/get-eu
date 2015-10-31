@@ -17,6 +17,8 @@ import Start from './Start'
 import CategoryDone from './CategoryDone'
 import Done from './Done'
 import ZeroPointsMessage from './ZeroPointsMessage'
+import Deck from './Deck'
+import Card from './Card'
 
 import '../scss/Kitchensink.scss'
 
@@ -98,6 +100,9 @@ export default class Kitchensink extends Component {
 
         <SectionTitle>The end</SectionTitle>
         <Done />
+
+        <SectionTitle>Deck</SectionTitle>
+        <Deck />
       </div>
     )
   }
