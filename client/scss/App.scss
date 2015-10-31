@@ -3,11 +3,14 @@
 @import 'fonts.scss';
 @import 'base.scss';
 
-.App {
-  background-color: $turquoise;
-}
-
 .AppWrapper,
 .AppWrapper > div {
   height: 100%;
+}
+
+.App {
+  background-color: $turquoise;
+  min-height: 600px;
+  position: relative;
+  transition: min-height .2s ease;
 }

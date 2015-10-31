@@ -6,20 +6,32 @@
 .CategoryHeader {
   @include pagePadding;
   position: relative;
-  margin-top: 2em;
-  margin-bottom: 2.2em;
-  padding: 0 20px;
+  margin-bottom: 1.5em;
+  padding: .7em 20px 1em;
 
   h2 {
-    font-size: 28px;
-    font-family: $mediumFontFamily;
+    font-size: 20px;
+    font-family: $gibsonBold;
     text-transform: uppercase;
     position: relative;
     padding-left: 64px;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAABFCAMAAAArU9sbAAAA/1BMVEUAAABt29tg399q1dV44dJ03Nx44dp129t33d143d143t54399439954OB44d954OB44d944OB54d944N954N944OB54OB54N944N954eB54OB44eB44N954eB44eB44eB44N954eB44eB54eB64eB64uF74uF84uF84+J94+J95ON+5ON/5ON/5eSA5eSB5uWC5uWC5+aE5+aF6OeH6eiI6umJ6umJ6+qK6+qL6+qM7OuN7eyO7u2P7+6Q7+6R7+6R8O+T8fCV8vGW8vGW8/KX8/KY8/KY9POZ9POZ9fSa9fSb9vWc9vWd9/ae9/ae+Pef+Peg+Peg+fih+fii+vnhrjrcAAAAI3RSTlMABwgMERYiIy01Rkhxcn+DiJOYv8DFzc/Z3Obr8vP09vr7/MmhImMAAAIlSURBVHjavdhrc5pAFAbgE1GjBEWhKCJq8G3TizRtk17S+yVpm+bSpoX//1tqstZqWXYX1unzCYaZd4Dd2T1nKZ9hWo7rB+E0DHzXsUyDCmvYXoR1kWc3qIBqqw++fqtKamqdEPnCTo3kttoTiE3aWySxM4DcYEf8Il2o6Qpep96Dql6dcjSHUDdsEpc5RhFjkxuyi2J2OTHNMYoaZz5qe4jihvV/hriHMnrrA95FOd21GYuyVmZxZYCyBn+/qY3y2sulYKKRMqkR04GODguphtARstWvBT0tutaHnv7Nag9lLy6T4/vIaBCRDVVH6dwZMmwi8qDoIEmv7WceeERGBDXxVXojzjyJDDKhZu+chXxFlkkW1JywkO8zZFnkQMk7FpI8BodDt6Dieco8A49LPhQ8SVjIW3D5FHB/5fuL00MszX6wkBPwBTQCx3E69xILd85YyPke+EY0RdaDNF2N+cRur2LkmFLIm2DpasybxfAcIE/I/y/fVmKepswRcgX8MZpdLmMe/WJXH5DPJxc88Z+Y14uLLxBwyYE4hrm4CwGHLCjE/NyHiEUm5DHJIYRMMiJ5zCsIRQaRB1nMR4h5bN0Vx5zehpgt2QNm8+n3+R4kGtL96GGsth/p740b26f1a4aN1i/6tZR+XbfhGlO/3tWvvfX7gA33JPr9kX6vpt835tjW6GE1+mnd3l6ionDOUPkPZx5a5y/6Z0Hyc6nRdCQ9l/oNB6AoHQr0cLcAAAAASUVORK5CYII=);
-    background-size: 23px;
-    background-repeat: no-repeat;
-    background-position: top right;
+    padding-top: .3em;
+    color: $darkerPurple;
+
+    // Tickmark
+    &:after {
+      content: "";
+      display: block;
+      width: 23px;
+      height: 23px;
+      position: absolute;
+      top: .1em;
+      right: 0;
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAABFCAMAAAArU9sbAAAA/1BMVEUAAABt29tg399q1dV44dJ03Nx44dp129t33d143d143t54399439954OB44d954OB44d944OB54d944N954N944OB54OB54N944N954eB54OB44eB44N954eB44eB44eB44N954eB44eB54eB64eB64uF74uF84uF84+J94+J95ON+5ON/5ON/5eSA5eSB5uWC5uWC5+aE5+aF6OeH6eiI6umJ6umJ6+qK6+qL6+qM7OuN7eyO7u2P7+6Q7+6R7+6R8O+T8fCV8vGW8vGW8/KX8/KY8/KY9POZ9POZ9fSa9fSb9vWc9vWd9/ae9/ae+Pef+Peg+Peg+fih+fii+vnhrjrcAAAAI3RSTlMABwgMERYiIy01Rkhxcn+DiJOYv8DFzc/Z3Obr8vP09vr7/MmhImMAAAIlSURBVHjavdhrc5pAFAbgE1GjBEWhKCJq8G3TizRtk17S+yVpm+bSpoX//1tqstZqWXYX1unzCYaZd4Dd2T1nKZ9hWo7rB+E0DHzXsUyDCmvYXoR1kWc3qIBqqw++fqtKamqdEPnCTo3kttoTiE3aWySxM4DcYEf8Il2o6Qpep96Dql6dcjSHUDdsEpc5RhFjkxuyi2J2OTHNMYoaZz5qe4jihvV/hriHMnrrA95FOd21GYuyVmZxZYCyBn+/qY3y2sulYKKRMqkR04GODguphtARstWvBT0tutaHnv7Nag9lLy6T4/vIaBCRDVVH6dwZMmwi8qDoIEmv7WceeERGBDXxVXojzjyJDDKhZu+chXxFlkkW1JywkO8zZFnkQMk7FpI8BodDt6Dieco8A49LPhQ8SVjIW3D5FHB/5fuL00MszX6wkBPwBTQCx3E69xILd85YyPke+EY0RdaDNF2N+cRur2LkmFLIm2DpasybxfAcIE/I/y/fVmKepswRcgX8MZpdLmMe/WJXH5DPJxc88Z+Y14uLLxBwyYE4hrm4CwGHLCjE/NyHiEUm5DHJIYRMMiJ5zCsIRQaRB1nMR4h5bN0Vx5zehpgt2QNm8+n3+R4kGtL96GGsth/p740b26f1a4aN1i/6tZR+XbfhGlO/3tWvvfX7gA33JPr9kX6vpt835tjW6GE1+mnd3l6ionDOUPkPZx5a5y/6Z0Hyc6nRdCQ9l/oNB6AoHQr0cLcAAAAASUVORK5CYII=);
+      background-size: 23px;
+      background-repeat: no-repeat;
+      background-position: top right;
+    }
   }
 }
 
