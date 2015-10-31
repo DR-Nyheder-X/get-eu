@@ -16,6 +16,9 @@ import CategoryHeader from './CategoryHeader'
 import Start from './Start'
 import CategoryDone from './CategoryDone'
 import Done from './Done'
+import ZeroPointsMessage from './ZeroPointsMessage'
+
+import '../scss/Kitchensink.scss'
 
 @connect(state => ({ progress: state.progress }))
 export default class Kitchensink extends Component {
@@ -64,6 +67,9 @@ export default class Kitchensink extends Component {
 
         <SectionTitle>Main navigation</SectionTitle>
         <MainNavigation currentPath='/learn' progress={{points: 666}} />
+
+        <SectionTitle>Zero points message</SectionTitle>
+        <ZeroPointsMessage />
 
         <SectionTitle>Point log entry</SectionTitle>
         <PointLogEntry type='1' points='10'>for at lære om...</PointLogEntry>
