@@ -46,32 +46,38 @@ const repo: Repo = {
     id: nextId('category'),
     title: 'EU generelt',
     type: 'eu',
-    steps: dummySteps()
+    steps: dummySteps(),
+    terms: ['Lovgivnings-halløj', 'Sandalforskning', 'Diablo III', 'Rumænske roer']
   }, {
     id: nextId('category'),
     title: 'Flygtninge',
     type: 'migrants',
-    steps: dummySteps()
+    steps: dummySteps(),
+    terms: ['Lovgivnings-halløj', 'Sandalforskning', 'Diablo III', 'Rumænske roer']
   }, {
     id: nextId('category'),
     title: 'Politi',
     type: 'police',
-    steps: dummySteps()
+    steps: dummySteps(),
+    terms: ['Lovgivnings-halløj', 'Sandalforskning', 'Diablo III', 'Rumænske roer']
   }, {
     id: nextId('category'),
     title: 'Lov',
     type: 'justice',
-    steps: dummySteps()
+    steps: dummySteps(),
+    terms: ['Lovgivnings-halløj', 'Sandalforskning', 'Diablo III', 'Rumænske roer']
   }, {
     id: nextId('category'),
     title: 'Erhverv',
     type: 'business',
-    steps: dummySteps()
+    steps: dummySteps(),
+    terms: ['Lovgivnings-halløj', 'Sandalforskning', 'Diablo III', 'Rumænske roer']
   }, {
     id: nextId('category'),
     title: 'Familie',
     type: 'family',
-    steps: dummySteps()
+    steps: dummySteps(),
+    terms: ['Lovgivnings-halløj', 'Sandalforskning', 'Diablo III', 'Rumænske roer']
   }]
 }
 

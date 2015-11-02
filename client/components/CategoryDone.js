@@ -30,6 +30,7 @@ export default class CategoryDone extends Component {
 
   render () {
     const { progress } = this.props
+    const { category } = this.state
 
     const nextCategory = nextStep(progress).category
 
@@ -48,13 +49,10 @@ export default class CategoryDone extends Component {
       <div className='CategoryDone'>
         <PageTitle type='small centered shadow'>
           <h1>Godt gået!</h1>
-          <PreHeading>Nu er du (næsten) ekspert indenfor</PreHeading>
+          <PreHeading>Nu er du (næsten) ekspert indenfor &hellip;</PreHeading>
         </PageTitle>
         <ul className='CategoryDone-terms'>
-          <Term>Lovgivnings-halløj</Term>
-          <Term>Sandalforordning</Term>
-          <Term>Dublin III</Term>
-          <Term>Rumænske roer</Term>
+          {category.terms.map(term => <Term key={term}>{term}</Term>)}
         </ul>
         <div className='CategoryDone-next'>Næste<br />udfordring</div>
         <div className='CategoryDone-nextCategory'>
