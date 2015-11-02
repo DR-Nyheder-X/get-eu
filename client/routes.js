@@ -9,6 +9,7 @@ import Category from './components/Category'
 import Step from './components/Step'
 import CategoryDone from './components/CategoryDone'
 import Start from './components/Start'
+import Done from './components/Done'
 
 const routes = (
   <Route path='/'>
@@ -20,6 +21,7 @@ const routes = (
       <Route path='/quiz/:type/done' component={CategoryDone} />
       <Route path='/quiz/:type/:step' component={Step} />
     </Route>
+    <Route path='the_end' component={Done} />
     <Route path='*' component={NotFound} />
   </Route>
 )
