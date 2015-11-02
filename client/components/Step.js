@@ -7,6 +7,7 @@ import { categoryProgress } from '../reducers/progress'
 import { find } from 'lodash'
 import { pushState } from 'redux-router'
 import Deck from './Deck'
+import Swipeable from 'react-swipeable'
 
 import '../scss/Step.scss'
 
@@ -65,11 +66,20 @@ export default class Step extends Component {
     const { progress } = this.props
     const { percent } = categoryProgress(category, progress)
 
+    const canPrev = currentSlide !== 0
+
     return <div>
-      <Deck cards={step.slides.map(slide => slide.text)} currentCard={currentSlide} />
+      <Swipeable
+        onSwipedLeft={_ => { this.move(1) }}
+        onSwipedRight={_ => { if (canPrev) this.move(-1) }}>
+        <Deck
+          cards={step.slides.map(slide => slide.text)}
+          currentCard={currentSlide}
+        />
+      </Swipeable>
       <CardNavigation page={currentSlide}
         total={step.slides.length}
-        onPrev={_ => this.move(-1)} canPrev={currentSlide !== 0}
+        onPrev={_ => this.move(-1)} canPrev={canPrev}
         onNext={_ => this.move(1)} canNext />
       <Progressbar percent={percent} />
     </div>
