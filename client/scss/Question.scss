@@ -2,18 +2,27 @@
 @import 'mixins.scss';
 
 .Question-text {
-  margin: 14px;
+  margin-right: 10px;
+  margin-left: 10px;
   margin-bottom: 0;
   background-color: #fff;
   border-radius: 2px;
-  padding: 2.5em 1.1em 2.7em;
+  padding: 1.1em;
   box-shadow: 2px 2px 0 0 $darkTurquoise;
-  // min-height: 150px;
+
+  @media #{$smallUp} {
+    padding-top: 2.5em;
+    padding-bottom: 2.7em;
+  }
 }
 .Question-text > span {
-  font-family: $mediumFontFamily;
-  font-size: 18px;
-  line-height: 1.4;
+  font-family: $gibsonSemiBold;
+  line-height: 1.2;
+  color: $purple;
+
+  @media #{$smallUp} {
+    font-size: 20px;
+  }
 }
 
 .Question-options {
@@ -35,7 +44,7 @@
 
   li {
     @include pagePadding;
-    padding-left: 3em;
+    padding-left: 2.6em;
     padding-bottom: .625em;
     padding-top: .625em;
     position: relative;
@@ -68,17 +77,18 @@
   }
 
   li label {
-    font-size: 13px;
-    line-height: 1.5;
-    margin-bottom: 1.75em;
+    font-family: $georgia;
+    font-size: 12px;
+    line-height: 1.45;
     background-size: 35px;
     background-repeat: no-repeat;
     background-position: 0 3px;
-    padding-left: 49px;
+    padding-left: 46px;
     display: block;
     min-height: 38px;
     max-width: 400px;
     margin: 0;
+    padding-top: .3em;
     position: relative;
   }
 

@@ -97,7 +97,7 @@ export default class Step extends Component {
     const { percent } = categoryProgress(category, progress)
 
     return (
-      <div>
+      <div className='Step'>
         <CategoryHeader category={category} />
         {slideOrQuestion}
 

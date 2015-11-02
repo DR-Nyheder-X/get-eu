@@ -2,19 +2,19 @@
 @import 'mixins.scss';
 
 .Card {
-  padding: 0 1em;
-  height: 240px;
-  display: table;
+  @include pagePadding;
   width: 100%;
 }
 
 .Card-inner {
+  padding: 2em;
+  height: 240px;
   background-color: #fff;
   box-shadow: 2px 2px 0 0 $darkTurquoise;
   border-radius: 2px;
-  display: table-cell;
-  vertical-align: middle;
-  padding: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .Card-text {

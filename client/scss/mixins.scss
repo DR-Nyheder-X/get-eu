@@ -1,4 +1,12 @@
+@import 'settings.scss';
+
 @mixin pagePadding() {
   padding-left: 10px;
   padding-right: 10px;
+}
+
+@mixin mediumParagraph() {
+  font-size: 15px;
+  line-height: 21px;
+  font-family: $gibsonRegular;
 }
