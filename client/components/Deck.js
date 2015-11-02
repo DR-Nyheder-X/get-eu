@@ -16,11 +16,16 @@ export default class Deck extends Component {
     const cls = classname('Deck', this.props.className, type)
     return (
       <div className={cls} {...this.props}>
-        <Card text='This' />
-        <Card text='hotness' />
-        <Card text='never' />
-        <Card text='stops.' />
-        <Card text='stops.' />
+        <Card type="one" text='This' />
+        <Card type="two" text='hotness' />
+        <Card type="three" text='never' />
+        <Card type="four" text='stops.' />
+        <Card type="five" text='stops.' />
+        <Card type="six" text='stops.' />
+        <Card type="seven" text='stops.' />
+        <Card type="eight" text='stops.' />
+        <Card type="nine" text='stops.' />
+        <Card type="ten" text='stops.' />
       </div>
     )
   }
