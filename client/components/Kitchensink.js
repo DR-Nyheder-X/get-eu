@@ -101,7 +101,7 @@ export default class Kitchensink extends Component {
         <Done />
 
         <SectionTitle>Deck</SectionTitle>
-        <Deck />
+        <Deck cards={['1', '2', '3']} />
 
         <SectionTitle>Card</SectionTitle>
         <Card text='Lorem ipsumz' />
