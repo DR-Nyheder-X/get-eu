@@ -7,6 +7,7 @@ import { Link } from 'react-router'
 import { whereToGoInCategory } from '../utils/whereToGo'
 import { connect } from 'react-redux'
 import Term from './Term'
+import { categoryProgress } from '../reducers/progress'
 
 import '../scss/CategoryDone.scss'
 
@@ -36,7 +37,7 @@ export default class CategoryDone extends Component {
 
     const rest = Repo.categories
     .filter(c => c.id !== nextCategory.id)
-    .sort(c => c.id)
+    .sort(c => categoryProgress(c, progress).percent)
 
     const categoryTileWithProgress = (progress, cls) => category => {
       const to = whereToGoInCategory(progress, category)
