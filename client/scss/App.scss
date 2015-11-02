@@ -15,12 +15,14 @@
   position: relative;
   transition: min-height .2s ease;
   max-width: 690px;
-  margin: 2em auto;
+  margin: 1em auto;
   box-shadow: 0 6px 6px 0 rgba(0, 0, 0, .2);
   padding-bottom: 1em;
 
   @media #{$smallUp} {
     padding-bottom: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
   }
 
   @media #{$mediumUp} {
