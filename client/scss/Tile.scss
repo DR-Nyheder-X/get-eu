@@ -4,7 +4,9 @@
 
 .Tile {
   margin-bottom: 9px;
-
+  max-width: $contentWidthOnDesktop*.85;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .Tile-inner {
