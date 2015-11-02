@@ -19,7 +19,15 @@
 
 .Card-text {
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.45;
   color: $darkerPurple;
+
+  @media #{$smallUp} {
+    font-size: 15px;
+  }
+
+  @media #{$mediumUp} {
+    font-size: 16px;
+  }
 }
