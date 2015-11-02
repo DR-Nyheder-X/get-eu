@@ -9,9 +9,7 @@ export default class ZeroPointsMessage extends Component {
       <div className='ZeroPointsMessage'>
         <div className='ZeroPointsMessage-hint'>Start her</div>
         <PageTitle type='centered shadow'>
-          <h1>
-            <em>Du har ingen</em> <em>point endnu</em>
-          </h1>
+          <em>Du har ingen</em> <em>point endnu</em>
         </PageTitle>
       </div>
     )
