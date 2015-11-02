@@ -8,6 +8,8 @@ import { where } from '../Repo'
 import { find } from 'lodash'
 import { completeStep } from '../actions'
 import { whereToGoInCategory } from '../utils/whereToGo'
+import { categoryProgress } from '../reducers/progress'
+import Progressbar from './Progressbar'
 
 import '../scss/Question.scss'
 
@@ -55,9 +57,11 @@ export default class Question extends Component {
   }
 
   render () {
-    const { step } = this.state
+    const { progress } = this.props
+    const { category, step } = this.state
     const { question } = step
     const correctAnswerSelected = this.state.checked === question.correct_answer
+    const { percent } = categoryProgress(category, progress)
 
     return (
       <div className='Question'>
@@ -78,6 +82,7 @@ export default class Question extends Component {
         <div className='Question-next'>
           <Button type='rightArrowAtRight' disabled={!correctAnswerSelected} onClick={cc(this.handleSubmit.bind(this))}>Videre</Button>
         </div>
+        <Progressbar percent={percent} />
       </div>
     )
   }
