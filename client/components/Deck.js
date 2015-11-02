@@ -1,32 +1,26 @@
 import React, { Component, PropTypes } from 'react'
-import classname from 'classname'
-import formatTypeClasses from '../utils/formatTypeClasses'
 import Card from './Card'
+import classname from 'classname'
 
 import '../scss/Deck.scss'
 
 export default class Deck extends Component {
   static propTypes = {
-    type: PropTypes.string,
-    className: PropTypes.string
+    cards: PropTypes.arrayOf(PropTypes.string),
+    currentCard: PropTypes.number
   }
 
   render () {
-    const type = formatTypeClasses('Deck', this.props.type)
-    const cls = classname('Deck', this.props.className, type)
-    return (
-      <div className={cls} {...this.props}>
-        <Card type="one" text='This' />
-        <Card type="two" text='hotness' />
-        <Card type="three" text='never' />
-        <Card type="four" text='stops.' />
-        <Card type="five" text='stops.' />
-        <Card type="six" text='stops.' />
-        <Card type="seven" text='stops.' />
-        <Card type="eight" text='stops.' />
-        <Card type="nine" text='stops.' />
-        <Card type="ten" text='stops.' />
-      </div>
-    )
+    const { cards } = this.props
+    const currentCard = this.props.currentCard || 0
+
+    return <div className='Deck' {...this.props}>
+      {cards.map((card, i) => {
+        const cls = classname('Card', {
+          ['Card--rejected']: i < currentCard
+        }, `Card--card-${i}`)
+        return <Card className={cls} text={card} key={i} />
+      })}
+    </div>
   }
 }

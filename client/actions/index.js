@@ -9,3 +9,7 @@ export function completeStep (step) {
     return Promise.resolve(getState().progress)
   }
 }
+
+export function resetProgress () {
+  return { type: RESET_PROGRESS }
+}

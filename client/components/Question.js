@@ -1,52 +1,67 @@
 import React, { Component, PropTypes } from 'react'
 import Button from './Button'
+import Answer from './Answer'
 import cc from '../utils/cleanClick'
+import { connect } from 'react-redux'
+import { pushState } from 'redux-router'
+import { where } from '../Repo'
+import { find } from 'lodash'
+import { completeStep } from '../actions'
+import { whereToGoInCategory } from '../utils/whereToGo'
+import { categoryProgress } from '../reducers/progress'
+import Progressbar from './Progressbar'
 
 import '../scss/Question.scss'
 
-class Answer extends Component {
-  static propTypes = {
-    answer: PropTypes.object.isRequired,
-    isCorrect: PropTypes.bool.isRequired,
-    isChecked: PropTypes.bool.isRequired
-  }
-
-  render () {
-    const { answer, isCorrect, isChecked } = this.props
-    const cls = isChecked && (isCorrect ? 'right' : 'wrong')
-
-    return (
-      <li key={answer.id} className={cls}>
-        <input type='radio' name='answer'
-          ref='radio' value={answer.id} id={answer.id} />
-        <label htmlFor={answer.id}>
-          {answer.text}
-        </label>
-      </li>
-    )
-  }
-}
-
+@connect(state => ({
+  progress: state.progress,
+  type: state.router.params.type,
+  step: state.router.params.step
+}), dispatch => ({
+  pushState,
+  dispatch
+}))
 export default class Question extends Component {
   static propTypes = {
-    question: PropTypes.object,
-    onSubmit: PropTypes.func
+    type: PropTypes.string,
+    step: PropTypes.string,
+    progress: PropTypes.object,
+    dispatch: PropTypes.func,
+    pushState: PropTypes.func
   }
 
   constructor (props) {
     super(props)
 
-    this.state = {}
+    const category = where({ type: this.props.type })
+
+    this.state = {
+      category,
+      step: find(category.steps, { id: parseInt(this.props.step, 10) })
+    }
   }
 
-  onChange (event) {
+  handleChange (event) {
     const checked = parseInt(event.target.value, 10)
     this.setState({ checked })
   }
 
+  handleSubmit () {
+    const { dispatch, pushState } = this.props
+    const { category, step } = this.state
+
+    dispatch(completeStep(step)).then(progress => {
+      const goTo = whereToGoInCategory(progress, category)
+      dispatch(pushState(null, goTo))
+    }, e => { console.error(e) })
+  }
+
   render () {
-    const { question, onSubmit } = this.props
+    const { progress } = this.props
+    const { category, step } = this.state
+    const { question } = step
     const correctAnswerSelected = this.state.checked === question.correct_answer
+    const { percent } = categoryProgress(category, progress)
 
     return (
       <div className='Question'>
@@ -54,7 +69,7 @@ export default class Question extends Component {
           <span>{question.text}</span>
         </h2>
         <form className='Question-options'
-          onChange={this.onChange.bind(this)}>
+          onChange={this.handleChange.bind(this)}>
           <ul>
             {question.answers.map(answer => {
               const isCorrect = answer.id === question.correct_answer
@@ -65,8 +80,9 @@ export default class Question extends Component {
           </ul>
         </form>
         <div className='Question-next'>
-          <Button type='rightArrowAtRight' disabled={!correctAnswerSelected} onClick={cc(onSubmit)}>Videre</Button>
+          <Button type='rightArrowAtRight' disabled={!correctAnswerSelected} onClick={cc(this.handleSubmit.bind(this))}>Videre</Button>
         </div>
+        <Progressbar percent={percent} />
       </div>
     )
   }
