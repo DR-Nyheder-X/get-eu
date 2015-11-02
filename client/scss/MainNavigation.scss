@@ -10,6 +10,14 @@ $MainNavigationHeight: 44px;
   margin-bottom: 1em;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
+
+  @media #{$smallUp} {
+    margin-bottom: 2em;
+  }
+
+  @media #{$mediumUp} {
+    margin-bottom: 2.5em;
+  }
 }
 
 .MainNavigation-tab {
