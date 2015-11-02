@@ -14,6 +14,10 @@ function dummyStep () {
     text: 'Dette flashkort indeholder noget afgrænset info om flygtninge og EU. Lorem ipsum dolor sit amet, ea eos putent platonem, nec doctus mandamus scripserit id. Alia epicuri scribentur ei sit.'
   }, {
     text: 'How about those shampoo bottles, eh? I mean, what the fudge? You know? No?'
+  }, {
+    text: 'Også noget rigtig spændende her'
+  }, {
+    text: '4'
   }]
   const answers = [{
     id: nextId('answer'),
