@@ -247,3 +247,11 @@
   padding-top: 2em;
   padding-bottom: 2em;
 }
+
+.Question-progressbar {
+  @include pagePadding;
+  padding-bottom: 10px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
