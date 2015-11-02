@@ -34,59 +34,59 @@
   transition: bottom .4s ease, padding .4s ease;
 }
 
-.Deck .Card:nth-child(1) {
+.Deck .Card--one {
   z-index: 1000;
 }
 
-.Deck .Card:nth-child(2) {
+.Deck .Card--two {
   z-index: 900;
   bottom: -4px;
   padding: 0 14px;
 }
 
-.Deck .Card:nth-child(3) {
+.Deck .Card--three {
   z-index: 800;
   bottom: -8px;
   padding: 0 18px;
 }
 
-.Deck .Card:nth-child(4) {
+.Deck .Card--four {
   z-index: 700;
   bottom: -12px;
   padding: 0 22px;
 }
 
-.Deck .Card:nth-child(5) {
+.Deck .Card--five {
   z-index: 600;
   bottom: -16px;
   padding: 0 26px;
 }
 
-.Deck .Card:nth-child(6) {
+.Deck .Card--six {
   z-index: 500;
   bottom: -20px;
   padding: 0 30px;
 }
 
-.Deck .Card:nth-child(7) {
+.Deck .Card--seven {
   z-index: 400;
   bottom: -24px;
   padding: 0 34px;
 }
 
-.Deck .Card:nth-child(8) {
+.Deck .Card--eight {
   z-index: 300;
   bottom: -28px;
   padding: 0 38px;
 }
 
-.Deck .Card:nth-child(9) {
+.Deck .Card--nine {
   z-index: 200;
   bottom: -32px;
   padding: 0 42px;
 }
 
-.Deck .Card:nth-child(10) {
+.Deck .Card--ten {
   z-index: 100;
   bottom: -36px;
   padding: 0 46px;

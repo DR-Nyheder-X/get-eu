@@ -18,7 +18,7 @@ export default class Deck extends Component {
       {cards.map((card, i) => {
         const cls = classname('Card', {
           ['Card--rejected']: i < currentCard
-        })
+        }, `Card--card-${i}`)
         return <Card className={cls} text={card} key={i} />
       })}
     </div>
