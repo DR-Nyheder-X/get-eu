@@ -11,6 +11,7 @@ import Question from './components/Question'
 import Quiz from './components/Quiz'
 import Start from './components/Start'
 import Step from './components/Step'
+import Points from './components/Points'
 
 const routes = (
   <Route path='/'>
@@ -23,6 +24,7 @@ const routes = (
       <Route path='/quiz/:type/:step/question' component={Question} />
       <Route path='/quiz/:type/:step' component={Step} />
     </Route>
+    <Route path='points' component={Points} />
     <Route path='the_end' component={Done} />
     <Route path='*' component={NotFound} />
   </Route>
