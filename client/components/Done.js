@@ -11,9 +11,12 @@ import '../scss/Done.scss'
   progress: state.progress
 }))
 export default class Done extends Component {
+  static propTypes = {
+    type: PropTypes.string.isRequired,
+    progress: PropTypes.object.isRequired
+  }
 
   render () {
-
     const { progress } = this.props
     const categories = Repo.categories
 
@@ -26,14 +29,14 @@ export default class Done extends Component {
           Du klarede dig gennem alle spørgsmål. Nu kan du sætte dit kryds d. 3. december med god, velinformeret samvittighed. Ole Ryborg er stolt af dig.
         </p>
         <div className='Done-cta'>
-          <a href="#">
+          <a href='#'>
             <i></i>
             <em>Vil du ha mere?</em>
             <b>Dyk ned i leksikonet</b>
           </a>
         </div>
         <div className='Done-reset'>
-          <a href="#"><i></i>Start forfra</a>
+          <a href='#'><i></i>Start forfra</a>
         </div>
         <Tiles>
           {categories.map(c => (
@@ -42,6 +45,5 @@ export default class Done extends Component {
         </Tiles>
       </div>
     )
-
   }
 }
