@@ -8,6 +8,8 @@ $MainNavigationHeight: 44px;
   background-color: $darkerPurple;
   overflow: hidden;
   margin-bottom: 1em;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
 }
 
 .MainNavigation-tab {
