@@ -1,19 +1,12 @@
-// TODO: Clean up this mess
-
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { where } from '../Repo'
-import Card from './Card'
 import CardNavigation from './CardNavigation'
-import Question from './Question'
-import CategoryHeader from './CategoryHeader'
-import { completeStep } from '../actions'
-import minMax from '../utils/minMax'
 import Progressbar from './Progressbar'
 import { categoryProgress } from '../reducers/progress'
-import { whereToGoInCategory } from '../utils/whereToGo'
 import { find } from 'lodash'
 import { pushState } from 'redux-router'
+import Deck from './Deck'
 
 import '../scss/Step.scss'
 
@@ -36,7 +29,6 @@ export default class Step extends Component {
 
   constructor (props) {
     super(props)
-
     this.state = this.stateFromProps(props)
   }
 
@@ -55,56 +47,31 @@ export default class Step extends Component {
     }
   }
 
-  move (amount) {
-    let currentSlide = this.state.currentSlide + amount
-    currentSlide = minMax(0, this.state.step.slides.length,
-                          currentSlide)
-    this.setState({ ...this.state, currentSlide })
-  }
+  move (dest) {
+    const { step, category } = this.state
+    const nextSlide = this.state.currentSlide + dest
 
-  submit () {
-    const { dispatch, pushState } = this.props
-    const { category, step } = this.state
-
-    dispatch(completeStep(step)).then(progress => {
-      const goTo = whereToGoInCategory(progress, category)
-      dispatch(pushState(null, goTo))
-    }, e => { console.error(e) })
+    if (nextSlide < step.slides.length) {
+      this.setState({ currentSlide: nextSlide })
+    } else {
+      const { dispatch, pushState } = this.props
+      const path = `/quiz/${category.type}/${step.id}/question`
+      dispatch(pushState(null, path))
+    }
   }
 
   render () {
-    const { currentSlide, step, category } = this.state
+    const { category, step, currentSlide } = this.state
     const { progress } = this.props
-    const slide = step.slides[currentSlide]
-
-    let slideOrQuestion
-
-    if (slide) {
-      slideOrQuestion = <div>
-        <Card text={slide.text} />
-        <CardNavigation page={this.state.currentSlide}
-          total={this.state.step.slides.length + 1}
-          onPrev={_ => this.move(-1)} canPrev={currentSlide !== 0}
-          onNext={_ => this.move(1)} canNext />
-      </div>
-    } else {
-      slideOrQuestion = <Question
-        question={step.question}
-        onSubmit={this.submit.bind(this)}
-      />
-    }
-
     const { percent } = categoryProgress(category, progress)
 
-    return (
-      <div className='Step'>
-        <CategoryHeader category={category} />
-        {slideOrQuestion}
-
-        <div className='Step-progressbar'>
-          <Progressbar percent={percent} />
-        </div>
-      </div>
-    )
+    return <div>
+      <Deck cards={step.slides.map(slide => slide.text)} currentCard={currentSlide} />
+      <CardNavigation page={currentSlide}
+        total={step.slides.length}
+        onPrev={_ => this.move(-1)} canPrev={currentSlide !== 0}
+        onNext={_ => this.move(1)} canNext />
+      <Progressbar percent={percent} />
+    </div>
   }
 }
