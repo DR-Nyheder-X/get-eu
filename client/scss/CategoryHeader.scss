@@ -8,6 +8,9 @@
   position: relative;
   margin-bottom: 1.5em;
   padding: .7em 20px 1em;
+  max-width: $contentWidthOnDesktop;
+  margin-right: auto;
+  margin-left: auto;
 
   h2 {
     font-size: 20px;
