@@ -26,7 +26,6 @@ export default class Points extends Component {
     const entries = processProgress(progress, Repo.categories)
 
     return <div>
-      <SectionTitle>Point log entry</SectionTitle>
       {entries.map(e => (
         <PointLogEntry
           key={e.stepId ? `step-${e.stepId}` : `category-${e.categoryId}`}

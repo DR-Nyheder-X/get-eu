@@ -10,7 +10,7 @@ export function logEntryForStep (category, step) {
 export function logEntryForCategory (category) {
   return {
     categoryId: category.id,
-    points: 20,
+    points: 50,
     text: category.title,
     terms: category.terms
   }
