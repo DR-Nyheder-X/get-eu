@@ -7,6 +7,7 @@ import { pushState } from 'redux-router'
 import { resetProgress } from '../actions'
 import { Link } from 'react-router'
 import cc from '../utils/cleanClick'
+import { categoryProgress } from '../reducers/progress'
 
 import '../scss/Done.scss'
 
@@ -30,7 +31,10 @@ export default class Done extends Component {
 
   render () {
     const { progress } = this.props
-    const categories = Repo.categories
+    const categories = Repo.categories.sort((a, b) => {
+      return categoryProgress(a, progress).percent -
+        categoryProgress(b, progress).percent
+    })
 
     return (
       <div className='Done'>
@@ -52,7 +56,7 @@ export default class Done extends Component {
         </div>
         <Tiles>
           {categories.map(c => (
-            <Tile key={c.id} category={c} progress={progress} />
+            <Tile key={c.id} category={c} progress={progress} type='small' />
           ))}
         </Tiles>
       </div>

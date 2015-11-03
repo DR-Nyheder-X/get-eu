@@ -10,6 +10,7 @@ import { completeStep } from '../actions'
 import { whereToGoInCategory } from '../utils/whereToGo'
 import { categoryProgress } from '../reducers/progress'
 import Progressbar from './Progressbar'
+import CategoryHeader from './CategoryHeader'
 
 import '../scss/Question.scss'
 
@@ -63,29 +64,28 @@ export default class Question extends Component {
     const correctAnswerSelected = this.state.checked === question.correct_answer
     const { percent } = categoryProgress(category, progress)
 
-    return (
-      <div className='Question'>
-        <h2 className='Question-text'>
-          <span>{question.text}</span>
-        </h2>
-        <form className='Question-options'
-          onChange={this.handleChange.bind(this)}>
-          <ul>
-            {question.answers.map(answer => {
-              const isCorrect = answer.id === question.correct_answer
-              const isChecked = answer.id === this.state.checked
-              return <Answer key={answer.id} answer={answer}
-                isCorrect={isCorrect} isChecked={isChecked} />
-            })}
-          </ul>
-        </form>
-        <div className='Question-next'>
-          <Button type='rightArrowAtRight' disabled={!correctAnswerSelected} onClick={cc(this.handleSubmit.bind(this))}>Videre</Button>
-        </div>
-        <div className='Question-progressbar'>
-          <Progressbar percent={percent} />
-        </div>
+    return <div className='Question'>
+      <CategoryHeader category={category} />
+      <h2 className='Question-text'>
+        <span>{question.text}</span>
+      </h2>
+      <form className='Question-options'
+        onChange={this.handleChange.bind(this)}>
+        <ul>
+          {question.answers.map(answer => {
+            const isCorrect = answer.id === question.correct_answer
+            const isChecked = answer.id === this.state.checked
+            return <Answer key={answer.id} answer={answer}
+              isCorrect={isCorrect} isChecked={isChecked} />
+          })}
+        </ul>
+      </form>
+      <div className='Question-next'>
+        <Button type='rightArrowAtRight' disabled={!correctAnswerSelected} onClick={cc(this.handleSubmit.bind(this))}>Videre</Button>
       </div>
-    )
+      <div className='Question-progressbar'>
+        <Progressbar percent={percent} />
+      </div>
+    </div>
   }
 }

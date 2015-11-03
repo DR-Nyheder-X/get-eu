@@ -8,6 +8,7 @@ import { find } from 'lodash'
 import { pushState } from 'redux-router'
 import Deck from './Deck'
 import Swipeable from 'react-swipeable'
+import CategoryHeader from './CategoryHeader'
 
 import '../scss/Step.scss'
 
@@ -69,6 +70,7 @@ export default class Step extends Component {
     const canPrev = currentSlide !== 0
 
     return <div>
+      <CategoryHeader category={category} />
       <Swipeable
         onSwipedLeft={_ => { this.move(1) }}
         onSwipedRight={_ => { if (canPrev) this.move(-1) }}>
