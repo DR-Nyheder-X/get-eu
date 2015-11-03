@@ -5,6 +5,7 @@ import React, { Component } from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { ReduxRouter } from 'redux-router'
+import { RESET_PROGRESS } from './actions'
 
 // STORE ------------------------------------------------
 
@@ -45,5 +46,6 @@ if (module.hot) {
 }
 
 window.resetProgress = function () {
-  window.localStorage.clear()
+  store.dispatch({ type: RESET_PROGRESS })
+  return true
 }
