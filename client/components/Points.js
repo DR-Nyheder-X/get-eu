@@ -5,6 +5,7 @@ import Repo from '../Repo'
 import ZeroPointsMessage from './ZeroPointsMessage'
 import SectionTitle from './SectionTitle'
 import PointLogEntry from './PointLogEntry'
+import { processProgress } from '../utils/logProcessor'
 
 @connect(state => ({
   progress: state.progress
@@ -22,13 +23,18 @@ export default class Points extends Component {
       return <ZeroPointsMessage />
     }
 
+    const entries = processProgress(progress, Repo.categories)
+
     return <div>
       <SectionTitle>Point log entry</SectionTitle>
-      <PointLogEntry type='1' points='10'>for at lære om...</PointLogEntry>
-      <PointLogEntry type='2' points='20'>for at lære om...</PointLogEntry>
-      <PointLogEntry type='3' points='30'>for at lære om...</PointLogEntry>
-      <PointLogEntry type='4' points='40'>for at lære om...</PointLogEntry>
-      <PointLogEntry type='5' points='50'>for at lære alt om Erhverv.</PointLogEntry>
+      {entries.map(e => (
+        <PointLogEntry
+          key={e.stepId ? `step-${e.stepId}` : `category-${e.categoryId}`}
+          points={e.points}
+          text={e.text}
+          terms={e.terms}
+        />
+      ))}
     </div>
   }
 }

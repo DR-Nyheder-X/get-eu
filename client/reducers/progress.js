@@ -3,6 +3,8 @@
 import { Progress } from '../types'
 import { COMPLETE_STEP, RESET_PROGRESS } from '../actions'
 import { union } from 'lodash'
+import { processProgress } from '../utils/logProcessor'
+import Repo from '../Repo'
 
 const initialState: Progress = {
   completedStepIds: [],
@@ -10,7 +12,9 @@ const initialState: Progress = {
 }
 
 function calculatePoints (completedStepIds) {
-  return completedStepIds.length * 10
+  return processProgress({ completedStepIds }, Repo.categories)
+  .map(log => log.points)
+  .reduce((total, amount) => total + amount, 0)
 }
 
 function doneInSteps (steps, progress) {

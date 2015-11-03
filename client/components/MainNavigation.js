@@ -27,7 +27,7 @@ export default class MainNavigation extends Component {
     const { points } = progress
     const quizTo = whereToGo(progress)
 
-    const quizCls = tabCls([/^\/quiz/, /^\/$/],
+    const quizCls = tabCls([/^\/(quiz|the_end)/, /^\/$/],
                            currentPath, 'MainNavigation-tabQuiz')
     const pointsCls = tabCls(/^\/points/,
                              currentPath, 'MainNavigation-tabPoints')

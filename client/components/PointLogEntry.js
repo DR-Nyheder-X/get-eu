@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 import classname from 'classname'
-import formatTypeClasses from '../utils/formatTypeClasses'
 import Term from './Term'
 
 import '../scss/PointLogEntry.scss'
@@ -8,27 +7,28 @@ import '../scss/PointLogEntry.scss'
 export default class PointLogEntry extends Component {
   static get propTypes () {
     return {
-      type: PropTypes.string,
-      children: PropTypes.node,
-      className: PropTypes.string,
-      points: PropTypes.string
+      points: PropTypes.number,
+      text: PropTypes.string,
+      terms: PropTypes.arrayOf(PropTypes.string)
     }
   }
   render () {
-    const type = formatTypeClasses('PointLogEntry', this.props.type)
-    const cls = classname('PointLogEntry', this.props.className, type)
+    const { points, text, terms } = this.props
+    const cls = classname('PointLogEntry', [
+      `PointLogEntry--${Math.round(points / 10)}`
+    ])
+
     return (
-      <div className={cls} {...this.props}>
+      <div className={cls}>
         <div className='PointLogEntry-inner'>
           <header>
-            <h3><i></i> {this.props.points} point</h3>
-            <p>{this.props.children}</p>
+            <h3><i></i> {points} point</h3>
+            <p>{text}</p>
           </header>
           <ul className='PointLogEntry-terms'>
-            <Term>Lovgivnings-halløj</Term>
-            <Term>Sandalforordning</Term>
-            <Term>Dublin III</Term>
-            <Term>Rumænske roer</Term>
+            {terms.map(term => (
+              <Term key={term}>{term}</Term>
+            ))}
           </ul>
         </div>
       </div>
