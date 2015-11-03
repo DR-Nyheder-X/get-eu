@@ -5,12 +5,32 @@
   background-color: $darkerPurple;
   position: relative;
   height: 100%;
-
   display: flex;
   flex-direction: column;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-top: 1em;
+  margin-right: auto;
+  margin-bottom: 1em;
+  margin-left: auto;
+  max-width: 690px;
+  border-radius: 2px;
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, .1);
 
   & > * {
     width: 100%;
+  }
+
+  @media #{$smallUp} {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  @media #{$mediumUp} {
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
   }
 }
 
@@ -32,14 +52,21 @@
 }
 
 .Start-cta {
-  padding: 20px;
-  padding-bottom: 22px;
-
+  margin-top: 2em;
+  margin-right: auto;
+  margin-left: auto;
   align-self: flex-end;
+  padding-right: 1em;
+  padding-left: 1em;
+
+  @media #{$smallUp} {
+    max-width: $contentWidthOnDesktop*.7;
+  }
+
 }
 
 .Start > h1 {
-  padding: 0 20px;
+  padding: 0 16px;
   font-family: $gibsonBold;
   text-transform: uppercase;
   color: $lightTurquoise;
@@ -47,9 +74,13 @@
   line-height: 1.1;
   text-shadow: 4px 4px 0 $black;
   margin-bottom: .25em;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: $contentWidthOnDesktop;
 
   @media #{$smallUp} {
     font-size: 28px;
+    text-align: center;
   }
 
   > em { color: $yellow; }
