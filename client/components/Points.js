@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { totalProgress } from '../reducers/progress'
 import Repo from '../Repo'
 import ZeroPointsMessage from './ZeroPointsMessage'
-import SectionTitle from './SectionTitle'
 import PointLogEntry from './PointLogEntry'
 import { processProgress } from '../utils/logProcessor'
 
