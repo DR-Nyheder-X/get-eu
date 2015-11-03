@@ -82,7 +82,9 @@ export default class Question extends Component {
         <div className='Question-next'>
           <Button type='rightArrowAtRight' disabled={!correctAnswerSelected} onClick={cc(this.handleSubmit.bind(this))}>Videre</Button>
         </div>
-        <Progressbar percent={percent} />
+        <div className='Question-progressbar'>
+          <Progressbar percent={percent} />
+        </div>
       </div>
     )
   }

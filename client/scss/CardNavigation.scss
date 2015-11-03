@@ -4,7 +4,10 @@
 .CardNavigation {
   @include pagePadding;
   position: relative;
-  margin-top: .5em;
+  margin-top: 1.15em;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: $contentWidthOnDesktop;
 }
 
 .CardNavigation-next,

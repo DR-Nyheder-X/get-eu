@@ -8,11 +8,19 @@
   background-color: #fff;
   border-radius: 2px;
   padding: 1.1em;
-  box-shadow: 2px 2px 0 0 $darkTurquoise;
+  box-shadow: 2px 2px 0 0 $dimmedTurquoise;
 
   @media #{$smallUp} {
     padding-top: 2.5em;
     padding-bottom: 2.7em;
+  }
+
+  @media only screen and (min-width: $contentWidthOnDesktop+60) {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: $contentWidthOnDesktop;
+    padding-right: 2em;
+    padding-left: 2em;
   }
 }
 .Question-text > span {
@@ -26,6 +34,12 @@
 }
 
 .Question-options {
+
+  @media only screen and (min-width: $contentWidthOnDesktop+60) {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: $contentWidthOnDesktop;
+  }
 
   input[type="radio"] {
     display: none;
@@ -246,4 +260,20 @@
   text-align: right;
   padding-top: 2em;
   padding-bottom: 2em;
+
+  @media only screen and (min-width: $contentWidthOnDesktop+60) {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: $contentWidthOnDesktop;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.Question-progressbar {
+  @include pagePadding;
+  padding-bottom: 10px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }

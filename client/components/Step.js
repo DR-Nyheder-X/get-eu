@@ -81,7 +81,9 @@ export default class Step extends Component {
         total={step.slides.length}
         onPrev={_ => this.move(-1)} canPrev={canPrev}
         onNext={_ => this.move(1)} canNext />
-      <Progressbar percent={percent} />
+      <div className='Step-progressbar'>
+        <Progressbar percent={percent} />
+      </div>
     </div>
   }
 }

@@ -10,6 +10,7 @@
   padding: 0;
   list-style: none;
   pointer-events: none;
+  max-width: $contentWidthOnDesktop;
 }
 
 .Deck .Card {

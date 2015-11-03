@@ -10,7 +10,22 @@
 
 .App {
   background-color: $turquoise;
+  border-radius: 2px;
   min-height: $appHeight;
   position: relative;
   transition: min-height .2s ease;
+  max-width: 690px;
+  margin: 1em auto;
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, .2);
+  padding-bottom: 1em;
+
+  @media #{$smallUp} {
+    padding-bottom: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  @media #{$mediumUp} {
+    padding-bottom: 2.5em;
+  }
 }
