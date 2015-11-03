@@ -37,7 +37,10 @@ export default class CategoryDone extends Component {
 
     const rest = Repo.categories
     .filter(c => c.id !== nextCategory.id)
-    .sort(c => categoryProgress(c, progress).percent)
+    .sort((a, b) => {
+      return categoryProgress(a, progress).percent -
+        categoryProgress(b, progress).percent
+    })
 
     const categoryTileWithProgress = (progress, cls) => category => {
       const to = whereToGoInCategory(progress, category)
