@@ -18,7 +18,10 @@ function newStep (id, slides, question, terms) {
 }
 
 function newQuestion (text, answers, correct_answer) {
-  return { text, answers, correct_answer }
+  return {
+    text, correct_answer,
+    answers: answers.map(text => ({ text }))
+  }
 }
 
 const repo: Repo = {
