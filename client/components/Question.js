@@ -72,10 +72,12 @@ export default class Question extends Component {
       <form className='Question-options'
         onChange={this.handleChange.bind(this)}>
         <ul>
-          {question.answers.map(answer => {
-            const isCorrect = answer.id === question.correct_answer
-            const isChecked = answer.id === this.state.checked
-            return <Answer key={answer.id} answer={answer}
+          {question.answers.map((answer, i) => {
+            const isCorrect = i === question.correct_answer
+            const isChecked = i === this.state.checked
+            return <Answer key={i}
+              text={answer.text}
+              value={`${i}`}
               isCorrect={isCorrect} isChecked={isChecked} />
           })}
         </ul>
