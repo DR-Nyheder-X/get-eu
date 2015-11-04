@@ -3,7 +3,7 @@
 
 .ZeroPointsMessage {
   position: relative;
-  min-height: $appHeight;
+  min-height: $appHeight*.75;
   display: flex;
   align-items: center;
   justify-content: center;
