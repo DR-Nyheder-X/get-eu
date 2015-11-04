@@ -3,7 +3,7 @@ export function logEntryForStep (category, step) {
     stepId: step.id,
     points: 10,
     text: `${category.title}: ${step.id}`,
-    terms: category.terms
+    terms: step.terms
   }
 }
 
