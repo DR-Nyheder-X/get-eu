@@ -27,8 +27,6 @@ export default class Start extends Component {
   }
 
   render () {
-    const goTo = whereToGo(this.props.progress)
-
     return (
       <div className='Start'>
         <h1>
@@ -36,7 +34,7 @@ export default class Start extends Component {
         </h1>
         <div className='Start-baseballs'></div>
         <div className='Start-cta'>
-          <Button to={goTo} type='yellow darkShadow fullWidth'>
+          <Button to='/intro' type='yellow darkShadow fullWidth'>
             Kom i gang
           </Button>
         </div>

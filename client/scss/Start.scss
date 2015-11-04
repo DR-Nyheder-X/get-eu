@@ -4,7 +4,7 @@
 .Start {
   background-color: $darkerPurple;
   position: relative;
-  height: 100%;
+  min-height: $appHeight;
   display: flex;
   flex-direction: column;
   padding-top: 1em;
