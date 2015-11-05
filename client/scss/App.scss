@@ -29,3 +29,21 @@
     padding-bottom: 2.5em;
   }
 }
+
+// Adding bg to make align with grid on desktop
+@media only screen and (min-width: 992px){
+  .quiz {
+    background: rgba(1, 28, 104, .3);
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+    margin-top: 2em;
+
+    .App {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}

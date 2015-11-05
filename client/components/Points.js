@@ -22,7 +22,7 @@ export default class Points extends Component {
       return <ZeroPointsMessage />
     }
 
-    const entries = processProgress(progress, Repo.categories)
+    const entries = processProgress(progress, Repo.categories).reverse()
 
     return <div>
       {entries.map(e => (

@@ -2,7 +2,7 @@ export function logEntryForStep (category, step) {
   return {
     stepId: step.id,
     points: 10,
-    text: `${category.title}: ${step.id}`,
+    text: `for at lære om …`,
     terms: step.terms
   }
 }
@@ -11,7 +11,7 @@ export function logEntryForCategory (category) {
   return {
     categoryId: category.id,
     points: 50,
-    text: category.title,
+    text: `for at lære alt om ${category.title}`,
     terms: category.terms
   }
 }
