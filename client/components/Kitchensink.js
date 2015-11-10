@@ -67,17 +67,17 @@ export default class Kitchensink extends Component {
         <Progressbar percent={70} type='small dimmed' />
 
         <SectionTitle>Main navigation</SectionTitle>
-        <MainNavigation currentPath='/learn' progress={{points: 666}} />
+        <MainNavigation currentPath='/learn' progress={{completedStepIds: [], points: 666}} />
 
         <SectionTitle>Zero points message</SectionTitle>
         <ZeroPointsMessage />
 
         <SectionTitle>Point log entry</SectionTitle>
-        <PointLogEntry type='1' points={10}>for at lære om...</PointLogEntry>
-        <PointLogEntry type='2' points={20}>for at lære om...</PointLogEntry>
-        <PointLogEntry type='3' points={30}>for at lære om...</PointLogEntry>
-        <PointLogEntry type='4' points={40}>for at lære om...</PointLogEntry>
-        <PointLogEntry type='5' points={50}>for at lære alt om Erhverv.</PointLogEntry>
+        <PointLogEntry type='1' points={10} terms={['abe']}>for at lære om...</PointLogEntry>
+        <PointLogEntry type='2' points={20} terms={['abe']}>for at lære om...</PointLogEntry>
+        <PointLogEntry type='3' points={30} terms={['abe']}>for at lære om...</PointLogEntry>
+        <PointLogEntry type='4' points={40} terms={['abe']}>for at lære om...</PointLogEntry>
+        <PointLogEntry type='5' points={50} terms={['abe']}>for at lære alt om Erhverv.</PointLogEntry>
 
         <SectionTitle>Card navigation</SectionTitle>
         <CardNavigation page={2} total={3} />
