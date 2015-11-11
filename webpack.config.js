@@ -3,7 +3,6 @@ var webpack = require('webpack')
 
 var isProduction = process.env.NODE_ENV === 'production'
 
-var entry = './client/index.js'
 var plugins = [
   new webpack.optimize.OccurenceOrderPlugin(),
   new webpack.NoErrorsPlugin(),
@@ -17,15 +16,23 @@ if (!isProduction) {
   plugins.push(new webpack.HotModuleReplacementPlugin())
 }
 
+var hotClient = 'webpack-hot-middleware/client'
+var entry = {
+  quiz: './client/quiz.js',
+  leksikon: './client/leksikon.js'
+}
+
 module.exports = {
   devtool: isProduction ? null : 'eval-sourcemaps',
-  entry: isProduction ? entry : [
-    'webpack-hot-middleware/client',
-    entry
-  ],
+  entry: Object.keys(entry).reduce((entries, key) => {
+    entries[key] = isProduction
+      ? entry[key]
+      : [entry[key], hotClient]
+    return entries
+  }, {}),
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     publicPath: '/client/'
   },
   plugins: plugins,
