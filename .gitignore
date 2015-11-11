@@ -45,4 +45,4 @@ Thumbs.db
 # Codekit
 .codekit-config.json
 config.codekit
-/public/bundle.js
+/public/*.bundle.js
