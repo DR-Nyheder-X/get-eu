@@ -1,10 +1,15 @@
-import React, { Component } from 'react'
-import Toggle from './Toggle'
+import React, { Component, PropTypes } from 'react'
 
 import '../scss/Filters.scss'
 
 export default class Filters extends Component {
+  static propTypes = {
+    children: PropTypes.node
+  }
+
   render () {
+    const { children } = this.props
+
     return (
       <div className='Filters'>
         <header className='Filters-header'>
@@ -13,12 +18,7 @@ export default class Filters extends Component {
         </header>
 
         <div className='Filters-toggles'>
-          <Toggle>Historiske begivenheder</Toggle>
-          <Toggle>Retsforbeholdet</Toggle>
-          <Toggle>Partiernes holdninger</Toggle>
-          <Toggle>Ja-sidens argumenter</Toggle>
-          <Toggle>Nej-sidens argumenter</Toggle>
-          <Toggle>Valg-detaljer</Toggle>
+          {children}
         </div>
       </div>
     )

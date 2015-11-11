@@ -4,13 +4,9 @@ require('babel-core/polyfill')
 import React, { Component } from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore, combineReducers, compose } from 'redux'
+import { createStore, compose } from 'redux'
 import Leksikon from './components/Leksikon'
-
-const initialState = { enabled: [] }
-function sectionsReducer (state = initialState, action) {
-  return state
-}
+import { createFinalReducer } from './reducers/leksikon'
 
 let finalCreateStore
 
@@ -24,9 +20,7 @@ if (__DEVELOPMENT) {
   finalCreateStore = createStore
 }
 
-const store = finalCreateStore(combineReducers({
-  sectionsReducer
-}))
+const store = finalCreateStore(createFinalReducer())
 
 class Root extends Component {
   render () {

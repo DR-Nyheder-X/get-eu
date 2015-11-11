@@ -7,7 +7,8 @@ export default class Toggle extends Component {
   static propTypes = {
     children: PropTypes.node,
     checked: PropTypes.bool,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    value: PropTypes.string
   }
 
   constructor (props) {
@@ -25,8 +26,8 @@ export default class Toggle extends Component {
     const checked = !this.state.checked
     this.setState({ checked })
 
-    const { onChange } = this.props
-    onChange && onChange({ checked })
+    const { onChange, value } = this.props
+    onChange && onChange({ checked, value })
   }
 
   render () {
