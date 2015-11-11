@@ -55,4 +55,3 @@ render(component, dest)
 if (module.hot) {
   module.hot.accept()
 }
-
