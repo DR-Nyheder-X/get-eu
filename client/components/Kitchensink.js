@@ -18,6 +18,7 @@ import Done from './Done'
 import ZeroPointsMessage from './ZeroPointsMessage'
 import Deck from './Deck'
 import Card from './Card'
+import Toggle from './Toggle'
 
 import '../scss/Kitchensink.scss'
 
@@ -105,6 +106,10 @@ export default class Kitchensink extends Component {
 
         <SectionTitle>Card</SectionTitle>
         <Card text='Lorem ipsumz' />
+
+        <SectionTitle>Toggle</SectionTitle>
+        <Toggle enabled={true}>Historiske begivenheder</Toggle>
+        <Toggle state='off'>Retsforbeholdet</Toggle>
       </div>
     )
   }

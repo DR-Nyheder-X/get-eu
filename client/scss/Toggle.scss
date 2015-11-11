@@ -1,0 +1,61 @@
+@import 'settings.scss';
+@import 'mixins.scss';
+
+.Toggle {
+  padding: 1em 10px .95em;
+  margin-bottom: 9px;
+  background-color: $lightTurquoise;
+  box-shadow: 2px 2px 0 0 $dimmedTurquoise;
+  border-radius: 2px;
+  font-size: 14px;
+  position: relative;
+  transition: background-color .2s ease;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media #{$mediumUp} {
+    font-size: 16px;
+    padding: 1.3em 14px 1.25em;
+  }
+}
+
+.Toggle-switch {
+  width: 30px;
+  height: 16px;
+  background-color: $dimmedTurquoise;
+  border-radius: 16px;
+  position: absolute;
+  top: .95em;
+  right: 10px;
+
+  @media #{$mediumUp} {
+    top: 1.275em;
+    right: 14px;
+  }
+
+  i {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    display: block;
+    border-radius: 12px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: left .2s ease, background-color .2s ease;
+  }
+}
+
+.Toggle.Toggle--enabled {
+  background-color: #fff;
+}
+
+.Toggle.Toggle--enabled .Toggle-switch {
+  background-color: $green;
+
+  i {
+    left: 16px;
+  }
+}
