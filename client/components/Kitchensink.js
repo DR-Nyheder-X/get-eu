@@ -18,7 +18,8 @@ import Done from './Done'
 import ZeroPointsMessage from './ZeroPointsMessage'
 import Deck from './Deck'
 import Card from './Card'
-
+import Toggle from './Toggle'
+import Filters from './Filters'
 import '../scss/Kitchensink.scss'
 
 @connect(state => ({ progress: state.progress }))
@@ -105,6 +106,12 @@ export default class Kitchensink extends Component {
 
         <SectionTitle>Card</SectionTitle>
         <Card text='Lorem ipsumz' />
+
+        <SectionTitle>Toggle</SectionTitle>
+        <Toggle>Historiske begivenheder</Toggle>
+
+        <SectionTitle>Filters</SectionTitle>
+        <Filters />
       </div>
     )
   }
