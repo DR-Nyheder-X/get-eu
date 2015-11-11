@@ -18,10 +18,9 @@ import Done from './Done'
 import ZeroPointsMessage from './ZeroPointsMessage'
 import Deck from './Deck'
 import Card from './Card'
+import Entry from './Entry'
 import Toggle from './Toggle'
 import Filters from './Filters'
-import Entry from './Entry'
-
 import '../scss/Kitchensink.scss'
 
 @connect(state => ({ progress: state.progress }))
@@ -38,10 +37,6 @@ export default class Kitchensink extends Component {
       <div className='Kitchensink'>
         <PageTitle type='boxed'>Kitchensink</PageTitle>
 
-        <SectionTitle>Entry</SectionTitle>
-        <Entry title='Dette er en overskrift' category='Retsforbeholdet'>
-          Og her er indhold.
-        </Entry>
         <SectionTitle>Buttons</SectionTitle>
         <Copy>
           <p><Button type='small'>Small button</Button></p>
@@ -119,6 +114,12 @@ export default class Kitchensink extends Component {
 
         <SectionTitle>Filters</SectionTitle>
         <Filters />
+
+        <SectionTitle>Entry</SectionTitle>
+        <Entry title='Dette er en overskrift' category='Retsforbeholdet'>
+          Og her er indhold.
+        </Entry>
+
       </div>
     )
   }
