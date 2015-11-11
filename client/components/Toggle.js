@@ -1,28 +1,39 @@
-var React = require('react')
-require('../scss/Toggle.scss')
+import React, { Component, PropTypes } from 'react'
+import classname from 'classname'
 
-var Toggle = React.createClass({
+import '../scss/Toggle.scss'
 
-  propTypes: {
-    children: React.PropTypes.node
-  },
+export default class Toggle extends Component {
+  static propTypes = {
+    children: PropTypes.node,
+    checked: PropTypes.bool,
+    onChange: PropTypes.func
+  }
 
-  getInitialState: function () {
-    return { enabled: true }
-  },
+  constructor (props) {
+    super(props)
+    const checked = !!props.checked
+    this.state = { checked }
+  }
 
-  toggle: function () {
-    if (this.state.enabled === true) { this.setState({ enabled: false }) }
-    if (this.state.enabled === false) { this.setState({ enabled: true }) }
-  },
+  componentWillReceiveProps (props) {
+    const checked = !!props.checked
+    this.setState({ checked })
+  }
 
-  render: function () {
-    var cls = 'Toggle'
-    if (this.state.enabled === true) { cls = 'Toggle Toggle--disabled' }
-    if (this.state.enabled === false) { cls = 'Toggle Toggle--enabled' }
+  handleChange (event) {
+    const checked = !this.state.checked
+    this.setState({ checked })
+  }
+
+  render () {
+    const { checked, onChange } = this.props
+    const cls = classname('Toggle', [
+      checked ? 'Toggle--enabled' : 'Toggle--disabled'
+    ])
 
     return (
-      <div className={cls} onClick={this.toggle}>
+      <div className={cls} onClick={this.handleChange.bind(this)}>
         {this.props.children}
         <div className="Toggle-switch">
           <i></i>
@@ -30,6 +41,4 @@ var Toggle = React.createClass({
       </div>
     )
   }
-})
-
-module.exports = Toggle
+}
