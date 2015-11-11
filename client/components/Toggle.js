@@ -24,10 +24,13 @@ export default class Toggle extends Component {
   handleChange (event) {
     const checked = !this.state.checked
     this.setState({ checked })
+
+    const { onChange } = this.props
+    onChange && onChange({ checked })
   }
 
   render () {
-    const { checked, onChange } = this.props
+    const { checked } = this.props
     const cls = classname('Toggle', [
       checked ? 'Toggle--enabled' : 'Toggle--disabled'
     ])
@@ -35,7 +38,7 @@ export default class Toggle extends Component {
     return (
       <div className={cls} onClick={this.handleChange.bind(this)}>
         {this.props.children}
-        <div className="Toggle-switch">
+        <div className='Toggle-switch'>
           <i></i>
         </div>
       </div>

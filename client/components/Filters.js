@@ -1,6 +1,7 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import Toggle from './Toggle'
-require('../scss/Filters.scss')
+
+import '../scss/Filters.scss'
 
 export default class Filters extends Component {
   render () {
