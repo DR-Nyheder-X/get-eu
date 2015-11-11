@@ -14,8 +14,13 @@ function cmd {
   echo "✅"
 }
 
-cmd "Running tests" npm test
-cmd "Checking syntax" ./node_modules/standard/bin/cmd.js
-cmd "Building bundle" npm run build
-cmd "Copying to server" scp public/bundle.js \
-  dr:/var/www/eu.drdinstem.me/public
+cmd "Running tests" \
+  npm test
+cmd "Checking syntax" \
+  npm run lint
+cmd "Building bundles" \
+  npm run build
+cmd "DEPRECATED: copying quiz to bundle.js" \
+  cp public/{quiz.,}bundle.js
+cmd "Copying to server" \
+  scp public/*bundle.js dr:/var/www/eu.drdinstem.me/public
