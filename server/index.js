@@ -15,9 +15,16 @@ if (!isProduction) {
   useDev(app)
 }
 
-app.get('/', (req, res) => res.redirect('/nyheder/politik/eu15/quiz'))
+app.get('/', (req, res) => {
+  res.redirect('/nyheder/politik/eu15/quiz')
+})
+
 app.get('/nyheder/politik/eu15/quiz', (req, res) => {
-  res.render('index', { isProduction })
+  res.render('index', { isProduction, bundle: 'quiz' })
+})
+
+app.get('/nyheder/politik/eu15/leksikon', (req, res) => {
+  res.render('index', { isProduction, bundle: 'leksikon' })
 })
 
 const port = process.env.PORT || 3000

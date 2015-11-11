@@ -93,11 +93,11 @@
             </div>
           </div>				</div>				
         
-        <div class="quiz"></div>
+          <div class="<%= bundle %>"></div>
         <%if (!isProduction) { %>
-          <script src="/client/bundle.js"></script>
+          <script src="/client/<%= bundle %>.bundle.js"></script>
         <% } else { %>
-          <script src="/build/<%= assetPath('app.js') %>"></script>
+          N/A (production not supported)
         <% } %>
 
         
