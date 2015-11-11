@@ -1,0 +1,65 @@
+@import 'settings.scss';
+@import 'mixins.scss';
+@import './PageTitle.scss';
+
+.Filters {
+  background-color: $turquoise;
+  padding: 10px 10px 2px;
+  border-radius: 2px;
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, .1);
+  overflow: hidden;
+
+  @media #{$mediumUp} {
+    padding: 1em 30px 1.65em;
+  }
+}
+
+.Filters-toggles {
+  @media only screen and (min-width: 480px) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  @media #{$mediumUp} {
+    width: 660px;
+    margin: 0 auto;
+  }
+}
+
+.Filters .Toggle {
+  margin-bottom: 9px;
+
+  @media only screen and (min-width: 480px) {
+    width: 49%;
+  }
+
+  @media #{$mediumUp} {
+    width: 325px;
+  }
+}
+
+.Filters .Filters-header {
+    @extend .PageTitle;
+    margin: 1em 0 1.75em;
+
+    @media #{$mediumUp} { margin-bottom: 2em; }
+
+    h1 {
+      @extend .PageTitle--shadow;
+      @extend .PageTitle--centered;
+      margin-bottom: .2em;
+
+      @media #{$largeUp} { font-size: 34px; margin-bottom: .15em; }
+    }
+
+    h2 {
+      font-size: 14px;
+      font-family: $gibsonRegular;
+      text-align: center;
+      color: $darkerPurple;
+
+      @media #{$mediumUp} { font-size: 16px; }
+    }
+}
