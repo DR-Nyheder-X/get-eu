@@ -43,15 +43,17 @@ export default class Entry extends Component {
 
     return (
       <div className={cls}>
-        <header className='Entry-header'>
-          <h2>{this.props.category}</h2>
-          <h1>{this.props.title}</h1>
-        </header>
-        <div className='Entry-content'>
-          {this.props.children}
-        </div>
-        <div className='Entry-toggle'>
-          <a href='#' onClick={this.handleChange.bind(this)}>Åbn</a>
+        <div className='Entry-inner'>
+          <header className='Entry-header'>
+            <h2>{this.props.category}</h2>
+            <h1>{this.props.title}</h1>
+          </header>
+          <div className='Entry-content'>
+            {this.props.children}
+          </div>
+          <div className='Entry-toggle'>
+            <a href='#' onClick={this.handleChange.bind(this)}>Åbn</a>
+          </div>
         </div>
       </div>
     )

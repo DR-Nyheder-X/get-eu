@@ -1,19 +1,14 @@
 @import 'settings.scss';
 @import 'mixins.scss';
 
-.Entry {
+.Entry-inner {
   background: #fff;
   border-radius: 2px;
   padding: 18px 20px 20px;
   box-shadow: 2px 2px 0 0 $black;
   overflow: hidden;
-  margin-bottom: 11px;
   transform: translateZ(0);
   transition: padding .2s linear;
-
-  @media #{$mediumUp} {
-    margin-bottom: 30px;
-  }
 }
 
 .Entry-header {
@@ -88,11 +83,15 @@
 
 // Open
 .Entry.Entry--open {
-  width: 100%;
 
-  @media #{$mediumUp} {
-    padding: 30px;
+  .Entry-inner {
+    width: 100%;
+
+    @media #{$mediumUp} {
+      padding: 30px;
+    }
   }
+
 
   .Entry-content {
     max-height: 1000px;
