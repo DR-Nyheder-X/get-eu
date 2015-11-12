@@ -22,7 +22,7 @@ export default class Entry extends Component {
   }
 
   handleChange (event) {
-    // event.preventDefault()
+    event.preventDefault()
     const open = !this.state.open
     this.setState({ open })
   }
@@ -35,7 +35,7 @@ export default class Entry extends Component {
     ])
 
     return (
-      <div className={cls} onClick={this.handleChange.bind(this)}>
+      <div className={cls}>
         <header className='Entry-header'>
           <h2>{this.props.category}</h2>
           <h1>{this.props.title}</h1>
@@ -44,7 +44,7 @@ export default class Entry extends Component {
           {this.props.children}
         </div>
         <div className='Entry-toggle'>
-          <a href='#'>Åbn</a>
+          <a href='#' onClick={this.handleChange.bind(this)}>Åbn</a>
         </div>
       </div>
     )

@@ -117,7 +117,8 @@ export default class Kitchensink extends Component {
 
         <SectionTitle>Entry</SectionTitle>
         <Entry title='Dette er en overskrift' category='Retsforbeholdet'>
-          Og her er indhold.
+          <p>Retsforbeholdet betyder, at Danmark står uden for en del af det retlige samarbejde i EU. Det gælder blandt andet asyl- og udlændingepolitikken samt de fælleseuropæiske konkurs- og skilsmisseregler. Til gengæld har vi i de seneste 16 år deltaget i det europæiske politisamarbejde, Europol, som har til formål at bekæmpe grænseoverskridende kriminalitet.</p>
+          <p>Retsforbeholdet har været gældende siden 1993, hvor et flertal af vælgerne (56,7 pct.) stemte ja til den såkaldte Edinburgh-afgørelse. Den indebærer, at Danmark også har forbehold inden for forsvarssamarbejdet, euroen og unionsborgerskabet. Edinburgh-afgørelsen blev til som et kompromis mellem Danmark og de øvrige EU-lande, da et flertal af danskerne (50,7 %) i 1992 havde stemt nej til Maastricht-traktaten.</p>
         </Entry>
 
       </div>
