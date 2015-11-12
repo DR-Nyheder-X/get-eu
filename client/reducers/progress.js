@@ -94,5 +94,4 @@ export default function progressReducer (state = initialState, action) {
       return state
     }
   }
-
 }
