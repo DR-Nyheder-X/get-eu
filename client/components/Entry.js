@@ -25,6 +25,13 @@ export default class Entry extends Component {
     event.preventDefault()
     const open = !this.state.open
     this.setState({ open })
+
+    // Change text in open/close button
+    if( open === true ) {
+      event.target.innerText = 'Luk'
+    } else {
+      event.target.innerText = 'Åbn'
+    }
   }
 
 

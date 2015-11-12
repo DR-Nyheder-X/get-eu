@@ -1,0 +1,121 @@
+@import 'settings.scss';
+@import 'mixins.scss';
+
+.Entry {
+  background: #fff;
+  border-radius: 2px;
+  padding: 18px 20px 20px;
+  box-shadow: 2px 2px 0 0 $black;
+  overflow: hidden;
+  margin-bottom: 11px;
+  transform: translateZ(0);
+  transition: padding .2s linear;
+
+  @media #{$mediumUp} {
+    margin-bottom: 30px;
+  }
+}
+
+.Entry-header {
+  margin-bottom: 1em;
+
+  h1 {
+    font-size: 1em;
+    font-family: $gibsonBold;
+    color: $darkPurple;
+    line-height: 1.35;
+    transform: translateZ(0);
+    transition: font-size .2s linear;
+
+    @media #{$mediumUp} {
+      font-size: 1.15em;
+    }
+  }
+
+  h2 {
+    font-size: 12px;
+    font-family: $gibsonRegular;
+    color: $darkTurquoise;
+    margin-bottom: .5em;
+  }
+}
+
+.Entry-content {
+  font-size: 15px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateZ(0);
+  transition: max-height .2s linear, opacity .2s linear .1s;
+
+  p {
+    margin-bottom: 1em;
+  }
+
+  a {
+    color: $darkerPurple;
+    text-decoration: underline;
+
+    &:hover { color: $purple; }
+  }
+
+  em {
+    font-style: italic;
+  }
+}
+
+.Entry-toggle {
+  margin: .75em -20px -20px;
+  padding-left: 0;
+  transform: translateZ(0);
+  transition: margin .2s linear, padding-left .1s linear .1s;
+
+  a {
+    background-color: $purple;
+    color: $turquoise;
+    text-align: center;
+    display: block;
+    padding: 14px 20px 12px;
+    border-radius: 0;
+    transform: translateZ(0);
+    transition: background-color .2s ease;
+    text-decoration: none;
+
+    &:hover { background-color: $lightPurple; }
+
+  }
+}
+
+// Open
+.Entry.Entry--open {
+  width: 100%;
+
+  @media #{$mediumUp} {
+    padding: 30px;
+  }
+
+  .Entry-content {
+    max-height: 1000px;
+    opacity: 1;
+  }
+
+  .Entry-header h1 {
+    @media #{$mediumUp} {
+      font-size: 1.5em;
+    }
+  }
+
+  .Entry-toggle {
+    margin-top: 1.2em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+
+    a { border-radius: 2px; }
+
+    @media #{$mediumUp} {
+      margin-top: 1.5em;
+      padding-left: 75%;
+    }
+  }
+}
