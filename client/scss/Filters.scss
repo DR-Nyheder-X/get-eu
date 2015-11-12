@@ -3,6 +3,7 @@
 @import './PageTitle.scss';
 
 .Filters {
+  margin-top: 10px;
   background-color: $turquoise;
   padding: 10px 10px 2px;
   border-radius: 2px;
@@ -10,6 +11,7 @@
   overflow: hidden;
 
   @media #{$mediumUp} {
+    margin-top: 2em;
     padding: 1em 30px 1.65em;
   }
 }
@@ -59,6 +61,7 @@
       font-family: $gibsonRegular;
       text-align: center;
       color: $darkerPurple;
+      margin-top: 0;
 
       @media #{$mediumUp} { font-size: 16px; }
     }
