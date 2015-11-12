@@ -6,6 +6,17 @@ import { union } from 'lodash'
 import { processProgress } from '../utils/logProcessor'
 import Repo from '../Repo'
 
+function gaSend(event, value) {
+  const ga = window.ga ||
+    function (...args) { console.log(args) }
+
+  try {
+    ga('send', 'event', 'Quiz', event, value)
+  } catch(e) {
+    console.log(e)
+  }
+}
+
 const initialState: Progress = {
   completedStepIds: [],
   points: calculatePoints([])
@@ -48,8 +59,26 @@ export default function progressReducer (state = initialState, action) {
   switch (action.type) {
     case COMPLETE_STEP: {
       const completedStepIds =
-        union(state.completedStepIds, [action.step.id])
+        state.completedStepIds.slice()
+
+      const beforeProg =
+        processProgress({ completedStepIds }, Repo.categories)
+
+      completedStepIds.push(action.step.id)
+
+      const afterProg =
+        processProgress({ completedStepIds }, Repo.categories)
+      const diff = beforeProg.length - afterProg.length
+      afterProg.slice(diff).forEach(logEntry => {
+        gaSend(`Completed ${logEntry.stepId ? 'step' : 'category'}`, logEntry.stepId || logEntry.categoryId)
+      })
+
       const points = calculatePoints(completedStepIds)
+
+      if (points === 500) {
+        gaSend('Completed everything!')
+      }
+
       return {
         ...state,
         completedStepIds,
@@ -66,4 +95,5 @@ export default function progressReducer (state = initialState, action) {
       return state
     }
   }
+
 }

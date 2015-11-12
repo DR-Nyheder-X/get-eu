@@ -13,6 +13,7 @@ export default class Toggle extends Component {
 
   constructor (props) {
     super(props)
+
     const checked = !!props.checked
     this.state = { checked }
   }
@@ -31,7 +32,7 @@ export default class Toggle extends Component {
   }
 
   render () {
-    const { checked } = this.props
+    const { checked } = this.state
     const cls = classname('Toggle', [
       checked ? 'Toggle--enabled' : 'Toggle--disabled'
     ])
