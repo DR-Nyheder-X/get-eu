@@ -2,17 +2,16 @@
 
 import { Progress } from '../types'
 import { COMPLETE_STEP, RESET_PROGRESS } from '../actions'
-import { union } from 'lodash'
 import { processProgress } from '../utils/logProcessor'
 import Repo from '../Repo'
 
-function gaSend(event, value) {
+function gaSend (event, value) {
   const ga = window.ga ||
     function (...args) { console.log(args) }
 
   try {
     ga('send', 'event', 'Quiz', event, value)
-  } catch(e) {
+  } catch (e) {
     console.log(e)
   }
 }
