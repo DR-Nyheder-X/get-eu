@@ -7,7 +7,8 @@ export default class Entry extends Component {
     children: PropTypes.node.isRequired,
     category: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    open: PropTypes.bool
+    open: PropTypes.bool,
+    onChange: PropTypes.func
   }
 
   constructor (props) {
@@ -23,20 +24,19 @@ export default class Entry extends Component {
 
   handleChange (event) {
     event.preventDefault()
+
     const open = !this.state.open
     this.setState({ open })
 
-    // Change text in open/close button
-    if( open === true ) {
-      event.target.innerText = 'Luk'
-    } else {
-      event.target.innerText = 'Åbn'
-    }
+    const { onChange } = this.props
+    onChange && onChange(this.state)
   }
 
-
   render () {
-    const { open, onChange } = this.props
+    const { category, title } = this.props
+    const { open } = this.state
+    const toggleText = open ? 'Luk' : 'Åbn'
+
     const cls = classname('Entry', [
       open ? 'Entry--open' : 'Entry--closed'
     ])
@@ -45,14 +45,14 @@ export default class Entry extends Component {
       <div className={cls}>
         <div className='Entry-inner'>
           <header className='Entry-header'>
-            <h2>{this.props.category}</h2>
-            <h1>{this.props.title}</h1>
+            <h2>{category}</h2>
+            <h1>{title}</h1>
           </header>
           <div className='Entry-content'>
             {this.props.children}
           </div>
           <div className='Entry-toggle'>
-            <a href='#' onClick={this.handleChange.bind(this)}>Åbn</a>
+            <a href='#' onClick={this.handleChange.bind(this)}>{toggleText}</a>
           </div>
         </div>
       </div>

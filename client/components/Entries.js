@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react'
-var Masonry = require('react-masonry-component')(React) // TODO: Not exactly kosher
+import createMasonry from 'react-masonry-component'
+
+const Masonry = createMasonry(React)
 
 import '../scss/Entries.scss'
 
@@ -8,19 +10,17 @@ export default class Entries extends Component {
     children: PropTypes.node
   }
 
-  render () {
-    const masonryOptions = {
-      transitionDuration: 0,
-      itemSelector: '.Entry',
-      isResizeBound: true
-    }
+  static defaultMasonryOptions = {
+    transitionDuration: 0,
+    itemSelector: '.Entry',
+    isResizeBound: true
+  }
 
-    return (
-      <div className='Entries'>
-        <Masonry className={'Entries'} elementType={'div'} options={masonryOptions} disableImagesLoaded={true}>
-          {this.props.children}
-        </Masonry>
-      </div>
-    )
+  render () {
+    return <div className='Entries'>
+      <Masonry className='Entries' elementType='div' options={Entries.defaultMasonryOptions} disableImagesLoaded>
+        {this.props.children}
+      </Masonry>
+    </div>
   }
 }
