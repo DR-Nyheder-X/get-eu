@@ -25,6 +25,7 @@
     color: $darkPurple;
     line-height: 1.35;
     transform: translateZ(0);
+    margin-top: 0;
     // transition: font-size .2s linear;
 
     @media #{$mediumUp} {
