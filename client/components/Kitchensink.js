@@ -18,6 +18,8 @@ import Done from './Done'
 import ZeroPointsMessage from './ZeroPointsMessage'
 import Deck from './Deck'
 import Card from './Card'
+import Entry from './Entry'
+import Entries from './Entries'
 import Toggle from './Toggle'
 import Filters from './Filters'
 import '../scss/Kitchensink.scss'
@@ -35,6 +37,7 @@ export default class Kitchensink extends Component {
     return (
       <div className='Kitchensink'>
         <PageTitle type='boxed'>Kitchensink</PageTitle>
+
         <SectionTitle>Buttons</SectionTitle>
         <Copy>
           <p><Button type='small'>Small button</Button></p>
@@ -112,6 +115,57 @@ export default class Kitchensink extends Component {
 
         <SectionTitle>Filters</SectionTitle>
         <Filters />
+
+        <SectionTitle>Entry</SectionTitle>
+        <Entry title='Retsforbeholdet og alt sådan noget' category='Retsforbeholdet'>
+          <p>Retsforbeholdet betyder, at <a href='#'>Danmark står uden</a> for en del af det retlige samarbejde i EU. Det gælder blandt andet asyl- og udlændingepolitikken samt de fælleseuropæiske konkurs- og skilsmisseregler. Til gengæld har vi i de seneste 16 år deltaget i det europæiske politisamarbejde, Europol, som har til formål at bekæmpe grænseoverskridende kriminalitet.</p>
+          <p>Retsforbeholdet har været gældende siden 1993, hvor et flertal af vælgerne (56,7 pct.) stemte ja til den såkaldte Edinburgh-afgørelse. Den indebærer, at Danmark også har forbehold inden for forsvarssamarbejdet, euroen og unionsborgerskabet. Edinburgh-afgørelsen blev til som et kompromis mellem Danmark og de øvrige EU-lande, da et flertal af danskerne (50,7 %) i 1992 havde stemt nej til Maastricht-traktaten.</p>
+        </Entry>
+        <Entry title='Mellemstatsligt vs. overstatsligt samarbejde' category='Partiernes holdninger'>
+          <p>Et <em>mellemstatsligt samarbejde betyder</em>, at parlamenterne i de enkelte lande skal godkende og implementere EU-reglerne i landenes egen lovgivning. Desuden skal alle medlemslande være enige om nye EU-regler, før de kan vedtages. Patentdomstolen, som var til folkeafstemning i Danmark d. 25. maj 2014, er ét eksempel på et mellemstatsligt samarbejde. Den fælles udenrigs- og sikkerhedspolitik er et andet.</p>
+          <p>Et <em>overstatsligt samarbejde</em> betyder derimod, at EU-reglerne har direkte virkning i medlemslandene. Reglerne udarbejdes i samarbejde mellem medlemslandene og Europa-Parlamentet. Med Lissabon-traktaten gik man desuden fra at kræve enstemmighed til flertalsafgørelser på det retlige område. EU’s samarbejde om blandt andet det indre marked samt landbrugs- og fiskeripolitikken er eksempler på overstatsligt samarbejde.</p>
+        </Entry>
+
+        <SectionTitle>Entries</SectionTitle>
+        <Entries>
+          <Entry title='Retsforbeholdet og alt sådan noget' category='Retsforbeholdet'>
+            <p>Retsforbeholdet betyder, at <a href='#'>Danmark står uden</a> for en del af det retlige samarbejde i EU. Det gælder blandt andet asyl- og udlændingepolitikken samt de fælleseuropæiske konkurs- og skilsmisseregler. Til gengæld har vi i de seneste 16 år deltaget i det europæiske politisamarbejde, Europol, som har til formål at bekæmpe grænseoverskridende kriminalitet.</p>
+            <p>Retsforbeholdet har været gældende siden 1993, hvor et flertal af vælgerne (56,7 pct.) stemte ja til den såkaldte Edinburgh-afgørelse. Den indebærer, at Danmark også har forbehold inden for forsvarssamarbejdet, euroen og unionsborgerskabet. Edinburgh-afgørelsen blev til som et kompromis mellem Danmark og de øvrige EU-lande, da et flertal af danskerne (50,7 %) i 1992 havde stemt nej til Maastricht-traktaten.</p>
+          </Entry>
+          <Entry title='Mellemstatsligt vs. overstatsligt samarbejde' category='Partiernes holdninger'>
+            <p>Et <em>mellemstatsligt samarbejde betyder</em>, at parlamenterne i de enkelte lande skal godkende og implementere EU-reglerne i landenes egen lovgivning. Desuden skal alle medlemslande være enige om nye EU-regler, før de kan vedtages. Patentdomstolen, som var til folkeafstemning i Danmark d. 25. maj 2014, er ét eksempel på et mellemstatsligt samarbejde. Den fælles udenrigs- og sikkerhedspolitik er et andet.</p>
+            <p>Et <em>overstatsligt samarbejde</em> betyder derimod, at EU-reglerne har direkte virkning i medlemslandene. Reglerne udarbejdes i samarbejde mellem medlemslandene og Europa-Parlamentet. Med Lissabon-traktaten gik man desuden fra at kræve enstemmighed til flertalsafgørelser på det retlige område. EU’s samarbejde om blandt andet det indre marked samt landbrugs- og fiskeripolitikken er eksempler på overstatsligt samarbejde.</p>
+          </Entry>
+          <Entry title='Retsforbeholdet og alt sådan noget' category='Retsforbeholdet'>
+            <p>Retsforbeholdet betyder, at <a href='#'>Danmark står uden</a> for en del af det retlige samarbejde i EU. Det gælder blandt andet asyl- og udlændingepolitikken samt de fælleseuropæiske konkurs- og skilsmisseregler. Til gengæld har vi i de seneste 16 år deltaget i det europæiske politisamarbejde, Europol, som har til formål at bekæmpe grænseoverskridende kriminalitet.</p>
+            <p>Retsforbeholdet har været gældende siden 1993, hvor et flertal af vælgerne (56,7 pct.) stemte ja til den såkaldte Edinburgh-afgørelse. Den indebærer, at Danmark også har forbehold inden for forsvarssamarbejdet, euroen og unionsborgerskabet. Edinburgh-afgørelsen blev til som et kompromis mellem Danmark og de øvrige EU-lande, da et flertal af danskerne (50,7 %) i 1992 havde stemt nej til Maastricht-traktaten.</p>
+          </Entry>
+          <Entry title='Mellemstatsligt vs. overstatsligt samarbejde' category='Partiernes holdninger'>
+            <p>Et <em>mellemstatsligt samarbejde betyder</em>, at parlamenterne i de enkelte lande skal godkende og implementere EU-reglerne i landenes egen lovgivning. Desuden skal alle medlemslande være enige om nye EU-regler, før de kan vedtages. Patentdomstolen, som var til folkeafstemning i Danmark d. 25. maj 2014, er ét eksempel på et mellemstatsligt samarbejde. Den fælles udenrigs- og sikkerhedspolitik er et andet.</p>
+            <p>Et <em>overstatsligt samarbejde</em> betyder derimod, at EU-reglerne har direkte virkning i medlemslandene. Reglerne udarbejdes i samarbejde mellem medlemslandene og Europa-Parlamentet. Med Lissabon-traktaten gik man desuden fra at kræve enstemmighed til flertalsafgørelser på det retlige område. EU’s samarbejde om blandt andet det indre marked samt landbrugs- og fiskeripolitikken er eksempler på overstatsligt samarbejde.</p>
+          </Entry>
+          <Entry title='Mellemstatsligt vs. overstatsligt samarbejde og mange andre gode sange' category='Partiernes holdninger'>
+            <p>Et <em>mellemstatsligt samarbejde betyder</em>, at parlamenterne i de enkelte lande skal godkende og implementere EU-reglerne i landenes egen lovgivning. Desuden skal alle medlemslande være enige om nye EU-regler, før de kan vedtages. Patentdomstolen, som var til folkeafstemning i Danmark d. 25. maj 2014, er ét eksempel på et mellemstatsligt samarbejde. Den fælles udenrigs- og sikkerhedspolitik er et andet.</p>
+            <p>Et <em>overstatsligt samarbejde</em> betyder derimod, at EU-reglerne har direkte virkning i medlemslandene. Reglerne udarbejdes i samarbejde mellem medlemslandene og Europa-Parlamentet. Med Lissabon-traktaten gik man desuden fra at kræve enstemmighed til flertalsafgørelser på det retlige område. EU’s samarbejde om blandt andet det indre marked samt landbrugs- og fiskeripolitikken er eksempler på overstatsligt samarbejde.</p>
+          </Entry>
+          <Entry title='Retsforbeholdet og alt sådan noget' category='Retsforbeholdet'>
+            <p>Retsforbeholdet betyder, at <a href='#'>Danmark står uden</a> for en del af det retlige samarbejde i EU. Det gælder blandt andet asyl- og udlændingepolitikken samt de fælleseuropæiske konkurs- og skilsmisseregler. Til gengæld har vi i de seneste 16 år deltaget i det europæiske politisamarbejde, Europol, som har til formål at bekæmpe grænseoverskridende kriminalitet.</p>
+            <p>Retsforbeholdet har været gældende siden 1993, hvor et flertal af vælgerne (56,7 pct.) stemte ja til den såkaldte Edinburgh-afgørelse. Den indebærer, at Danmark også har forbehold inden for forsvarssamarbejdet, euroen og unionsborgerskabet. Edinburgh-afgørelsen blev til som et kompromis mellem Danmark og de øvrige EU-lande, da et flertal af danskerne (50,7 %) i 1992 havde stemt nej til Maastricht-traktaten.</p>
+          </Entry>
+          <Entry title='Mellemstatsligt vs. overstatsligt samarbejde' category='Partiernes holdninger'>
+            <p>Et <em>mellemstatsligt samarbejde betyder</em>, at parlamenterne i de enkelte lande skal godkende og implementere EU-reglerne i landenes egen lovgivning. Desuden skal alle medlemslande være enige om nye EU-regler, før de kan vedtages. Patentdomstolen, som var til folkeafstemning i Danmark d. 25. maj 2014, er ét eksempel på et mellemstatsligt samarbejde. Den fælles udenrigs- og sikkerhedspolitik er et andet.</p>
+            <p>Et <em>overstatsligt samarbejde</em> betyder derimod, at EU-reglerne har direkte virkning i medlemslandene. Reglerne udarbejdes i samarbejde mellem medlemslandene og Europa-Parlamentet. Med Lissabon-traktaten gik man desuden fra at kræve enstemmighed til flertalsafgørelser på det retlige område. EU’s samarbejde om blandt andet det indre marked samt landbrugs- og fiskeripolitikken er eksempler på overstatsligt samarbejde.</p>
+          </Entry>
+          <Entry title='Retsforbeholdet og alt sådan noget' category='Retsforbeholdet'>
+            <p>Retsforbeholdet betyder, at <a href='#'>Danmark står uden</a> for en del af det retlige samarbejde i EU. Det gælder blandt andet asyl- og udlændingepolitikken samt de fælleseuropæiske konkurs- og skilsmisseregler. Til gengæld har vi i de seneste 16 år deltaget i det europæiske politisamarbejde, Europol, som har til formål at bekæmpe grænseoverskridende kriminalitet.</p>
+            <p>Retsforbeholdet har været gældende siden 1993, hvor et flertal af vælgerne (56,7 pct.) stemte ja til den såkaldte Edinburgh-afgørelse. Den indebærer, at Danmark også har forbehold inden for forsvarssamarbejdet, euroen og unionsborgerskabet. Edinburgh-afgørelsen blev til som et kompromis mellem Danmark og de øvrige EU-lande, da et flertal af danskerne (50,7 %) i 1992 havde stemt nej til Maastricht-traktaten.</p>
+          </Entry>
+          <Entry title='Mellemstatsligt vs. overstatsligt samarbejde' category='Partiernes holdninger'>
+            <p>Et <em>mellemstatsligt samarbejde betyder</em>, at parlamenterne i de enkelte lande skal godkende og implementere EU-reglerne i landenes egen lovgivning. Desuden skal alle medlemslande være enige om nye EU-regler, før de kan vedtages. Patentdomstolen, som var til folkeafstemning i Danmark d. 25. maj 2014, er ét eksempel på et mellemstatsligt samarbejde. Den fælles udenrigs- og sikkerhedspolitik er et andet.</p>
+            <p>Et <em>overstatsligt samarbejde</em> betyder derimod, at EU-reglerne har direkte virkning i medlemslandene. Reglerne udarbejdes i samarbejde mellem medlemslandene og Europa-Parlamentet. Med Lissabon-traktaten gik man desuden fra at kræve enstemmighed til flertalsafgørelser på det retlige område. EU’s samarbejde om blandt andet det indre marked samt landbrugs- og fiskeripolitikken er eksempler på overstatsligt samarbejde.</p>
+          </Entry>
+        </Entries>
+
       </div>
     )
   }

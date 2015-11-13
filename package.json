@@ -27,6 +27,7 @@
     "raf": "^3.1.0",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
+    "react-masonry-component": "^2.0.0",
     "react-redux": "^4.0.0",
     "react-router": "1.0.0-rc3",
     "react-swipeable": "^3.0.2",

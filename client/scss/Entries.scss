@@ -1,0 +1,28 @@
+@import 'settings.scss';
+@import 'mixins.scss';
+
+.Entries {
+
+  @media #{$smallUp} {
+    margin-right: -3px;
+    margin-left: -3px;
+  }
+
+  .Entry {
+    margin-bottom: 12px;
+
+    @media #{$smallUp} {
+      width: 50%;
+      padding-right: 6px;
+      padding-left: 6px;
+    }
+
+    @media #{$mediumUp} {
+      width: 33.33%;
+    }
+
+    @media only screen and (min-width: 992px) {
+      width: 25%;
+    }
+  }
+}
