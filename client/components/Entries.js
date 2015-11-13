@@ -16,9 +16,19 @@ export default class Entries extends Component {
     isResizeBound: true
   }
 
+  componentWillReceiveProps (props) {
+    setTimeout(() => {
+      this.refs.masonry.masonry.layout()
+    }, 220)
+  }
+
   render () {
     return <div className='Entries'>
-      <Masonry className='Entries' elementType='div' options={Entries.defaultMasonryOptions} disableImagesLoaded>
+      <Masonry ref='masonry'
+        className='Entries'
+        elementType='div'
+        options={Entries.defaultMasonryOptions}
+      disableImagesLoaded>
         {this.props.children}
       </Masonry>
     </div>
