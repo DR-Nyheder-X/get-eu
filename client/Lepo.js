@@ -4,7 +4,7 @@ export const filters = [
   { id: 3, title: 'Partiernes argumenter' },
   { id: 4, title: 'Ja-sidens argumenter' },
   { id: 5, title: 'Nej-sidens argumenter' },
-  { id: 6, title: 'Historiske begivenheder' },
+  { id: 6, title: 'Historiske begivenheder' }
 ]
 
 export const entries = [
