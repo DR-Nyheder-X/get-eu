@@ -146,5 +146,3 @@ export const entries = [
     <p class="c1"><span>Antallet af stemmeberettigede offentligg&oslash;res af Social- og Indenrigsministeriet flere gange op til valget. Det endelige tal opgives f&oslash;rst efter valget, da man f&oslash;rst efterf&oslash;lgende kan vide, hvor mange som er d&oslash;de p&aring; dagen og derfor ikke skal t&aelig;lles med. Ved FV15 var der 4.145.105 stemmeberettigede. Hvis vi tager udgangspunkt i det tal, skal der 1.243.532 nej-stemmer til for at forkaste lovforslaget. Statsministeren har dog givet udtryk for, at han vil acceptere afstemningsresultatet lige meget hvad.</span></p>`
   }
 ]
-
-
