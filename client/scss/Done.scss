@@ -4,6 +4,8 @@
 
 .Done {
   background: $turquoise;
+  position: relative;
+  text-align: center;
 
   .PageTitle {
     margin-top: 1.5em;
@@ -12,6 +14,17 @@
     animation-fill-mode: both;
     animation-name: tada;
   }
+
+  .ShareButton {
+    margin-bottom: 1.5em;
+
+    @media #{$mediumUp} {
+      position: absolute;
+      top: -1.75em;
+      right: 1.5em;
+    }
+  }
+
 }
 
 @keyframes tada {
@@ -24,11 +37,13 @@
 
 .Done-message {
   @include mediumParagraph;
-  max-width: 375px;
+  max-width: 400px;
   text-align: center;
   margin-right: auto;
   margin-bottom: 3em;
   margin-left: auto;
+  padding-right: 1em;
+  padding-left: 1em;
 }
 
 .Done-cta {
