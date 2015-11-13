@@ -8,12 +8,6 @@ import Entries from './Entries'
 import Entry from './Entry'
 import { find } from 'lodash'
 
-function filterEntries (entries, enabled) {
-  return entries.filter(entry => {
-    return enabled.indexOf(entry.id) > -1
-  })
-}
-
 @connect(state => ({
   enabled: state.filters.enabled,
   open: state.entries.open
@@ -79,4 +73,10 @@ export default class Leksikon extends Component {
       </Entries>
     </main>
   }
+}
+
+function filterEntries (entries, enabled) {
+  return entries.filter(entry => {
+    return enabled.indexOf(entry.filterId) > -1
+  })
 }
