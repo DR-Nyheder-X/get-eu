@@ -1,0 +1,33 @@
+@import 'settings.scss';
+@import 'mixins.scss';
+
+.ShareButton {
+  font-size: 12px;
+  font-family: $gibsonRegular;
+  color: $facebookBlue;
+  background: #fff;
+  border-radius: 2px;
+  padding: 3px 8px 3px 31px;
+  height: 26px;
+  display: inline-block;
+  line-height: 23px;
+  position: relative;
+  box-shadow: 2px 2px 0 0 lighten($dimmedTurquoise, 10%);
+
+  &:hover {
+    box-shadow: 2px 2px 0 0 $dimmedTurquoise;
+  }
+
+  // Icon (default is Facebook)
+  i {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAAAt1BMVEUrVYA8WZk8Wpk8WZg8Wpk9W5lAXZtBXptEYZ1NaKJQa6NRbKRSbKRedqplfa5rgbFwhrRyh7VyiLV+kbuAk7yFmL+ImsCNnsOOn8ORosWXp8ihsM6kss+ntNCotdGuu9SwvNWxvdW7xdu8xtu+yN3J0eLM1OTO1eXO1uXS2efT2efU2+jZ3+rc4ezf5O7h5u/i5u/j5/Dn6/Lo6/Lq7fPq7fTr7vTu8fb3+Pr5+vv6+vz9/f3+/v6bdUEPAAAABHRSTlMGiebnTlY6+AAAAMpJREFUeNrt00cTgjAQhuEkBLAr9oK9iwUL2PL/f5fOQOSkwu54cfIed+a5fUsI1TgoRp+Wg6OEwbFGOCKFf4PNsj3beP7BXc8n9WTYbJ1E1DgRzjpCQHHGE2BsOAKOGwKOjSMClwQC25HyRz37WTU+XrxsP5V4YVtpdzpPjM8SdwDbvkjcxOCawh9xwQq6Sty1wtLf8Uq8q4jBOQS+6QjscgSeYvAAg9sYXImBh8ugu0T78JBXX6Wwwgr/CdbgmBEKx5QQymBYo+QBuMrJwwp4mJEAAAAASUVORK5CYII=);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    margin-right: .35em;
+    position: absolute;
+    left: 3px;
+  }
+}

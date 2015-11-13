@@ -8,6 +8,7 @@ import { whereToGoInCategory } from '../utils/whereToGo'
 import { connect } from 'react-redux'
 import Term from './Term'
 import { categoryProgress } from '../reducers/progress'
+import ShareButton from './ShareButton'
 import { pushState } from 'redux-router'
 import { resetProgress } from '../actions'
 
@@ -71,6 +72,7 @@ export default class CategoryDone extends Component {
         <ul className='CategoryDone-terms'>
           {category.terms.map(term => <Term key={term}>{term}</Term>)}
         </ul>
+        <ShareButton type='facebook'>Fortæl dine venner</ShareButton>
         <div className='CategoryDone-next'>Næste<br />udfordring</div>
         <div className='CategoryDone-nextCategory'>
           {categoryTileWithProgress(progress)(nextCategory)}

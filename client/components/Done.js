@@ -8,6 +8,7 @@ import { resetProgress } from '../actions'
 import { Link } from 'react-router'
 import cc from '../utils/cleanClick'
 import { categoryProgress } from '../reducers/progress'
+import ShareButton from './ShareButton'
 
 import '../scss/Done.scss'
 import '../scss/ResetButton.scss'
@@ -45,6 +46,7 @@ export default class Done extends Component {
         <p className='Done-message'>
           Du klarede dig gennem alle spørgsmål. Nu kan du sætte dit kryds d. 3. december med god, velinformeret samvittighed. Ole Ryborg er stolt af dig.
         </p>
+        <ShareButton type='facebook'>Fortæl dine venner</ShareButton>
         <div className='Done-cta'>
           <Link to='/lexicon'>
             <i></i>

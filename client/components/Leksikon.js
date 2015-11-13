@@ -15,6 +15,7 @@ import { find } from 'lodash'
 export default class Leksikon extends Component {
   static propTypes = {
     enabled: PropTypes.arrayOf(PropTypes.number),
+    open: PropTypes.arrayOf(PropTypes.number),
     dispatch: PropTypes.func
   }
 
