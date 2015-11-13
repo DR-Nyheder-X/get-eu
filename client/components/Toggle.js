@@ -8,7 +8,7 @@ export default class Toggle extends Component {
     children: PropTypes.node,
     checked: PropTypes.bool,
     onChange: PropTypes.func,
-    value: PropTypes.string
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
   }
 
   constructor (props) {

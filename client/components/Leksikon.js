@@ -2,29 +2,38 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Filters from './Filters'
 import Toggle from './Toggle'
-import { toggleSection } from '../actions/leksikon'
+import { toggleFilter } from '../actions/leksikon'
+import { filters, entries } from '../Lepo'
+import Entries from './Entries'
+import Entry from './Entry'
+import { find } from 'lodash'
 
-const sections = [
-  'Historiske begivenheder',
-  'Retsforbeholdet',
-  'Partiernes holdninger',
-  'Ja-sidens argumenter',
-  'Nej-sidens argumenter',
-  'Valg-detaljer'
-]
+function filterEntries (entries, enabled) {
+  return entries.filter(entry => {
+    return enabled.includes(entry.id)
+  })
+}
 
 @connect(state => ({
-  enabled: state.sections.enabled
+  enabled: state.filters.enabled
 }))
 export default class Leksikon extends Component {
   static propTypes = {
-    enabled: PropTypes.arrayOf(PropTypes.string),
+    enabled: PropTypes.arrayOf(PropTypes.number),
     dispatch: PropTypes.func
+  }
+
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      entries: filterEntries(entries, props.enabled)
+    }
   }
 
   handleChange (state) {
     const { dispatch } = this.props
-    dispatch(toggleSection(state.value, state.checked))
+    dispatch(toggleFilter(state.value, state.checked))
   }
 
   render () {
@@ -33,19 +42,25 @@ export default class Leksikon extends Component {
 
     return <main className='App'>
       <Filters>
-        {sections.map(title => (
+        {filters.map(filter => (
           <Toggle
-            key={title}
+            key={filter.title}
             onChange={handleChange}
-            checked={enabled.includes(title)}
-            value={title}
-          >{title}</Toggle>
-        ))}
-
-        {enabled.map(title => (
-          <h1 key={title}>{title}</h1>
+            checked={enabled.includes(filter.id)}
+            value={filter.id}
+          >{filter.title}</Toggle>
         ))}
       </Filters>
+      <Entries>
+        {entries.map(entry => (
+          <Entry
+            key={entry.id}
+            title={entry.title}
+            category={find(filters, {id: entry.filterId}).title}
+            content={entry.content}
+          />
+        ))}
+      </Entries>
     </main>
   }
 }

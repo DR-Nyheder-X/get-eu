@@ -4,9 +4,9 @@ import '../scss/Entry.scss'
 
 export default class Entry extends Component {
   static propTypes = {
-    children: PropTypes.node.isRequired,
-    category: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
     open: PropTypes.bool,
     onChange: PropTypes.func
   }
@@ -33,7 +33,7 @@ export default class Entry extends Component {
   }
 
   render () {
-    const { category, title } = this.props
+    const { category, title, content } = this.props
     const { open } = this.state
     const toggleText = open ? 'Luk' : 'Åbn'
 
@@ -48,9 +48,8 @@ export default class Entry extends Component {
             <h2>{category}</h2>
             <h1>{title}</h1>
           </header>
-          <div className='Entry-content'>
-            {this.props.children}
-          </div>
+          <div className='Entry-content'
+            dangerouslySetInnerHTML={{__html: content}}></div>
           <div className='Entry-toggle'>
             <a href='#' onClick={this.handleChange.bind(this)}>{toggleText}</a>
           </div>
