@@ -8,6 +8,8 @@ import { whereToGoInCategory } from '../utils/whereToGo'
 import { connect } from 'react-redux'
 import Term from './Term'
 import { categoryProgress } from '../reducers/progress'
+import { pushState } from 'redux-router'
+import { resetProgress } from '../actions'
 
 import '../scss/CategoryDone.scss'
 import '../scss/ResetButton.scss'
@@ -15,11 +17,15 @@ import '../scss/ResetButton.scss'
 @connect(state => ({
   type: state.router.params.type,
   progress: state.progress
+}), dispatch => ({
+  dispatch, pushState
 }))
 export default class CategoryDone extends Component {
   static propTypes = {
     type: PropTypes.string.isRequired,
-    progress: PropTypes.object.isRequired
+    progress: PropTypes.object.isRequired,
+    dispatch: PropTypes.func,
+    pushState: PropTypes.func
   }
 
   constructor (props) {
@@ -28,6 +34,12 @@ export default class CategoryDone extends Component {
     this.state = {
       category: where({ type: props.type })
     }
+  }
+
+  reset () {
+    const { dispatch, pushState } = this.props
+    dispatch(resetProgress())
+    dispatch(pushState(null, '/'))
   }
 
   render () {
@@ -67,7 +79,7 @@ export default class CategoryDone extends Component {
           {rest.map(categoryTileWithProgress(progress, 'small'))}
         </Tiles>
         <div className='ResetButton'>
-          <a href=''><i></i>Start forfra</a>
+          <a href='' onClick={this.reset.bind(this)}><i></i>Start forfra</a>
         </div>
       </div>
     )
