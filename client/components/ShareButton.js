@@ -17,7 +17,7 @@ export default class ShareButton extends Component {
     const cls = classname('ShareButton', this.props.className, type)
 
     return (
-      <a className={cls} href=''><i></i> {this.props.children}</a>
+      <a className={cls} href='https://www.facebook.com/sharer/sharer.php?u=http://www.dr.dk/nyheder/politik/eu15/forstaa-forbeholdet'><i></i> {this.props.children}</a>
     )
   }
 }
