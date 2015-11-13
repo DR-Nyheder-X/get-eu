@@ -11,7 +11,7 @@ export default class Entries extends Component {
   }
 
   static defaultMasonryOptions = {
-    transitionDuration: 0,
+    transitionDuration: '.2s',
     itemSelector: '.Entry',
     isResizeBound: true
   }

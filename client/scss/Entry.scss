@@ -1,6 +1,11 @@
 @import 'settings.scss';
 @import 'mixins.scss';
 
+// Transitions for smoother Masonry
+.Entry {
+  // transition: left .2s ease .2s, top .2s ease .2s, width .2s linear;
+}
+
 .Entry-inner {
   background: #fff;
   border-radius: 2px;
@@ -8,7 +13,7 @@
   box-shadow: 2px 2px 0 0 $black;
   overflow: hidden;
   transform: translateZ(0);
-  transition: padding .2s linear;
+  // transition: padding .2s linear;
 }
 
 .Entry-header {
@@ -20,7 +25,7 @@
     color: $darkPurple;
     line-height: 1.35;
     transform: translateZ(0);
-    transition: font-size .2s linear;
+    // transition: font-size .2s linear;
 
     @media #{$mediumUp} {
       font-size: 1.15em;
@@ -41,7 +46,7 @@
   overflow: hidden;
   opacity: 0;
   transform: translateZ(0);
-  transition: max-height .2s linear, opacity .2s linear;
+  // transition: max-height .2s linear, opacity .2s linear;
 
   p {
     margin-bottom: 1em;
@@ -59,15 +64,11 @@
   }
 }
 
-.Entry {
-  transition: width .2s linear;
-}
-
 .Entry-toggle {
   margin: .75em -20px -20px;
   padding-left: 0;
   transform: translateZ(0);
-  transition: margin .2s linear, padding-left .1s linear .1s;
+  // transition: margin .2s linear, padding-left .1s linear .1s;
 
   a {
     background-color: $purple;
@@ -87,6 +88,7 @@
 
 // Open
 .Entry.Entry--open {
+  z-index: 999;
 
   .Entry-inner {
     width: 100%;
