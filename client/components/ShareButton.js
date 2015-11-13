@@ -8,7 +8,8 @@ export default class ShareButton extends Component {
   static get propTypes () {
     return {
       type: PropTypes.string,
-      children: PropTypes.node
+      children: PropTypes.node,
+      className: PropTypes.string
     }
   }
   render () {
@@ -16,7 +17,7 @@ export default class ShareButton extends Component {
     const cls = classname('ShareButton', this.props.className, type)
 
     return (
-      <a className={cls} type={type} href="#"><i></i> {this.props.children}</a>
+      <a className={cls} type={type} href=''><i></i> {this.props.children}</a>
     )
   }
 }
