@@ -4,17 +4,7 @@ import { Progress } from '../types'
 import { COMPLETE_STEP, RESET_PROGRESS } from '../actions'
 import { processProgress } from '../utils/logProcessor'
 import Repo from '../Repo'
-
-function gaSend (event, value) {
-  const ga = window.ga ||
-    function (...args) { console.log(args) }
-
-  try {
-    ga('send', 'event', 'Quiz', event, value)
-  } catch (e) {
-    console.log(e)
-  }
-}
+import gaSend from '../utils/gaSend'
 
 const initialState: Progress = {
   completedStepIds: [],

@@ -2,6 +2,7 @@ import { combineReducers } from 'redux'
 import { TOGGLE_FILTER, TOGGLE_ENTRY } from '../actions/leksikon'
 import { without } from 'lodash'
 import { filters } from '../Lepo'
+import gaSend from '../utils/gaSend'
 
 const initialFiltersState = {
   enabled: filters.map(f => f.id)
@@ -28,7 +29,10 @@ export function entriesReducer (state = { open: [] }, action) {
   switch (action.type) {
     case TOGGLE_ENTRY: {
       newState.open = without(newState.open, action.id)
-      if (action.open) newState.open.push(action.id)
+      if (action.open) {
+        newState.open.push(action.id)
+        gaSend('expand', action.id, 'Leksikon')
+      }
       break
     }
     default: break
