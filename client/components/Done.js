@@ -10,6 +10,7 @@ import cc from '../utils/cleanClick'
 import { categoryProgress } from '../reducers/progress'
 
 import '../scss/Done.scss'
+import '../scss/ResetButton.scss'
 
 @connect(state => ({
   progress: state.progress
@@ -51,7 +52,7 @@ export default class Done extends Component {
             <b>Dyk ned i leksikonet</b>
           </Link>
         </div>
-        <div className='Done-reset'>
+        <div className='ResetButton'>
           <a href='' onClick={cc(this.reset.bind(this))}><i></i>Start forfra</a>
         </div>
         <Tiles>

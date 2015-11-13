@@ -10,6 +10,7 @@ import Term from './Term'
 import { categoryProgress } from '../reducers/progress'
 
 import '../scss/CategoryDone.scss'
+import '../scss/ResetButton.scss'
 
 @connect(state => ({
   type: state.router.params.type,
@@ -65,6 +66,9 @@ export default class CategoryDone extends Component {
         <Tiles>
           {rest.map(categoryTileWithProgress(progress, 'small'))}
         </Tiles>
+        <div className='ResetButton'>
+          <a href=''><i></i>Start forfra</a>
+        </div>
       </div>
     )
   }
