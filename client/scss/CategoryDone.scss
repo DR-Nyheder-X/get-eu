@@ -1,5 +1,6 @@
 @import 'settings.scss';
 @import 'mixins.scss';
+@import 'Done';
 
 .CategoryDone {
 
@@ -66,4 +67,8 @@
 
 .CategoryDone-nextCategory {
   @include pagePadding;
+}
+
+.CategoryDone .ResetButton {
+  margin-bottom: -1em;
 }
