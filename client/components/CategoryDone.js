@@ -8,6 +8,7 @@ import { whereToGoInCategory } from '../utils/whereToGo'
 import { connect } from 'react-redux'
 import Term from './Term'
 import { categoryProgress } from '../reducers/progress'
+import ShareButton from './ShareButton'
 
 import '../scss/CategoryDone.scss'
 
@@ -51,6 +52,7 @@ export default class CategoryDone extends Component {
 
     return (
       <div className='CategoryDone'>
+        <ShareButton type='facebook'>Fortæl dine venner</ShareButton>
         <PageTitle type='small centered shadow'>
           <h1>Godt gået!</h1>
           <PreHeading>Nu er du (næsten) ekspert indenfor &hellip;</PreHeading>
