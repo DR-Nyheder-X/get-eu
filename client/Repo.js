@@ -29,8 +29,8 @@ const repo: Repo = {
     newCategory(1, 'Folkeafstemningen', 'eu', [
       newStep(1, [
         'Et flertal af Folketingets partier ønsker at erstatte Danmarks retsforbehold med en tilvalgsordning.',
-        'Da de danske EU forbehold blev indført lovede politikerne at de kun kunne ændres ved en folkeafstemning.',
-        'Justititsministeriet vurderer at Danmark afgiver suverænitet, hvis vi ændrer retsforbeholdet til en tilvalgsordning. Enten skal 5/6-dele af Folketingets medlemmer støtte det eller også skal der være folkeafstemning.'
+        'Da de danske EU-forbehold blev indført, lovede politikerne, at de kun kunne ændres ved en folkeafstemning.',
+        'Justitsministeriet vurderer, at Danmark afgiver suverænitet, hvis vi ændrer retsforbeholdet til en tilvalgsordning. Enten skal 5/6-dele af Folketingets medlemmer støtte det, eller også skal der være en folkeafstemning.'
       ], newQuestion('Hvad vil et flertal i Folketinget?', [
         'Indføre et retsforbehold.',
         'Afskaffe Danmarks retsforbehold fuldstændig.',
@@ -39,8 +39,8 @@ const repo: Repo = {
       newStep(2, [
         'Danmark har haft et retsforbehold siden 1993. Det betyder, at vi står uden for størstedelen af det retlige samarbejde og EUs udlændingepolitik.',
         'På trods af retsforbeholdet deltager vi i dag i det europæiske politisamarbejde, Europol, samt enkelte andre regelsæt.',
-        'Siden Amsterdamtraktaten i 1997 har man rykket mere og mere af det retlige samarbejde længere ind i EU. Nu diskuterer man også ændringer af Europol-samarbejdet og det kan skabe problemer for fortsat dansk deltagelse i Europol.',
-        'Hvis vi stemmer ja d. 3. december, kan Folketinget bestemme at vi fortsætter i Europol. Hvis vi stemmer nej, skal dansk medlemsskab forhandles med Europa-Kommissionen, de øvrige EU-lande og Europaparlamentet.'
+        'Siden Amsterdamtraktaten i 1997 har man rykket mere og mere af det retlige samarbejde længere ind i EU. Nu diskuterer man også ændringer af Europol-samarbejdet, og det kan skabe problemer for fortsat dansk deltagelse i Europol.',
+        'Hvis vi stemmer ja d. 3. december, kan Folketinget bestemme, at vi fortsætter i Europol. Hvis vi stemmer nej, skal dansk medlemskab forhandles med Europa-Kommissionen, de øvrige EU-lande og Europaparlamentet.'
       ], newQuestion('Hvornår fik Danmark et retsforbehold?', [
         '1972',
         '1993',
@@ -67,8 +67,8 @@ const repo: Repo = {
     newCategory(2, 'Strafferet', 'justice', [
       newStep(5, [
         'EU-reglerne på det strafferetlige område handler om grænseoverskridende kriminalitet som menneskehandel, narkohandel, cyberkriminalitet og børneporno.',
-        'EU-reglerne sætter rammer for blandt andet udveksling af bevismateriale og giver mulighed for polititilhold udstedt et land også kan have virkning i andre EU-lande.',
-        'EU-reglerne fastsætter også standarder for hvordan man skal straffe f.eks. insiderhandel, identitetstyveri og menneskehandel.'
+        'EU-reglerne sætter rammer for blandt andet udveksling af bevismateriale og giver mulighed for, at polititilhold udstedt i et land også kan have virkning i andre EU-lande.',
+        'EU-reglerne fastsætter også standarder for, hvordan man skal straffe f.eks. insiderhandel, identitetstyveri og menneskehandel.'
       ], newQuestion('Hvordan deltager Danmark i dag i det strafferetlige samarbejde?', [
         'Vi deltager i fem regelsæt.',
         'Vi deltager i otte regelsæt.',
@@ -87,7 +87,7 @@ const repo: Repo = {
       newStep(7, [
         'Uanset om vi stemmer ja eller nej d. 3. december, vil vi fortsat stå uden for det strafferetlige samarbejde på flere områder.',
         'De fravalgte regler handler blandt andet om konfiskationer, behandling af ofre for kriminalitet, og tiltaltes rettigheder.',
-        'Reglerne er fravalgt, fordi Danmark enten allerede lever op til dem, fordi de ville bryde med dansk retssikkerhed, eller fordi de ville medføre ekstraudgifter.',
+        'Reglerne er fravalgt, fordi Danmark enten allerede lever op til dem, fordi de ville bryde med dansk retssikkerhed eller fordi de ville medføre ekstraudgifter.',
         'Hvis vi får en tilvalgsordning, vil et flertal i Folketinget på et senere tidspunkt kunne tilvælge flere dele af det strafferetlige område uden at sende spørgsmålet til folkeafstemning.'
       ], newQuestion('På hvilket område står vi fortsat udenfor, selvom vi stemmer ja?', [
         'Konfiskationer',
@@ -107,7 +107,7 @@ const repo: Repo = {
       ], 1), ['Asyl og udlændinge']),
       newStep(9, [
         'Selvom vi står uden for det meste af asyl- og udlændingepolitikken, er vi alligevel med i to dele af den: Et fælles fingeraftryksregister og den såkaldte Dublin-forordning.',
-        'Dublin-forordningen betyder, at vi kan sende asylansøgere tilbage til det første land, de blev registreret i – og at andre lande kan sende asylansøgere tilbage til os, hvis Danmark var det første EU-land de ankom til.',
+        'Dublin-forordningen betyder, at vi kan sende asylansøgere tilbage til det første land, de blev registreret i – og at andre lande kan sende asylansøgere tilbage til os, hvis Danmark var det første EU-land, de ankom til.',
         'Asylansøgere får registreret deres fingeraftryk i det fælles register - Eurodac. Dermed kan andre lande se, om en person tidligere er registreret i et andet land.'
       ], newQuestion('Hvilke dele af EU’s asyl- og udlændingepolitik deltager Danmark i?', [
         'Vi står helt uden for asyl- og udlændingepolitikken.',
@@ -126,7 +126,7 @@ const repo: Repo = {
       newStep(11, [
         'Et af de konkrete områder, Danmark står uden for på udlændingeområdet, er de fælles EU-regler for familiesammenføring. Reglerne i Danmark er strammere end i de andre EU-lande.',
         'I Danmark kan en udenlandsk ægtefælle kun blive familiesammenført, hvis begge personer er fyldt 24 år. Desuden er der strammere krav til ægteparrets tilknytning til Danmark.',
-        'Ifølge EU-reglerne kan man som udgangspunkt få familiesammenføring, når begge ægtefæller er fyldt 18 år. Der kan dog stilles et særligt krav om, at de skal være fyldt højest 21 år.',
+        'Ifølge EU-reglerne kan man som udgangspunkt få familiesammenføring, når begge ægtefæller er fyldt 18 år. Der kan dog stilles et særligt krav om, at de skal være fyldt mindst 21 år.',
         'Hvis Danmark tilslutter sig reglerne for familiesammenføring, vil vi være nødt til at droppe 24-årsreglen og tilknytningskravet.'
       ], newQuestion('Hvad vil Danmark være nødt til at droppe, hvis vi tilslutter os EU’s familiesammenføringsregler?', [
         '21-årsreglen',
@@ -145,8 +145,8 @@ const repo: Repo = {
         'Ingen betydning'
       ], 2), ['Handelsret']),
       newStep(13, [
-        'Når en virksomhed går konkurs i ét land, kan borgere og virksomheder i et andet land få sine penge i klemme.',
-        'Konkursforordningen gør det lettere at anmelde sine krav i det land hvor virksomheden er gået konkurs.',
+        'Når en virksomhed går konkurs i ét land, kan borgere og virksomheder i et andet land få deres penge i klemme.',
+        'Konkursforordningen gør det lettere at anmelde sine krav i det land, hvor virksomheden er gået konkurs.',
         'Danmark har tidligere anmodet om at tilslutte sig konkursforordningen via en parallelaftale. Det har Europa-Kommissionen afvist.',
         'Hvis vi stemmer ja d. 3. december, bliver vi en del af konkursforordningen. Hvis vi stemmer nej, står vi fortsat udenfor.'
       ], newQuestion('Er Danmark i dag med i EU’s konkursforordning?', [
@@ -166,7 +166,7 @@ const repo: Repo = {
     newCategory(5, 'Familie', 'family', [
       newStep(15, [
         'Hvis en dansk mand og en tysk kvinde får et barn, og senere bliver skilt, skaber det en kompliceret situation om afgørelse af forældremyndighed.',
-        'Hvis vi stemmer ja d. 3. december skal sager om forældremyndighed fremover afgøres i det land, hvor barnet normalt opholder sig.',
+        'Hvis vi stemmer ja d. 3. december, skal sager om forældremyndighed fremover afgøres i det land, hvor barnet normalt opholder sig.',
         'Skilsmisseafgørelser vil fremover være gældende i alle EU-lande, da man vil anerkende den afgørelse, som det første land kom frem til.',
         'Vi har tidligere forsøgt at indgå en parallelaftale på området, men det har Europa-Kommissionen afvist.'
       ], newQuestion('Hvor skal en sag om forældremyndighed afgøres hvis vi stemmer ja?', [
@@ -194,7 +194,7 @@ const repo: Repo = {
     ]),
     newCategory(6, 'Politi', 'police', [
       newStep(18, [
-        'Danmark har været med i det europæiske politisamarbejdet, Europol, siden det blev etableret i 1998. Formålet med samarbejdet er at bekæmpe grænseoverskridende kriminalitet.',
+        'Danmark har været med i det europæiske politisamarbejde, Europol, siden det blev etableret i 1998. Formålet med samarbejdet er at bekæmpe grænseoverskridende kriminalitet.',
         'I 2014 søgte det danske politi mere end 70.000 gange i Europols database. Det svarer til 19 procent af alle søgninger i databasen.',
         'Norge, som har en såkaldt operationel aftale med Europol, modtog kun oplysninger 2.000 gange fra databasen. En af forklaringerne er, at Norge ikke har direkte adgang til at søge i databasen, men skal anmode om oplysninger hver gang.'
       ], newQuestion('Hvor mange gange søgte det danske politi i Europol-databasen i 2014?', [
@@ -216,7 +216,7 @@ const repo: Repo = {
         'Med et ja d. 3. december vil Danmark også tilslutte sig de europæiske regler om efterforskningskendelser og beskyttelsesordrer på tværs af landegrænser.',
         'Det vil eksempelvis betyde, at hvis du har fået et polititilhold mod en voldelig bekendt, vil du kunne tage tilholdet med til udlandet. De udenlandske myndigheder vil være forpligtet til at yde beskyttelse.',
         'Det vil også betyde, at det tyske politi kan bede det danske politi om at afhøre en dansk statsborger, der er involveret i en tysk straffesag. Politiet vil være forpligtet til at foretage afhøringen inden en bestemt tidsfrist.',
-        'Et nej d. 3. december vil betyde, at vi fortsat står uden for de fælles regler om efterforskning og beskyttelse borgerne på tværs af landegrænser.'
+        'Et nej d. 3. december vil betyde, at vi fortsat står uden for de fælles regler om efterforskning og beskyttelse af borgerne på tværs af landegrænser.'
       ], newQuestion('Hvad er IKKE en del af de europæiske regler, Danmark vil tilslutte sig med et ja?', [
         'Regler om fælles efterforskning.',
         'Regler om ens politiuniformer.',
