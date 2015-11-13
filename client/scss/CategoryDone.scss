@@ -2,9 +2,21 @@
 @import 'mixins.scss';
 
 .CategoryDone {
+  position: relative;
+  text-align: center;
 
   .PageTitle {
     margin-bottom: .4em;
+  }
+
+  .ShareButton {
+    margin-bottom: 2em;
+
+    @media #{$mediumUp} {
+      position: absolute;
+      top: -1.75em;
+      right: 1.5em;
+    }
   }
 
 }//.CategoryDone

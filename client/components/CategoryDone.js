@@ -52,7 +52,6 @@ export default class CategoryDone extends Component {
 
     return (
       <div className='CategoryDone'>
-        <ShareButton type='facebook'>Fortæl dine venner</ShareButton>
         <PageTitle type='small centered shadow'>
           <h1>Godt gået!</h1>
           <PreHeading>Nu er du (næsten) ekspert indenfor &hellip;</PreHeading>
@@ -60,6 +59,7 @@ export default class CategoryDone extends Component {
         <ul className='CategoryDone-terms'>
           {category.terms.map(term => <Term key={term}>{term}</Term>)}
         </ul>
+        <ShareButton type='facebook'>Fortæl dine venner</ShareButton>
         <div className='CategoryDone-next'>Næste<br />udfordring</div>
         <div className='CategoryDone-nextCategory'>
           {categoryTileWithProgress(progress)(nextCategory)}
