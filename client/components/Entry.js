@@ -46,7 +46,7 @@ export default class Entry extends Component {
         <div className='Entry-inner'>
           <header className='Entry-header'>
             <h2>{category}</h2>
-            <h1>{title}</h1>
+            <h1 dangerouslySetInnerHTML={{__html: title}}></h1>
           </header>
           <div className='Entry-content'
             dangerouslySetInnerHTML={{__html: content}}></div>

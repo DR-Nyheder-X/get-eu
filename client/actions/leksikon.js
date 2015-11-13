@@ -1,5 +1,5 @@
-export const TOGGLE_SECTION = 'TOGGLE_SECTION'
+export const TOGGLE_FILTER = 'TOGGLE_FILTER'
 
-export function toggleSection (value, checked) {
-  return { type: TOGGLE_SECTION, value, checked }
+export function toggleFilter (value, checked) {
+  return { type: TOGGLE_FILTER, value, checked }
 }

@@ -10,7 +10,7 @@ import { find } from 'lodash'
 
 function filterEntries (entries, enabled) {
   return entries.filter(entry => {
-    return enabled.includes(entry.id)
+    return enabled.indexOf(entry.id) > -1
   })
 }
 
@@ -31,6 +31,13 @@ export default class Leksikon extends Component {
     }
   }
 
+  componentWillReceiveProps (props) {
+    console.log(props)
+    this.setState({
+      entries: filterEntries(entries, props.enabled)
+    })
+  }
+
   handleChange (state) {
     const { dispatch } = this.props
     dispatch(toggleFilter(state.value, state.checked))
@@ -38,6 +45,7 @@ export default class Leksikon extends Component {
 
   render () {
     const { enabled } = this.props
+    const { entries } = this.state
     const handleChange = this.handleChange.bind(this)
 
     return <main className='App'>
