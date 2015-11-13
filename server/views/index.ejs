@@ -97,7 +97,7 @@
         <%if (!isProduction) { %>
           <script src="/client/<%= bundle %>.bundle.js"></script>
         <% } else { %>
-          N/A (production not supported)
+          <script src="/<%= bundle %>.bundle.js" type="text/javascript"></script>
         <% } %>
 
         
