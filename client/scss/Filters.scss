@@ -20,27 +20,40 @@
 
 .Filters-toggles {
   @media only screen and (min-width: 480px) {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    // display: flex;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    // justify-content: space-between;
+    // text-align: center;
+    margin-right: -1%;
+    margin-left: -1%;
   }
 
   @media #{$mediumUp} {
-    width: 660px;
-    margin: 0 auto;
+    margin-right: -5px;
+    margin-left: -5px;
+  }
+
+  @media only screen and (min-width: 960px) {
+    padding-left: 100px;
   }
 }
 
 .Filters .Toggle {
   margin-bottom: 9px;
+  text-align: left;
 
   @media only screen and (min-width: 480px) {
-    width: 49%;
+    float: left;
+    width: 48%;
+    margin-right: 1%;
+    margin-left: 1%;
   }
 
   @media #{$mediumUp} {
     width: 325px;
+    margin-right: 5px;
+    margin-left: 5px;
   }
 }
 
