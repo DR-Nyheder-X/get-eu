@@ -2,8 +2,9 @@
 @import 'mixins.scss';
 
 .Entries {
+  margin-bottom: 2em;
 
-  @media #{$smallUp} {
+  @media #{$mediumUp} {
     margin-right: -3px;
     margin-left: -3px;
   }
@@ -11,18 +12,18 @@
   .Entry {
     margin-bottom: 12px;
 
-    @media #{$smallUp} {
+    @media #{$mediumUp} {
       width: 50%;
       padding-right: 6px;
       padding-left: 6px;
     }
 
-    @media #{$mediumUp} {
-      width: 33.33%;
-    }
+    // @media #{$mediumUp} {
+    //   width: 33.33%;
+    // }
 
     @media only screen and (min-width: 992px) {
-      width: 25%;
+      width: 33.33%;
     }
   }
 }

@@ -92,7 +92,6 @@
   z-index: 999;
 
   .Entry-inner {
-    width: 100%;
 
     @media #{$mediumUp} {
       padding: 30px;
@@ -124,4 +123,9 @@
       padding-left: 75%;
     }
   }
+}
+
+//Cowboying: This invisible Entry fixes a layout-but in Masonry.
+.Entry.Entry--masonryLayoutBugFix {
+  margin-bottom: 0;
 }

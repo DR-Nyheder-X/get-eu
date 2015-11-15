@@ -60,6 +60,11 @@ export default class Leksikon extends Component {
         ))}
       </Filters>
       <Entries>
+        {/*
+          Cowboying: .Entry.Entry--masonryLayoutBugFix is empty and invisible.
+          This fixes a layout-bug in Masonry. It's not pretty, but it works.
+        */}
+        <div className='Entry Entry--masonryLayoutBugFix'></div>
         {entries.map(entry => (
           <Entry
             key={entry.id}
