@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import classname from 'classname'
 import '../scss/Entry.scss'
 import { findDOMNode } from 'react-dom'
+import { Link } from 'react-router'
 
 export default class Entry extends Component {
   static propTypes = {
@@ -10,7 +11,8 @@ export default class Entry extends Component {
     content: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
     open: PropTypes.bool,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    hideControls: PropTypes.bool
   }
 
   constructor (props) {
@@ -41,11 +43,12 @@ export default class Entry extends Component {
   }
 
   parentWidth () {
-    return `${this.parent.clientWidth}px`
+    return this.parent &&
+      `${this.parent.clientWidth}px`
   }
 
   render () {
-    const { category, title, content } = this.props
+    const { id, category, title, content, hideControls } = this.props
     const { open } = this.state
     const toggleText = open ? 'Luk' : 'Åbn'
 
@@ -64,11 +67,13 @@ export default class Entry extends Component {
             <h2>{category}</h2>
             <h1 dangerouslySetInnerHTML={{__html: title}}></h1>
           </header>
-          <div className='Entry-content'
-            dangerouslySetInnerHTML={{__html: content}}></div>
-          <div className='Entry-toggle'>
-            <a href='#' onClick={this.handleChange.bind(this)}>{toggleText}</a>
+          <div className='Entry-content'>
+            <div dangerouslySetInnerHTML={{__html: content}} />
+            <p><Link to={`/${id}`}>Direkte link</Link></p>
           </div>
+          {hideControls || <div className='Entry-toggle'>
+            <a href='#' onClick={this.handleChange.bind(this)}>{toggleText}</a>
+          </div>}
         </div>
       </div>
     )
