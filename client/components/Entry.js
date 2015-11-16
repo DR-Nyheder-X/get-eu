@@ -50,7 +50,7 @@ export default class Entry extends Component {
   render () {
     const { id, category, title, content, hideControls } = this.props
     const { open } = this.state
-    const toggleText = open ? 'Luk' : 'Åbn'
+    const toggleText = open ? 'Luk' : 'Vis mere'
 
     const cls = classname('Entry', [
       open ? 'Entry--open' : 'Entry--closed'

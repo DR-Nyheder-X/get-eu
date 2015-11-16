@@ -3,6 +3,7 @@
 
 .Entries {
   margin-bottom: 2em;
+  min-height: 100%;
 
   @media #{$mediumUp} {
     margin-right: -3px;

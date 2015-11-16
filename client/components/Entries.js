@@ -26,7 +26,7 @@ export default class Entries extends Component {
         className='Entries'
         elementType='div'
         options={Entries.defaultMasonryOptions}
-      disableImagesLoaded>
+      disableImagesLoaded={false}>
         {this.props.children}
       </Masonry>
     </div>

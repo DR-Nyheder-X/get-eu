@@ -13,8 +13,8 @@ export default class Filters extends Component {
     return (
       <div className='Filters'>
         <header className='Filters-header'>
-          <h1>Eu-leksikon</h1>
-          <h2>Få svar på retsforbeholdets svære spørgsmål (plus bonus-info)</h2>
+          <h1>Leksikon</h1>
+          <h2>Få svar på folkeafstemningens svære spørgsmål (plus bonus-info)</h2>
         </header>
 
         <div className='Filters-toggles'>
