@@ -49,7 +49,7 @@ class Root extends Component {
         <ReduxRouter />
       </div>
     } else {
-      contents = <Leksikon />
+      contents = <ReduxRouter />
     }
 
     return <Provider store={store}>{contents}</Provider>
