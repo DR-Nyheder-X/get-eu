@@ -17,7 +17,9 @@ export default class Entries extends Component {
   }
 
   componentWillReceiveProps (props) {
-    this.refs.masonry.masonry.layout()
+    setTimeout(function() {
+      this.refs.masonry.masonry.layout()
+    }, 0)
   }
 
   render () {
