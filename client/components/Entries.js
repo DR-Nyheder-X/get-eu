@@ -6,8 +6,8 @@ const Masonry = createMasonry(React)
 import '../scss/Entries.scss'
 
 function isIE () {
-  var myNav = navigator.userAgent.toLowerCase();
-  return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
+  var myNav = navigator.userAgent.toLowerCase()
+  return (myNav.indexOf('msie') !== -1) ? parseInt(myNav.split('msie')[1], 10) : false
 }
 
 export default class Entries extends Component {
@@ -23,7 +23,7 @@ export default class Entries extends Component {
 
   componentWillReceiveProps (props) {
     if (isIE()) {
-      setTimeout(function() {
+      setTimeout(function () {
         this.refs.masonry.masonry.layout()
       }, 0)
     } else {
