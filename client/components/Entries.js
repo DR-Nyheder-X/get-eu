@@ -22,7 +22,7 @@ export default class Entries extends Component {
   }
 
   componentWillReceiveProps (props) {
-    if (isIE) {
+    if (isIE()) {
       setTimeout(function() {
         this.refs.masonry.masonry.layout()
       }, 0)
@@ -37,7 +37,7 @@ export default class Entries extends Component {
         className='Entries'
         elementType='div'
         options={Entries.defaultMasonryOptions}
-      disableImagesLoaded={false}>
+        disableImagesLoaded={false}>
         {this.props.children}
       </Masonry>
     </div>
