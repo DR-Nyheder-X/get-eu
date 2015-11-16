@@ -35,7 +35,7 @@ export default class EntryPage extends Component {
         open
         hideControls
       />
-      <div class='EntryPage-goBack'>
+      <div className='EntryPage-goBack'>
         <Button type='yellow darkShadow' to='/'>Se hele leksikonet</Button>
       </div>
     </div>
