@@ -38,6 +38,7 @@
     font-family: $gibsonRegular;
     color: $darkTurquoise;
     margin-bottom: .5em;
+    margin-top: 0;
   }
 }
 
@@ -123,6 +124,12 @@
       padding-left: 75%;
     }
   }
+}
+
+.Entry-directLink a {
+  font-size: 12px;
+  text-decoration: none;
+  font-family: $gibsonRegular;
 }
 
 //Cowboying: This invisible Entry fixes a layout-but in Masonry.

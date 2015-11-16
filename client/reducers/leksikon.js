@@ -2,6 +2,7 @@ import { combineReducers } from 'redux'
 import { TOGGLE_FILTER, TOGGLE_ENTRY } from '../actions/leksikon'
 import { without } from 'lodash'
 import { filters } from '../Lepo'
+import { routerStateReducer } from 'redux-router'
 import gaSend from '../utils/gaSend'
 
 const initialFiltersState = {
@@ -43,6 +44,7 @@ export function entriesReducer (state = { open: [] }, action) {
 
 export function createFinalReducer () {
   return combineReducers({
+    router: routerStateReducer,
     filters: filtersReducer,
     entries: entriesReducer
   })
