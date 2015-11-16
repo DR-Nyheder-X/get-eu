@@ -139,7 +139,7 @@ const repo: Repo = {
         'Når virksomheder eller borgere handler over grænserne i EU, kan der nogle gange opstå en tvist mellem dem.',
         'EU-reglerne bestemmer, i hvilket land en grænseoverskridende sag skal behandles. Danmark står i dag uden for disse regler.',
         'Uanset om vi stemmer ja eller nej d. 3. december, har reglerne ingen betydning for rent danske sager.'
-      ], newQuestion('Hvilken betydning vil reglerne have ved rent danske sager et ja?', [
+      ], newQuestion('Hvilken betydning vil reglerne have for rent danske sager ved et ja?', [
         'Reglerne bliver skærpede',
         'Reglerne bliver lempede',
         'Ingen betydning'
