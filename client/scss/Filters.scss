@@ -66,7 +66,7 @@
     @media #{$mediumUp} { margin-bottom: 2em; }
 
     h1 {
-      @extend .PageTitle--shadow;
+      // @extend .PageTitle--shadow;
       @extend .PageTitle--centered;
       margin-bottom: .2em;
 
