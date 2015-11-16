@@ -14,7 +14,7 @@
   @media #{$mediumUp} {
     margin-top: 2em;
     margin-bottom: 2em;
-    padding: 1.35em 30px 1.9em;
+    padding: 1.35em 30px .45em;
   }
 }
 
@@ -32,6 +32,8 @@
   @media #{$mediumUp} {
     margin-right: -5px;
     margin-left: -5px;
+    overflow: hidden;
+    margin-bottom: 1.75em;
   }
 
   @media only screen and (min-width: 960px) {

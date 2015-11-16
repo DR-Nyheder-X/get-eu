@@ -69,7 +69,7 @@ export default class Entry extends Component {
           </header>
           <div className='Entry-content'>
             <div dangerouslySetInnerHTML={{__html: content}} />
-            <p><Link to={`/${id}`}>Direkte link</Link></p>
+            <p className='Entry-directLink'><Link to={`/${id}`}>Direkte link</Link></p>
           </div>
           {hideControls || <div className='Entry-toggle'>
             <a href='#' onClick={this.handleChange.bind(this)}>{toggleText}</a>

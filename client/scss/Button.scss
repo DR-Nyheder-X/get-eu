@@ -70,6 +70,17 @@
   }
 }
 
+.Button--turquoise {
+  background-color: $turquoise;
+  color: $darkerPurple !important;
+
+  &:hover,
+  &:active {
+    color: $darkerPurple;
+    background-color: $lightTurquoise;
+  }
+}
+
 .Button--shadow {
   box-shadow: 2px 2px 0 0 $dimmedTurquoise;
 }

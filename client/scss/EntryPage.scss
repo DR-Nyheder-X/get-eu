@@ -1,0 +1,19 @@
+@import 'settings.scss';
+@import 'mixins.scss';
+
+.EntryPage {
+  margin-top: 10px;
+  margin-bottom: 2em;
+
+  @media #{$mediumUp} {
+    margin-top: 2em;
+  }
+}
+
+.EntryPage .Entry {
+  margin-bottom: 1em;
+
+  @media #{$mediumUp} {
+    margin-bottom: 1.5em;
+  }
+}
