@@ -4,7 +4,6 @@ var webpack = require('webpack')
 var isProduction = process.env.NODE_ENV === 'production'
 
 var plugins = [
-  new webpack.optimize.OccurenceOrderPlugin(),
   new webpack.NoErrorsPlugin(),
   new webpack.DefinePlugin({
     __PRODUCTION: isProduction,
@@ -14,6 +13,8 @@ var plugins = [
 
 if (!isProduction) {
   plugins.push(new webpack.HotModuleReplacementPlugin())
+} else {
+  plugins.push(new webpack.optimize.OccurenceOrderPlugin())
 }
 
 var hotClient = 'webpack-hot-middleware/client'
@@ -44,7 +45,7 @@ module.exports = {
         exclude: path.resolve(__dirname, 'node_modules')
       }, {
         test: /\.s?css?$/,
-        loader: 'style!css!autoprefixer!sass?includePaths[]=./node_modules'
+        loader: 'style!css?-minimize!autoprefixer!sass?includePaths[]=./node_modules'
       }
     ]
   }

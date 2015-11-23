@@ -27,11 +27,13 @@ export default class CardNavigation extends Component {
     const nextCls = classname('CardNavigation-next',
                               { disabled: !canNext })
 
+    const preventDefault = e => e.preventDefault()
+
     return (
       <nav className='CardNavigation'>
-        <a href='' onClick={canPrev ? cc(onPrev) : () => {}}
+        <a href='' onClick={canPrev ? cc(onPrev) : preventDefault}}
           className={prevCls}>Forrige</a>
-        <a href='' onClick={canNext ? cc(onNext) : () => {}}
+        <a href='' onClick={canNext ? cc(onNext) : preventDefault}}
           className={nextCls}>Næste</a>
 
         <ul>
