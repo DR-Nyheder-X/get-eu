@@ -31,9 +31,9 @@ export default class CardNavigation extends Component {
 
     return (
       <nav className='CardNavigation'>
-        <a href='' onClick={canPrev ? cc(onPrev) : preventDefault}}
+        <a href='' onClick={canPrev ? cc(onPrev) : preventDefault}
           className={prevCls}>Forrige</a>
-        <a href='' onClick={canNext ? cc(onNext) : preventDefault}}
+        <a href='' onClick={canNext ? cc(onNext) : preventDefault}
           className={nextCls}>Næste</a>
 
         <ul>
