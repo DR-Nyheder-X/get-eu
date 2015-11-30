@@ -41,7 +41,7 @@ export default class Step extends Component {
   stateFromProps (props) {
     const category = where({ type: props.type })
     const stepId = parseInt(props.step, 10)
-    const step = find(category.steps, { id: stepId })
+    const step = find(category && category.steps, { id: stepId })
 
     return {
       currentSlide: 0,

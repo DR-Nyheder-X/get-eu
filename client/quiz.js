@@ -58,3 +58,4 @@ if (state.progress.completedStepIds.length === 0) {
     store.dispatch(pushState(null, '/'))
   }
 }
+

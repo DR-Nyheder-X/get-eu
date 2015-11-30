@@ -1,6 +1,10 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import MainNavigation from './MainNavigation'
+import classname from 'classname'
+
+const is_iOS7 =
+  navigator.userAgent.match(/(iPad|iPhone|iPod touch);.*CPU.*OS 7_\d/i)
 
 require('../scss/App.scss')
 
@@ -17,9 +21,12 @@ export default class App extends Component {
 
   render () {
     const { path, progress } = this.props
+    const cls = classname('App', {
+      ['no-animations']: is_iOS7 || true
+    })
 
     return (
-      <main className='App'>
+      <main className={cls}>
         <MainNavigation currentPath={path} progress={progress} />
         {this.props.children}
       </main>

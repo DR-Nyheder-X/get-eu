@@ -26,6 +26,15 @@
 // Accept / reject animations
 .Deck .Card--rejected { animation: cardRejected 0.4s forwards; }
 .Deck .Card--accepted { animation: cardAccepted 0.4s forwards; }
+.no-animations .Deck {
+  .Card--rejected {
+    display: none;
+  }
+  .Card--rejected,
+  .Card--accepted {
+    animation: none;
+  }
+}
 
 @keyframes cardRejected { to { transform: translate3d(-50vw,0,0) translate3d(-60%,0,0) rotate3d(0,0,1,-5deg); } }
 @keyframes cardAccepted { to { transform: translate3d(50vw,0,0) translate3d(60%,0,0) rotate3d(0,0,1,5deg); } }

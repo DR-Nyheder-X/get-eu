@@ -26,6 +26,8 @@ function doneInSteps (steps, progress) {
 }
 
 export function categoryProgress (category, progress) {
+  if (!category) return
+
   const total = category.steps.length
   const done = doneInSteps(category.steps, progress)
   const percent = done / total * 100.0
