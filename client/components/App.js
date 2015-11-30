@@ -22,7 +22,7 @@ export default class App extends Component {
   render () {
     const { path, progress } = this.props
     const cls = classname('App', {
-      ['no-animations']: is_iOS7 || true
+      ['no-animations']: is_iOS7
     })
 
     return (
